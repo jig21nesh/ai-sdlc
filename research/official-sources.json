@@ -1,0 +1,443 @@
+[
+  {
+    "id": "O01",
+    "title": "State of AI-assisted Software Development 2025",
+    "publisher": "DORA / Google Cloud",
+    "url": "https://dora.dev/research/2025/dora-report/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025",
+    "access": "partial",
+    "summary": "The official report page characterizes AI as an amplifier of existing organizational strengths and weaknesses. It argues that returns depend on improving the organizational system around AI, and points to a companion capabilities model.",
+    "supports": [
+      "Assess organizational readiness alongside tools.",
+      "Improve the delivery system rather than treating code generation volume as success."
+    ],
+    "limitations": "The official landing-page summary was read; the full report and its statistical methodology were not reviewed. No causal or numerical productivity claim is made.",
+    "stages": [
+      "govern",
+      "discover",
+      "improve"
+    ]
+  },
+  {
+    "id": "O02",
+    "title": "DORA AI Capabilities Model: Survey Questions",
+    "publisher": "DORA / Google Cloud",
+    "url": "https://dora.dev/ai/capabilities-model/questions/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025-11-25 (last updated)",
+    "access": "full",
+    "summary": "The survey instrument operationalizes seven capabilities: a clear AI stance, healthy data, AI-accessible internal information, version control, small batches, user focus, and internal platform quality. Outcomes include delivery, product quality, user experience, and team performance.",
+    "supports": [
+      "Version prompts and configurations as well as code.",
+      "Capture user feedback and work in small changes.",
+      "Make organization policy, information access, and platform usability explicit."
+    ],
+    "limitations": "A survey instrument defines measured concepts; it does not establish effect sizes or prove causation. Internal data access must still respect authorization.",
+    "stages": [
+      "govern",
+      "discover",
+      "specify",
+      "plan",
+      "build",
+      "release",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O03",
+    "title": "Building effective agents",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2024-12-19",
+    "access": "full",
+    "summary": "Predefined workflows and model-directed agents serve different needs. Anthropic describes chaining, routing, parallel tasks, delegation, and evaluator loops, while recommending simple designs, environmental feedback, bounded execution, sandbox testing, and human review for broader coding requirements.",
+    "supports": [
+      "Choose orchestration according to task uncertainty.",
+      "Delegate independent tasks with explicit completion conditions.",
+      "Use tool results and tests to verify progress."
+    ],
+    "limitations": "Vendor engineering guidance, not comparative proof. The page warns that tooling has changed since its original publication; architectural ideas should be separated from product choices.",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review"
+    ]
+  },
+  {
+    "id": "O04",
+    "title": "Effective context engineering for AI agents",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025-09-29",
+    "access": "full",
+    "summary": "Agent context includes instructions, tools, retrieved information, and interaction history. The article recommends concise relevant context, clear tool contracts, selective retrieval, and techniques for preserving useful state during long tasks.",
+    "supports": [
+      "Load stage-specific evidence on demand.",
+      "Give tools clear, non-overlapping purposes.",
+      "Preserve concise handoff state for long tasks."
+    ],
+    "limitations": "Vendor observations are design guidance. Retrieval strategy and context budgets require local evaluation; more available context does not guarantee correctness.",
+    "stages": [
+      "discover",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "operate"
+    ]
+  },
+  {
+    "id": "O05",
+    "title": "Equipping agents for the real world with Agent Skills",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025-10-16; portability update 2025-12-18",
+    "access": "full",
+    "summary": "Skills package procedural instructions, resources, and optional scripts in folders. Metadata enables discovery and progressive loading. Anthropic recommends representative evaluations, clear triggering descriptions, iterative refinement, and auditing unfamiliar skills, dependencies, and network behavior before use.",
+    "supports": [
+      "Keep reusable procedures separate from organization context.",
+      "Use small skill entry points with linked detail.",
+      "Review bundled code and resources before installation."
+    ],
+    "limitations": "Portability of the content format does not imply identical permissions, discovery, or execution behavior across agent runtimes.",
+    "stages": [
+      "govern",
+      "design",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ]
+  },
+  {
+    "id": "O06",
+    "title": "Demystifying evals for AI agents",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2026-01-09",
+    "access": "full",
+    "summary": "Agent evaluation must inspect outcomes and execution traces across repeat trials. The article combines deterministic, model, and human graders; distinguishes capability from regression suites; and evaluates the model together with its harness. Production observations complement offline evaluation.",
+    "supports": [
+      "Define success before implementation.",
+      "Verify actual environment state rather than the agent's success claim.",
+      "Calibrate model graders with humans and retain regression cases."
+    ],
+    "limitations": "Example benchmarks do not establish performance in a new organization. Evaluation fixtures, graders, and environment stability can bias results.",
+    "stages": [
+      "specify",
+      "verify",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O07",
+    "title": "Secure Software Development Framework (SSDF) Version 1.1, NIST SP 800-218",
+    "publisher": "NIST",
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2022-02",
+    "access": "full",
+    "summary": "SSDF organizes secure development around preparing the organization, protecting software, producing secure software, and responding to vulnerabilities. It emphasizes outcomes over particular technologies, documented security requirements, threat modeling, design records, and risk-based tailoring.",
+    "supports": [
+      "Maintain security requirements and risk decisions through the lifecycle.",
+      "Include third-party component assurance and vulnerability response.",
+      "Adapt controls to project risk and existing delivery practices."
+    ],
+    "limitations": "High-level guidance requires implementation-specific controls. This is a review of version 1.1, not a claim that it is the only applicable standard or a compliance certification.",
+    "stages": [
+      "govern",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O08",
+    "title": "NIST AI Risk Management Framework 1.0: AI RMF Core",
+    "publisher": "NIST AI Resource Center",
+    "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2023",
+    "access": "full",
+    "summary": "AI RMF treats governance as continuous across mapping, measuring, and managing risk. It calls for accountable roles, stakeholder engagement, inventories, oversight, monitoring, incident recovery, and safe decommissioning. Organizations tailor these functions to their resources and context.",
+    "supports": [
+      "GOVERN 1.7 covers safe phase-out and decommissioning.",
+      "MANAGE 4.1 includes monitoring, override, incident response, recovery, and change management.",
+      "Treat governance as cross-cutting rather than a one-time gate."
+    ],
+    "limitations": "The page states that AI RMF 1.0 is being revised. Its voluntary outcomes are not an ordered checklist, and using them does not establish legal compliance.",
+    "stages": [
+      "govern",
+      "discover",
+      "specify",
+      "design",
+      "verify",
+      "release",
+      "operate",
+      "improve",
+      "retire"
+    ]
+  },
+  {
+    "id": "O09",
+    "title": "AI Agent Security Cheat Sheet",
+    "publisher": "OWASP Cheat Sheet Series",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "OWASP addresses prompt injection, excessive tool access, data leakage, memory poisoning, approval manipulation, and failures spreading between agents. Controls include authorization outside model context, scoped tools, isolated memory, bounded operation, output validation, observability, and adversarial tests.",
+    "supports": [
+      "Enforce permissions in the tool execution layer.",
+      "Bind sensitive-action authorization to the exact proposed action.",
+      "Preserve trust boundaries and prevent escalation through delegated agents."
+    ],
+    "limitations": "Living guidance and illustrative code require independent engineering review. Prompt filtering alone is not a security boundary; this source does not certify any implementation.",
+    "stages": [
+      "govern",
+      "design",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate"
+    ]
+  },
+  {
+    "id": "O10",
+    "title": "SLSA specification v1.2",
+    "publisher": "SLSA / Linux Foundation",
+    "url": "https://slsa.dev/spec/v1.2/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "The approved v1.2 specification describes increasing supply-chain assurance through source and build tracks, provenance, artifact verification, and platform assessment. It separates producing attestations from checking the artifacts and evidence received by consumers.",
+    "supports": [
+      "Record and verify artifact origin and build information.",
+      "Choose a supply-chain assurance target explicitly.",
+      "Assess source control and build systems alongside application code."
+    ],
+    "limitations": "The overview was inspected, not every linked requirement. Provenance does not prove that software is defect-free; no SLSA level is claimed for this project.",
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "review",
+      "release"
+    ]
+  },
+  {
+    "id": "O11",
+    "title": "Site Reliability Engineering: Release Engineering",
+    "publisher": "Google SRE",
+    "url": "https://sre.google/sre-book/release-engineering/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Reliable releases use repeatable builds, versioned inputs, tests on the version being shipped, access-controlled release operations, traceable artifacts, and risk-sensitive rollout strategies. Release design begins early and includes rollback and configuration management.",
+    "supports": [
+      "Plan packaging, deployment, and rollback before shipping.",
+      "Test the actual release artifact and configuration.",
+      "Tailor rollout pace and authority to service risk."
+    ],
+    "limitations": "The chapter describes Google's historical internal tools. Transfer the principles rather than assuming its branching model or infrastructure fits every organization.",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "release",
+      "operate"
+    ]
+  },
+  {
+    "id": "O12",
+    "title": "Site Reliability Engineering: Managing Incidents",
+    "publisher": "Google SRE",
+    "url": "https://sre.google/sre-book/managing-incidents/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Incident response benefits from preparation, clear command, separate operations and communications roles, recorded state, and controlled handoffs. Uncoordinated system changes and unclear communication can worsen an outage.",
+    "supports": [
+      "Define incident ownership and escalation before an incident.",
+      "Keep remediation authority coordinated.",
+      "Maintain an incident record and explicit handoffs."
+    ],
+    "limitations": "Human SRE practice rather than an autonomous-agent incident design. Mapping agents to supporting roles is a proposed adaptation, not Google's endorsement.",
+    "stages": [
+      "govern",
+      "plan",
+      "operate"
+    ]
+  },
+  {
+    "id": "O13",
+    "title": "What to look for in a code review",
+    "publisher": "Google Engineering Practices",
+    "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Review considers system design, user-facing behavior, complexity, meaningful tests, naming, documentation, and surrounding context. Reviewers should inspect interactive behavior when relevant and involve qualified specialists for security, privacy, accessibility, and other difficult concerns.",
+    "supports": [
+      "Use independent security and usability review perspectives.",
+      "Review whether tests would catch real failures.",
+      "Record the scope covered by each reviewer."
+    ],
+    "limitations": "General code-review practice; adding an AI reviewer alone does not establish specialist competence or eliminate human accountability.",
+    "stages": [
+      "design",
+      "build",
+      "verify",
+      "review",
+      "retire"
+    ]
+  },
+  {
+    "id": "O14",
+    "title": "Site Reliability Engineering: Postmortem Culture—Learning from Failure",
+    "publisher": "Google SRE",
+    "url": "https://sre.google/sre-book/postmortem-culture/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Blameless postmortems document incident impact, contributing causes, mitigation, and prevention actions. Teams define triggers, review reports for completeness, and share learning while protecting user information. Follow-up should improve systems and processes.",
+    "supports": [
+      "Convert incidents into reviewed improvement work.",
+      "Define postmortem triggers in advance.",
+      "Protect sensitive information in incident evidence."
+    ],
+    "limitations": "Practice guidance from Google's operating context. AI-generated incident summaries still need evidence checking and accountable review.",
+    "stages": [
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O15",
+    "title": "The AI-native SDLC playbook",
+    "publisher": "Anthropic / Louis Claxton",
+    "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+    "published": "2026-08-21",
+    "summary": "A six-stage reference for AI-assisted delivery, with versioned handoffs, governed automation and operational feedback. The adoption diagram represents a different ordering from delivery.",
+    "supports": [
+      "Reference-stage terminology and the distinction between initial intent and implementation planning."
+    ],
+    "limitations": "Article body and lifecycle/adoption images inspected. Prescriptive vendor guidance, not measured assurance. The Skills prerequisite prose and diagram differ. Examples, product availability and numerical suggestions need separate validation; no code was executed.",
+    "stages": [
+      "govern",
+      "discover",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "O16",
+    "title": "Claude Code hooks reference",
+    "publisher": "Anthropic / Claude Code documentation",
+    "url": "https://code.claude.com/docs/en/hooks",
+    "published": null,
+    "summary": "Hook behavior depends on event type, handler and result. Pre-action events can affect permission decisions; later events cannot undo an action already performed. Some handler failures continue through the normal permission flow.",
+    "supports": [
+      "Choose enforcement events and error behavior deliberately; test actual blocking paths.",
+      "Hooks may use commands, models or other handlers, so not every hook is a deterministic policy check."
+    ],
+    "limitations": "Living, host-specific documentation; relevant lifecycle and error sections inspected, not every example. A hook is not a universal sandbox or authorization guarantee.",
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "O17",
+    "title": "Create custom subagents",
+    "publisher": "Anthropic / Claude Code documentation",
+    "url": "https://code.claude.com/docs/en/sub-agents",
+    "published": null,
+    "summary": "Custom subagents can use separate context and configured tools. Execution isolation and tool permissions are distinct configuration concerns; a scoped helper is different from a separate concurrent coding session.",
+    "supports": [
+      "Document helper context, tools and isolation separately.",
+      "Use fresh verification context while preserving actual host permission boundaries."
+    ],
+    "limitations": "Describes one host. A file or role label does not establish that a tool cannot mutate state; not all hosts share the same discovery or execution model.",
+    "stages": [
+      "plan",
+      "build",
+      "verify",
+      "review"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "O18",
+    "title": "Configure permissions",
+    "publisher": "Anthropic / Claude Code documentation",
+    "url": "https://code.claude.com/docs/en/permissions",
+    "published": null,
+    "summary": "Permission rules and modes control tool use in the configured host. Mode behavior has exceptions and interacts with managed policy, so an informal mode name should not be treated as proof of an enforced organizational boundary.",
+    "supports": [
+      "Inspect effective host settings and verify the permitted action rather than assuming a label is sufficient."
+    ],
+    "limitations": "Current documentation is vendor-specific. No permission settings were applied or verified against a live Claude Code session.",
+    "stages": [
+      "govern",
+      "plan",
+      "build",
+      "release"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  }
+]

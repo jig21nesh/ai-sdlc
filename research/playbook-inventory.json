@@ -1,0 +1,926 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-10-08",
+  "primary_source": {
+    "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+    "published": "2026-08-21",
+    "role": "PRIMARY practice reference; not a universal standard or executable specification"
+  },
+  "reading_scope": "Full substantive article; linked official documentation checked for selected technical claims. No downloaded code executed.",
+  "attribution_boundary": "Source-dependent content is restricted to identifiers, placement, short purpose labels, pointers and typed prerequisite edges. Capability contracts and adaptation points are original proposals for this repository, not claims that the source implements them.",
+  "dependency_semantics": {
+    "required": "Stated prerequisite or explicit narrative dependency; source_basis identifies which.",
+    "advisory": "Source describes this as helpful or part of a maturity path, not an unconditional prerequisite.",
+    "conditional": "Applies only under the recorded source condition.",
+    "empty_upstream": "No play-to-play prerequisite stated for this subsection; does not imply absence of infrastructure, approved inputs or authorization.",
+    "relation": "adoption, input, or control; do not collapse all three into a mandatory delivery sequence.",
+    "prose_precedence": "Prose prerequisite language is used; diagram-only edges are not promoted to requirements. The implementation-plan prose is conditional on an existing record; instructions help policy skills but are not mandatory."
+  },
+  "technical_references": {
+    "modes": {
+      "url": "https://code.claude.com/docs/en/permission-modes",
+      "section": "planning and autonomous-mode behavior",
+      "observation": "Mode behavior depends on session configuration; planning has a bypass-permissions exception. Inspect effective settings instead of inferring authority from the mode name."
+    },
+    "memory": {
+      "url": "https://code.claude.com/docs/en/memory",
+      "section": "managed instructions and troubleshooting",
+      "observation": "Instruction files guide behavior; settings enforce supported restrictions. Discovery of AGENTS.md depends on host version and configuration. Verify actual loading."
+    },
+    "skills": {
+      "url": "https://code.claude.com/docs/en/skills",
+      "section": "frontmatter, supporting files, and invocation",
+      "observation": "Descriptions affect selection; malformed metadata may load without the intended fields. Supporting resources can load on demand. Validate discovery and behavior, not just Markdown syntax."
+    },
+    "hooks": {
+      "url": "https://code.claude.com/docs/en/hooks",
+      "section": "exit codes, timeouts, event coverage",
+      "observation": "Blocking is event- and result-specific. Several hook errors and PreToolUse timeouts do not themselves block execution; normal permission processing can continue."
+    },
+    "subagents": {
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "section": "working directories, isolation, and frontmatter",
+      "observation": "Helpers normally share the parent working directory. Worktree isolation is explicit, and teammate behavior differs. Context separation does not imply filesystem or credential isolation."
+    },
+    "review": {
+      "url": "https://code.claude.com/docs/en/code-review",
+      "section": "rating/replies and check output",
+      "observation": "Managed findings do not approve or block PRs; the check is neutral. Replying to a finding does not request a fix. Review and repair integrations are distinct."
+    },
+    "actions": {
+      "url": "https://code.claude.com/docs/en/github-actions",
+      "section": "permissions and actor-trigger checks",
+      "observation": "The shared app grants broader permissions than the action alone uses. Trigger eligibility and bot checks matter. Available tool access also depends on invocation form."
+    },
+    "sandbox": {
+      "url": "https://code.claude.com/docs/en/sandboxing",
+      "section": "scope and security limitations",
+      "observation": "The built-in boundary covers shell processes, not every client capability. Broad destinations, writable executables, sockets, and escape exceptions can defeat an intended restriction."
+    },
+    "tag": {
+      "url": "https://claude.com/product/tag",
+      "section": "availability and channel behavior",
+      "observation": "The linked product page describes a Slack beta for eligible Team/Enterprise accounts. Do not infer equivalent Teams support or installed connectors."
+    },
+    "scans": {
+      "url": "https://claude.com/product/claude-security",
+      "section": "availability and scan model",
+      "observation": "The linked product now names Mythos 5.1 while the article names Mythos 5. Record the actual scan model/version and provider terms rather than freezing the article example."
+    }
+  },
+  "items": [
+    {
+      "id": "intent",
+      "phase": "Plan",
+      "purpose": "Clarify a request.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 1 / intent entry",
+        "observed_text_lines": [
+          113,
+          172
+        ]
+      },
+      "upstream": [],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Elicit missing decisions and produce a bounded request record with evidence references.",
+        "runtime_adapter": "Authenticate record access and persist an authorized version."
+      },
+      "main_adaptation_points": [
+        "Use the existing intake location and owner directory.",
+        "Separate observed needs, proposed outcomes and unresolved claims.",
+        "Permit a draft without fabricating product acceptance."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude conversation; repository-centered example"
+      ],
+      "technical_caveat_refs": [],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-discover"
+      ]
+    },
+    {
+      "id": "spec-design",
+      "phase": "Design",
+      "purpose": "Resolve product decisions.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 2 / specification work",
+        "observed_text_lines": [
+          178,
+          221
+        ]
+      },
+      "upstream": [
+        {
+          "id": "intent",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "input"
+        },
+        {
+          "id": "policy-skills",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Turn an accepted request into a consistent behavior/interface decision record with acceptance cases and a conflict register.",
+        "runtime_adapter": "Retrieve approved policy versions and control record publication."
+      },
+      "main_adaptation_points": [
+        "Select only relevant product, architecture and policy owners.",
+        "Keep one canonical record even when requirements and architecture views differ.",
+        "Bound a prototype to the hypothesis it can test."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude session; optional proprietary design surface"
+      ],
+      "technical_caveat_refs": [
+        "skills"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-specify",
+        "ai-sdlc-design"
+      ]
+    },
+    {
+      "id": "implementation-plan",
+      "phase": "Build",
+      "purpose": "Make work executable.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / implementation planning",
+        "observed_text_lines": [
+          227,
+          281
+        ]
+      },
+      "upstream": [
+        {
+          "id": "intent",
+          "requirement": "conditional",
+          "source_basis": "explicit-prerequisites",
+          "relation": "input",
+          "condition": "existing-record; alternative to spec-design"
+        },
+        {
+          "id": "spec-design",
+          "requirement": "conditional",
+          "source_basis": "explicit-prerequisites",
+          "relation": "input",
+          "condition": "existing-record; alternative to intent"
+        },
+        {
+          "id": "repo-context",
+          "requirement": "advisory",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Inspect the candidate and define exact edit ownership, technical choices, check oracles, and reassessment points.",
+        "runtime_adapter": "Provide a controlled inspection environment and revision identity."
+      },
+      "main_adaptation_points": [
+        "A user-authorized small task may be its own accepted record.",
+        "Flag assumptions requiring inspection rather than guessing paths.",
+        "Record why a changed approach still satisfies the same acceptance conditions."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude Code planning mode"
+      ],
+      "technical_caveat_refs": [
+        "modes"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-plan"
+      ]
+    },
+    {
+      "id": "autonomy",
+      "phase": "Build",
+      "purpose": "Calibrate permitted actions.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / autonomous-mode sidebar",
+        "observed_text_lines": [
+          282,
+          285
+        ]
+      },
+      "upstream": [
+        {
+          "id": "implementation-plan",
+          "requirement": "required",
+          "source_basis": "narrative",
+          "relation": "input"
+        },
+        {
+          "id": "repo-context",
+          "requirement": "advisory",
+          "source_basis": "narrative",
+          "relation": "adoption"
+        },
+        {
+          "id": "policy-skills",
+          "requirement": "advisory",
+          "source_basis": "narrative",
+          "relation": "adoption"
+        },
+        {
+          "id": "build-hooks",
+          "requirement": "advisory",
+          "source_basis": "narrative",
+          "relation": "adoption"
+        },
+        {
+          "id": "feedback-tests",
+          "requirement": "advisory",
+          "source_basis": "narrative",
+          "relation": "adoption"
+        }
+      ],
+      "kind": "sidebar",
+      "expected_practice_capability": {
+        "skill": "Assess whether proposed unattended actions fit a demonstrated control and recovery envelope.",
+        "runtime_adapter": "Enforce permissions, isolation, time/cost limits and stop/revoke controls."
+      },
+      "main_adaptation_points": [
+        "Describe permitted actor, operation, target and validity; avoid a single autonomy score.",
+        "Require negative conformance evidence before increasing capability.",
+        "Preserve existing authority without interpreting convenience settings as consent."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude mode names"
+      ],
+      "technical_caveat_refs": [
+        "modes",
+        "sandbox"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-govern",
+        "ai-sdlc-security-review"
+      ]
+    },
+    {
+      "id": "canonical-records",
+      "phase": "Cross-cutting",
+      "purpose": "Prevent record divergence.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / record-system sidebar",
+        "observed_text_lines": [
+          288,
+          298
+        ]
+      },
+      "upstream": [],
+      "kind": "sidebar",
+      "expected_practice_capability": {
+        "skill": "Reconcile competing artifacts and return a canonical revision, mirror links and a conflict decision.",
+        "runtime_adapter": "Implement access, versioning, optimistic concurrency and authorized synchronization."
+      },
+      "main_adaptation_points": [
+        "Select authority separately for request, design, check, review and incident records.",
+        "Do not overwrite a newer source from a stale local copy.",
+        "Draft writeback separately from performing an external write."
+      ],
+      "observed_vendor_assumptions": [
+        "Repository or incumbent tool plus connector"
+      ],
+      "technical_caveat_refs": [],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-govern",
+        "shared-contract"
+      ]
+    },
+    {
+      "id": "repo-context",
+      "phase": "Build",
+      "purpose": "Maintain local knowledge.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / repository instructions",
+        "observed_text_lines": [
+          299,
+          351
+        ]
+      },
+      "upstream": [],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Audit instruction usefulness, remove stale claims, and propose a minimal verified context patch.",
+        "runtime_adapter": "Load the intended files and expose their provenance."
+      },
+      "main_adaptation_points": [
+        "Probe commands in an authorized safe environment before documenting outcomes.",
+        "Separate recurring pitfalls from facts recoverable from the code.",
+        "Resolve conflicting nested rules through owner decisions."
+      ],
+      "observed_vendor_assumptions": [
+        "CLAUDE.md and init command"
+      ],
+      "technical_caveat_refs": [
+        "memory"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-build",
+        "ai-sdlc-improve"
+      ]
+    },
+    {
+      "id": "policy-skills",
+      "phase": "Build",
+      "purpose": "Operationalize a rule.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / reusable policy procedures",
+        "observed_text_lines": [
+          352,
+          404
+        ]
+      },
+      "upstream": [
+        {
+          "id": "repo-context",
+          "requirement": "advisory",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Translate an owner-approved policy clause into scoped instructions and positive/negative activation and behavior cases.",
+        "runtime_adapter": "Discover/distribute approved revisions and enforce non-advisory invariants elsewhere."
+      },
+      "main_adaptation_points": [
+        "Record policy clause, owner, exceptions and expiry.",
+        "Test misleading near-match prompts and policy conflicts.",
+        "Avoid generating organizational rules from examples."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude skill discovery and distribution conventions"
+      ],
+      "technical_caveat_refs": [
+        "skills"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-govern",
+        "ai-sdlc-improve"
+      ]
+    },
+    {
+      "id": "build-hooks",
+      "phase": "Build",
+      "purpose": "Check implementation boundaries.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / build controls",
+        "observed_text_lines": [
+          405,
+          416
+        ]
+      },
+      "upstream": [
+        {
+          "id": "policy-skills",
+          "requirement": "conditional",
+          "source_basis": "narrative",
+          "relation": "control",
+          "condition": "backing a selected invariant"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Specify an action-control matrix and exercise allowed, denied, malformed and failed-control cases.",
+        "runtime_adapter": "Install protected interceptors and enforce coverage across actual action paths."
+      },
+      "main_adaptation_points": [
+        "Separate automatic formatting from security authorization.",
+        "Inspect alternate shell/tool entry points and who can alter the control.",
+        "Use representative local fixtures; never install a sample directly in production."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude hook events"
+      ],
+      "technical_caveat_refs": [
+        "hooks",
+        "sandbox"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-security-review",
+        "ai-sdlc-govern"
+      ]
+    },
+    {
+      "id": "sessions-helpers",
+      "phase": "Build",
+      "purpose": "Partition independent work.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 3 / concurrency",
+        "observed_text_lines": [
+          417,
+          465
+        ]
+      },
+      "upstream": [
+        {
+          "id": "repo-context",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "feedback-tests",
+          "requirement": "advisory",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "implementation-plan",
+          "requirement": "required",
+          "source_basis": "narrative",
+          "relation": "input"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Assign non-overlapping units, sanitized briefs, result contracts and a single integration decision.",
+        "runtime_adapter": "Provision real isolation, capability scopes, budgets and cancellation."
+      },
+      "main_adaptation_points": [
+        "Differentiate separate sessions, scoped helpers and team messaging.",
+        "Require candidate identifiers and inspect results before integration.",
+        "Measure rework and review capacity before adding concurrency."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude sessions, worktrees and subagents"
+      ],
+      "technical_caveat_refs": [
+        "subagents",
+        "sandbox"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-orchestrate",
+        "ai-sdlc-plan"
+      ]
+    },
+    {
+      "id": "feedback-tests",
+      "phase": "Test",
+      "purpose": "Expose wrong behavior.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 4 / implementation feedback",
+        "observed_text_lines": [
+          471,
+          530
+        ]
+      },
+      "upstream": [],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Choose a relevant observable oracle, reproduce the failure, make the bounded change and compare observed outcomes.",
+        "runtime_adapter": "Run checks with meaningful failure signals and preserve artifacts."
+      },
+      "main_adaptation_points": [
+        "A failing test must fail for the intended reason.",
+        "Distinguish corrected expectations from weakened assertions.",
+        "For visual work record environment, representative states and comparison evidence."
+      ],
+      "observed_vendor_assumptions": [
+        "Local commands and optional visual tools"
+      ],
+      "technical_caveat_refs": [],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-build",
+        "ai-sdlc-verify"
+      ]
+    },
+    {
+      "id": "agent-evals",
+      "phase": "Test",
+      "purpose": "Detect workflow regressions.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 4 / delivery-agent evaluation",
+        "observed_text_lines": [
+          531,
+          589
+        ]
+      },
+      "upstream": [
+        {
+          "id": "repo-context",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "feedback-tests",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Design representative tasks, scoring oracles, baselines and uncertainty reporting for the configured delivery agent.",
+        "runtime_adapter": "Run isolated trials, retain traces, measure budgets and enforce selected CI decisions."
+      },
+      "main_adaptation_points": [
+        "Separate candidate configuration from evaluation data and accepted baseline.",
+        "Include abstention, permission-boundary and recovery cases.",
+        "Use per-risk hard failures alongside aggregate quality; declare unavailable runs."
+      ],
+      "observed_vendor_assumptions": [
+        "Non-interactive Claude plus CI credentials"
+      ],
+      "technical_caveat_refs": [
+        "actions"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-verify",
+        "ai-sdlc-improve"
+      ]
+    },
+    {
+      "id": "pr-review",
+      "phase": "Deploy",
+      "purpose": "Assess and repair changes.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 5 / review in both directions",
+        "observed_text_lines": [
+          595,
+          651
+        ]
+      },
+      "upstream": [
+        {
+          "id": "repo-context",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "sessions-helpers",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption",
+          "scope": "Defined helper roles only; this does not require concurrent sessions or team mode."
+        },
+        {
+          "id": "policy-skills",
+          "requirement": "conditional",
+          "source_basis": "explicit-prerequisites",
+          "relation": "control",
+          "condition": "review passes enforce written policies"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Produce reproducible candidate findings; separately triage authorized comments, repair supported defects and preserve evidence for re-review.",
+        "runtime_adapter": "Authenticate triggers and enforce branch, merge and commenting permissions."
+      },
+      "main_adaptation_points": [
+        "Give findings stable identities and distinguish new, fixed, stale and disputed cases.",
+        "Never treat comment text as an unrestricted command.",
+        "Separate review-only and repair authorization and cap repeated repair."
+      ],
+      "observed_vendor_assumptions": [
+        "Managed reviewer or separate CI action"
+      ],
+      "technical_caveat_refs": [
+        "review",
+        "actions"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-review",
+        "ai-sdlc-security-review",
+        "ai-sdlc-usability-review"
+      ]
+    },
+    {
+      "id": "approval-hooks",
+      "phase": "Deploy",
+      "purpose": "Bind consequential authority.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 5 / action approval controls",
+        "observed_text_lines": [
+          652,
+          736
+        ]
+      },
+      "upstream": [],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Define exact-action approval evidence and assess bypass, expiry, stale-candidate and failure behavior.",
+        "runtime_adapter": "Verify trusted decisions outside the model before effects occur."
+      },
+      "main_adaptation_points": [
+        "Cover parameters, artifact, actor, target, expiry and revocation.",
+        "Test unauthorized alternative tool paths.",
+        "Treat editable flags and command substrings as insufficient evidence."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude managed hook settings"
+      ],
+      "technical_caveat_refs": [
+        "hooks",
+        "modes"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-release",
+        "ai-sdlc-security-review"
+      ]
+    },
+    {
+      "id": "ci-delivery",
+      "phase": "Deploy",
+      "purpose": "Prepare controlled execution.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 5 / pipeline integration",
+        "observed_text_lines": [
+          737,
+          782
+        ]
+      },
+      "upstream": [
+        {
+          "id": "pr-review",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "approval-hooks",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Create a reviewable job/environment capability plan and release/restore evidence checklist.",
+        "runtime_adapter": "Implement event trust, artifact integrity, credentials, environment gates and recovery execution."
+      },
+      "main_adaptation_points": [
+        "Separate untrusted build inputs from privileged jobs.",
+        "Specify idempotency and partial-success handling for retries.",
+        "Validate rollback or forward recovery against the actual migration and state model."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude non-interactive jobs and target connectors"
+      ],
+      "technical_caveat_refs": [
+        "actions",
+        "sandbox"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-release"
+      ]
+    },
+    {
+      "id": "trigger-intake",
+      "phase": "Maintain",
+      "purpose": "Triage observed anomalies.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 6 / event-to-work loop",
+        "observed_text_lines": [
+          788,
+          844
+        ]
+      },
+      "upstream": [
+        {
+          "id": "intent",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "pr-review",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "approval-hooks",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "ci-delivery",
+          "requirement": "conditional",
+          "source_basis": "explicit-prerequisites",
+          "relation": "control",
+          "condition": "response may invoke rollback"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Validate and deduplicate evidence, distinguish symptom from hypothesis, and draft an owned work item or justified dismissal.",
+        "runtime_adapter": "Authenticate events and enforce each allowed response before a tool call."
+      },
+      "main_adaptation_points": [
+        "Choose thresholds from service behavior rather than an example constant.",
+        "Preserve event IDs, clocks, correlation and previous attempts.",
+        "Verify recovery independently of whether a remediation command returned success."
+      ],
+      "observed_vendor_assumptions": [
+        "Headless Claude or Agent SDK"
+      ],
+      "technical_caveat_refs": [
+        "sandbox"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-operate",
+        "ai-sdlc-improve"
+      ]
+    },
+    {
+      "id": "recurring-scans",
+      "phase": "Maintain",
+      "purpose": "Manage dated findings.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 6 / scheduled security assessment",
+        "observed_text_lines": [
+          845,
+          880
+        ]
+      },
+      "upstream": [
+        {
+          "id": "pr-review",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "approval-hooks",
+          "requirement": "required",
+          "source_basis": "explicit-prerequisites",
+          "relation": "adoption"
+        },
+        {
+          "id": "intent",
+          "requirement": "conditional",
+          "source_basis": "explicit-prerequisites",
+          "relation": "input",
+          "condition": "finding exceeds bounded patch"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Assess scan coverage, verify finding evidence, consolidate duplicates, assign disposition and follow through to regression proof.",
+        "runtime_adapter": "Schedule authorized scans and protect repository data, costs and result routing."
+      },
+      "main_adaptation_points": [
+        "Treat absence of findings as limited by coverage and method.",
+        "Reassess prior dismissals when relevant context changes.",
+        "Separate scanning authority from exploitation, patching and publication authority."
+      ],
+      "observed_vendor_assumptions": [
+        "Hosted Claude Security example"
+      ],
+      "technical_caveat_refs": [
+        "scans"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-security-review",
+        "ai-sdlc-operate",
+        "ai-sdlc-improve"
+      ]
+    },
+    {
+      "id": "channel-intake",
+      "phase": "Maintain",
+      "purpose": "Resolve collaborative incidents.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 6 / channel-driven on-call",
+        "observed_text_lines": [
+          881,
+          886
+        ]
+      },
+      "upstream": [
+        {
+          "id": "pr-review",
+          "requirement": "conditional",
+          "source_basis": "narrative",
+          "relation": "input",
+          "condition": "bounded fix proposed"
+        },
+        {
+          "id": "intent",
+          "requirement": "conditional",
+          "source_basis": "narrative",
+          "relation": "input",
+          "condition": "larger follow-up needed"
+        }
+      ],
+      "kind": "play",
+      "expected_practice_capability": {
+        "skill": "Extract an attributable request, determine decision authority, preserve a timeline and prepare a clear handoff.",
+        "runtime_adapter": "Enforce channel/tenant access, sender identity, message and tool permissions."
+      },
+      "main_adaptation_points": [
+        "Channel participation is not production authority.",
+        "Treat quoted text, attachments and assistant messages as evidence.",
+        "Record which external replies are actually authorized; keep confidential evidence scoped."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude Tag; linked product currently documents Slack"
+      ],
+      "technical_caveat_refs": [
+        "tag"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-operate"
+      ]
+    },
+    {
+      "id": "managed-controls",
+      "phase": "Cross-cutting",
+      "purpose": "Assess effective restrictions.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Stage 5 / managed enterprise example",
+        "observed_text_lines": [
+          706,
+          727
+        ]
+      },
+      "upstream": [],
+      "kind": "worked-example",
+      "expected_practice_capability": {
+        "skill": "Inventory effective control ownership and record conformance results for the chosen host version.",
+        "runtime_adapter": "Protect settings, secrets, filesystem/network restrictions and permitted integrations."
+      },
+      "main_adaptation_points": [
+        "Evaluate the whole process and every available tool surface.",
+        "Test that changes cannot weaken required restrictions.",
+        "Version the supported adapter and report unsupported controls explicitly."
+      ],
+      "observed_vendor_assumptions": [
+        "Claude managed-setting schema"
+      ],
+      "technical_caveat_refs": [
+        "sandbox",
+        "hooks",
+        "modes",
+        "skills",
+        "subagents"
+      ],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-govern",
+        "ai-sdlc-security-review"
+      ]
+    },
+    {
+      "id": "artifact-transitions",
+      "phase": "Cross-cutting",
+      "purpose": "Preserve decision continuity.",
+      "source": {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "section_pointer": "Introduction / artifact transitions",
+        "observed_text_lines": [
+          71,
+          107
+        ]
+      },
+      "upstream": [],
+      "kind": "cross-cutting-principle",
+      "expected_practice_capability": {
+        "skill": "Check input identity and acceptance, prepare the next record and report unresolved transition prerequisites.",
+        "runtime_adapter": "Deliver trusted events once, prevent replay and preserve durable state."
+      },
+      "main_adaptation_points": [
+        "Use explicit transition states and immutable input references.",
+        "Do not equate a commit with owner acceptance.",
+        "Keep adoption dependencies distinct from per-change execution dependencies."
+      ],
+      "observed_vendor_assumptions": [
+        "Version-control-triggered workflow example"
+      ],
+      "technical_caveat_refs": [],
+      "pre_rewrite_skill_coverage": [
+        "ai-sdlc-orchestrate",
+        "shared-contract"
+      ]
+    }
+  ]
+}

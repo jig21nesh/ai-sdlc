@@ -1,0 +1,28 @@
+{
+  "case": "E01",
+  "method": "Offline fixture execution using explicitly assigned skills; no external models, network or system mutations.",
+  "reviewed_at": "2026-10-08T06:48:35.316513+00:00",
+  "raw_inputs": [
+    {
+      "path": "REQUEST.txt",
+      "sha256": "f140c20e623862b2d363b6f0a01483be03ffcd72cd39c2316c438b7c3a02bedb"
+    },
+    {
+      "path": "results.json",
+      "sha256": "951d53e761345b29b7dead878eb31baa0178223b556d446c2b816553844b408d"
+    }
+  ],
+  "skill_inputs": [
+    {
+      "path": "skills/ai-sdlc-agent-evals/SKILL.md",
+      "sha256": "5b7c847b3656b97586a44ecc7742997fdda6cedf711a49a6ee4a41ee57032bac"
+    },
+    {
+      "path": "skills/shared-contract.md",
+      "sha256": "05acac39cc690f0ccd067c637b7f0fde1cbc8fc5426676aae9b6429fb255ec08"
+    }
+  ],
+  "limits": [
+    "Only supplied fixture data inspected; referenced production/repository state not independently available."
+  ]
+}

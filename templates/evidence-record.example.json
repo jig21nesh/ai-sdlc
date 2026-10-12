@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "example_only": true,
+  "task_id": null,
+  "stage": "verify",
+  "stage_field_meaning": "Legacy field containing the toolkit work-module ID",
+  "reference_stage": "Test",
+  "authoritative_record": {"system": null, "record_id": null, "accepted_revision": null, "working_copy_reference": null, "next_consumer": null},
+  "candidate": {"revision": null, "artifact_sha256": null},
+  "profile_versions": {"organization": null, "project": null, "adapters": null},
+  "requirements": [],
+  "risks": [],
+  "checks": [{"name": null, "command_or_tool": null, "environment": null, "observed_at": null, "status": "not-run", "evidence_path": null}],
+  "findings": [],
+  "review": {"author": null, "reviewer": null, "independent": null, "scope": null},
+  "evidence_status": "not-run",
+  "owner_acceptance": {"status": "pending", "owner": null, "decision_reference": null, "authorized_action_and_target": null},
+  "limitations": ["Unpopulated example; not proof that any check ran or any action is authorized."],
+  "next_owner": null,
+  "next_action": null
+}

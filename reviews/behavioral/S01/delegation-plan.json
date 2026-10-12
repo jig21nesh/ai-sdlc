@@ -1,0 +1,111 @@
+{
+  "objective": "I-9 revision 2: own-invoice CSV export, planning only",
+  "authority": "REQUEST.txt authorizes local analysis/planning; code edits and delegation execution not requested",
+  "source_record": {
+    "id": "I-9",
+    "revision": 2,
+    "acceptance": "Product accepted intent per intent.md"
+  },
+  "topology_recommendation": "one implementation owner or serialized T1/T2; no actual delegation",
+  "candidate_revision": null,
+  "integration_owner": null,
+  "integration_owner_status": "must be named before implementation",
+  "tasks": [
+    {
+      "id": "P0",
+      "owner": "engineering owner, unassigned",
+      "state": "planned",
+      "depends": [],
+      "writes": [],
+      "output": "observed repository baseline and resolved/linked spec decisions"
+    },
+    {
+      "id": "T1",
+      "owner": "agent-A proposal only",
+      "state": "not-run",
+      "depends": [
+        "P0 relevant auth/domain context"
+      ],
+      "writes": [
+        "src/domain/invoices.py",
+        "tests/test_export.py"
+      ],
+      "requirements": [
+        "R1",
+        "R2",
+        "R3",
+        "R7"
+      ]
+    },
+    {
+      "id": "T2",
+      "owner": "agent-B proposal only",
+      "state": "not-run",
+      "depends": [
+        "T1",
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "writes": [
+        "src/web/export.py",
+        "tests/test_export.py"
+      ],
+      "requirements": [
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "T3",
+      "owner": "UI owner unassigned",
+      "state": "not-run",
+      "depends": [
+        "P0 UI discovery",
+        "T2 contract"
+      ],
+      "writes": [],
+      "write_scope_gap": "Actual UI file not supplied; determine before edits.",
+      "requirements": [
+        "R6"
+      ]
+    },
+    {
+      "id": "V1",
+      "owner": "quality verifier unassigned",
+      "state": "not-run",
+      "depends": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "writes": [],
+      "output": "candidate-bound verification report"
+    }
+  ],
+  "conflict_resolution": {
+    "path": "tests/test_export.py",
+    "writers": [
+      "T1",
+      "T2"
+    ],
+    "rule": "T2 starts after T1 returns inspected integrated revision; never concurrent writes.",
+    "status": "planned, not executed"
+  },
+  "open_decisions": [
+    "CSV dialect/escaping/spreadsheet interpretation",
+    "column schema",
+    "missing/empty/error conventions",
+    "actual API/UI/test/version context"
+  ],
+  "agent_limits": {
+    "max_agents": null,
+    "max_seconds": null,
+    "max_cost_usd": null,
+    "reason": "No runtime/profile budgets supplied and no launch requested."
+  },
+  "evidence_status": "partial",
+  "execution_status": "not-run"
+}

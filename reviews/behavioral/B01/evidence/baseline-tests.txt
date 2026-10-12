@@ -1,0 +1,10 @@
+import unittest
+from invoices import get_invoice
+
+class InvoiceTests(unittest.TestCase):
+    def test_owner(self):
+        record={'id':'i1','account':'a1','amount':10}
+        self.assertEqual(get_invoice([record], 'i1', 'a1'), record)
+
+if __name__ == '__main__':
+    unittest.main()

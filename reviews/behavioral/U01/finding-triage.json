@@ -1,0 +1,18 @@
+{
+  "id": "F1",
+  "normalized_identity": "retired-pilot:examples/token.txt:hardcoded-secret",
+  "source": "runtime-facts.json.scan.prior_findings[0]",
+  "claimed_rule": "hardcoded-secret",
+  "claimed_location": "examples/token.txt",
+  "supplied_value": "EXAMPLE_NOT_A_SECRET",
+  "status": "unconfirmed",
+  "confidence": "The supplied marker is consistent with an example; actual file, history, scanner provenance and any credential validity evidence were not supplied.",
+  "severity": null,
+  "severity_reason": "No supported reachable credential exposure is established from the report alone.",
+  "next_step": "Inspect the actual candidate and local history within authority; determine whether the value is only synthetic. If confirmed, document a narrowly scoped false-positive disposition with evidence and revisit on content/rule changes.",
+  "duplicates": [],
+  "dismissed": false,
+  "suppression_added": false,
+  "live_credential_test": "not-run",
+  "owner_acceptance": "not provided"
+}

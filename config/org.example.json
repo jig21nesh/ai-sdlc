@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "profile_type": "organization",
+  "profile_id": null,
+  "policy_version": null,
+  "roles": {
+    "engineering_owner": null,
+    "product_owner": null,
+    "security_owner": null,
+    "privacy_owner": null,
+    "quality_owner": null,
+    "release_owner": null,
+    "service_owner": null,
+    "incident_commander": null,
+    "retention_owner": null
+  },
+  "data": {
+    "classifications": null,
+    "allowed_context_classes": null,
+    "approved_source_locations": null,
+    "residency_regions": null,
+    "retention_days": null,
+    "provider_retention_days": null,
+    "training_use_allowed": null,
+    "legal_hold_process_ref": null,
+    "deletion_verification_process_ref": null
+  },
+  "ai": {
+    "approved_model_ids": null,
+    "provider_terms_review_ref": null,
+    "evaluation_policy_ref": null,
+    "model_change_review_required": null
+  },
+  "tools": {
+    "allowed_tool_ids": null,
+    "allowed_read_paths": null,
+    "allowed_write_paths": null,
+    "allowed_network_origins": null,
+    "max_agents": null,
+    "max_task_seconds": null,
+    "max_task_cost_usd": null,
+    "authorization_policy_ref": null,
+    "runtime_controls_ref": null
+  },
+  "assurance": {
+    "required_checks": null,
+    "independent_review_required": null,
+    "security_review_risk_tiers": null,
+    "usability_review_required": null,
+    "exception_process_ref": null,
+    "evidence_retention_days": null
+  },
+  "release": {
+    "approval_required": null,
+    "authorized_environment_ids": null,
+    "production_deployment_allowed": null,
+    "rollback_evidence_required": null,
+    "approval_policy_ref": null
+  },
+  "operations": {
+    "incident_process_ref": null,
+    "severity_thresholds_ref": null,
+    "notification_policy_ref": null,
+    "access_review_days": null,
+    "emergency_stop_process_ref": null
+  }
+}

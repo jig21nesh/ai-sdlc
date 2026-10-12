@@ -1,0 +1,10 @@
+Command: python3 -B -m unittest -v
+Exit: 0
+test_empty (test_stats.StatsTests.test_empty) ... ok
+test_mixed_numbers (test_stats.StatsTests.test_mixed_numbers) ... ok
+test_nonempty (test_stats.StatsTests.test_nonempty) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

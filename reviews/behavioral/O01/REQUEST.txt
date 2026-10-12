@@ -1,0 +1,1 @@
+Triage this incident and prepare the next useful work artifact. Authorized scope is offline diagnosis and drafting; no notifications or operational changes.

@@ -1,0 +1,1861 @@
+[
+  {
+    "id": "O01",
+    "title": "State of AI-assisted Software Development 2025",
+    "publisher": "DORA / Google Cloud",
+    "url": "https://dora.dev/research/2025/dora-report/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025",
+    "access": "partial",
+    "summary": "The official report page characterizes AI as an amplifier of existing organizational strengths and weaknesses. It argues that returns depend on improving the organizational system around AI, and points to a companion capabilities model.",
+    "supports": [
+      "Assess organizational readiness alongside tools.",
+      "Improve the delivery system rather than treating code generation volume as success."
+    ],
+    "limitations": "The official landing-page summary was read; the full report and its statistical methodology were not reviewed. No causal or numerical productivity claim is made.",
+    "stages": [
+      "govern",
+      "discover",
+      "improve"
+    ]
+  },
+  {
+    "id": "O02",
+    "title": "DORA AI Capabilities Model: Survey Questions",
+    "publisher": "DORA / Google Cloud",
+    "url": "https://dora.dev/ai/capabilities-model/questions/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025-11-25 (last updated)",
+    "access": "full",
+    "summary": "The survey instrument operationalizes seven capabilities: a clear AI stance, healthy data, AI-accessible internal information, version control, small batches, user focus, and internal platform quality. Outcomes include delivery, product quality, user experience, and team performance.",
+    "supports": [
+      "Version prompts and configurations as well as code.",
+      "Capture user feedback and work in small changes.",
+      "Make organization policy, information access, and platform usability explicit."
+    ],
+    "limitations": "A survey instrument defines measured concepts; it does not establish effect sizes or prove causation. Internal data access must still respect authorization.",
+    "stages": [
+      "govern",
+      "discover",
+      "specify",
+      "plan",
+      "build",
+      "release",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O03",
+    "title": "Building effective agents",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2024-12-19",
+    "access": "full",
+    "summary": "Predefined workflows and model-directed agents serve different needs. Anthropic describes chaining, routing, parallel tasks, delegation, and evaluator loops, while recommending simple designs, environmental feedback, bounded execution, sandbox testing, and human review for broader coding requirements.",
+    "supports": [
+      "Choose orchestration according to task uncertainty.",
+      "Delegate independent tasks with explicit completion conditions.",
+      "Use tool results and tests to verify progress."
+    ],
+    "limitations": "Vendor engineering guidance, not comparative proof. The page warns that tooling has changed since its original publication; architectural ideas should be separated from product choices.",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review"
+    ]
+  },
+  {
+    "id": "O04",
+    "title": "Effective context engineering for AI agents",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025-09-29",
+    "access": "full",
+    "summary": "Agent context includes instructions, tools, retrieved information, and interaction history. The article recommends concise relevant context, clear tool contracts, selective retrieval, and techniques for preserving useful state during long tasks.",
+    "supports": [
+      "Load stage-specific evidence on demand.",
+      "Give tools clear, non-overlapping purposes.",
+      "Preserve concise handoff state for long tasks."
+    ],
+    "limitations": "Vendor observations are design guidance. Retrieval strategy and context budgets require local evaluation; more available context does not guarantee correctness.",
+    "stages": [
+      "discover",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "operate"
+    ]
+  },
+  {
+    "id": "O05",
+    "title": "Equipping agents for the real world with Agent Skills",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2025-10-16; portability update 2025-12-18",
+    "access": "full",
+    "summary": "Skills package procedural instructions, resources, and optional scripts in folders. Metadata enables discovery and progressive loading. Anthropic recommends representative evaluations, clear triggering descriptions, iterative refinement, and auditing unfamiliar skills, dependencies, and network behavior before use.",
+    "supports": [
+      "Keep reusable procedures separate from organization context.",
+      "Use small skill entry points with linked detail.",
+      "Review bundled code and resources before installation."
+    ],
+    "limitations": "Portability of the content format does not imply identical permissions, discovery, or execution behavior across agent runtimes.",
+    "stages": [
+      "govern",
+      "design",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ]
+  },
+  {
+    "id": "O06",
+    "title": "Demystifying evals for AI agents",
+    "publisher": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2026-01-09",
+    "access": "full",
+    "summary": "Agent evaluation must inspect outcomes and execution traces across repeat trials. The article combines deterministic, model, and human graders; distinguishes capability from regression suites; and evaluates the model together with its harness. Production observations complement offline evaluation.",
+    "supports": [
+      "Define success before implementation.",
+      "Verify actual environment state rather than the agent's success claim.",
+      "Calibrate model graders with humans and retain regression cases."
+    ],
+    "limitations": "Example benchmarks do not establish performance in a new organization. Evaluation fixtures, graders, and environment stability can bias results.",
+    "stages": [
+      "specify",
+      "verify",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O07",
+    "title": "Secure Software Development Framework (SSDF) Version 1.1, NIST SP 800-218",
+    "publisher": "NIST",
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2022-02",
+    "access": "full",
+    "summary": "SSDF organizes secure development around preparing the organization, protecting software, producing secure software, and responding to vulnerabilities. It emphasizes outcomes over particular technologies, documented security requirements, threat modeling, design records, and risk-based tailoring.",
+    "supports": [
+      "Maintain security requirements and risk decisions through the lifecycle.",
+      "Include third-party component assurance and vulnerability response.",
+      "Adapt controls to project risk and existing delivery practices."
+    ],
+    "limitations": "High-level guidance requires implementation-specific controls. This is a review of version 1.1, not a claim that it is the only applicable standard or a compliance certification.",
+    "stages": [
+      "govern",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O08",
+    "title": "NIST AI Risk Management Framework 1.0: AI RMF Core",
+    "publisher": "NIST AI Resource Center",
+    "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": "2023",
+    "access": "full",
+    "summary": "AI RMF treats governance as continuous across mapping, measuring, and managing risk. It calls for accountable roles, stakeholder engagement, inventories, oversight, monitoring, incident recovery, and safe decommissioning. Organizations tailor these functions to their resources and context.",
+    "supports": [
+      "GOVERN 1.7 covers safe phase-out and decommissioning.",
+      "MANAGE 4.1 includes monitoring, override, incident response, recovery, and change management.",
+      "Treat governance as cross-cutting rather than a one-time gate."
+    ],
+    "limitations": "The page states that AI RMF 1.0 is being revised. Its voluntary outcomes are not an ordered checklist, and using them does not establish legal compliance.",
+    "stages": [
+      "govern",
+      "discover",
+      "specify",
+      "design",
+      "verify",
+      "release",
+      "operate",
+      "improve",
+      "retire"
+    ]
+  },
+  {
+    "id": "O09",
+    "title": "AI Agent Security Cheat Sheet",
+    "publisher": "OWASP Cheat Sheet Series",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "OWASP addresses prompt injection, excessive tool access, data leakage, memory poisoning, approval manipulation, and failures spreading between agents. Controls include authorization outside model context, scoped tools, isolated memory, bounded operation, output validation, observability, and adversarial tests.",
+    "supports": [
+      "Enforce permissions in the tool execution layer.",
+      "Bind sensitive-action authorization to the exact proposed action.",
+      "Preserve trust boundaries and prevent escalation through delegated agents."
+    ],
+    "limitations": "Living guidance and illustrative code require independent engineering review. Prompt filtering alone is not a security boundary; this source does not certify any implementation.",
+    "stages": [
+      "govern",
+      "design",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate"
+    ]
+  },
+  {
+    "id": "O10",
+    "title": "SLSA specification v1.2",
+    "publisher": "SLSA / Linux Foundation",
+    "url": "https://slsa.dev/spec/v1.2/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "The approved v1.2 specification describes increasing supply-chain assurance through source and build tracks, provenance, artifact verification, and platform assessment. It separates producing attestations from checking the artifacts and evidence received by consumers.",
+    "supports": [
+      "Record and verify artifact origin and build information.",
+      "Choose a supply-chain assurance target explicitly.",
+      "Assess source control and build systems alongside application code."
+    ],
+    "limitations": "The overview was inspected, not every linked requirement. Provenance does not prove that software is defect-free; no SLSA level is claimed for this project.",
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "review",
+      "release"
+    ]
+  },
+  {
+    "id": "O11",
+    "title": "Site Reliability Engineering: Release Engineering",
+    "publisher": "Google SRE",
+    "url": "https://sre.google/sre-book/release-engineering/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Reliable releases use repeatable builds, versioned inputs, tests on the version being shipped, access-controlled release operations, traceable artifacts, and risk-sensitive rollout strategies. Release design begins early and includes rollback and configuration management.",
+    "supports": [
+      "Plan packaging, deployment, and rollback before shipping.",
+      "Test the actual release artifact and configuration.",
+      "Tailor rollout pace and authority to service risk."
+    ],
+    "limitations": "The chapter describes Google's historical internal tools. Transfer the principles rather than assuming its branching model or infrastructure fits every organization.",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "release",
+      "operate"
+    ]
+  },
+  {
+    "id": "O12",
+    "title": "Site Reliability Engineering: Managing Incidents",
+    "publisher": "Google SRE",
+    "url": "https://sre.google/sre-book/managing-incidents/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Incident response benefits from preparation, clear command, separate operations and communications roles, recorded state, and controlled handoffs. Uncoordinated system changes and unclear communication can worsen an outage.",
+    "supports": [
+      "Define incident ownership and escalation before an incident.",
+      "Keep remediation authority coordinated.",
+      "Maintain an incident record and explicit handoffs."
+    ],
+    "limitations": "Human SRE practice rather than an autonomous-agent incident design. Mapping agents to supporting roles is a proposed adaptation, not Google's endorsement.",
+    "stages": [
+      "govern",
+      "plan",
+      "operate"
+    ]
+  },
+  {
+    "id": "O13",
+    "title": "What to look for in a code review",
+    "publisher": "Google Engineering Practices",
+    "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Review considers system design, user-facing behavior, complexity, meaningful tests, naming, documentation, and surrounding context. Reviewers should inspect interactive behavior when relevant and involve qualified specialists for security, privacy, accessibility, and other difficult concerns.",
+    "supports": [
+      "Use independent security and usability review perspectives.",
+      "Review whether tests would catch real failures.",
+      "Record the scope covered by each reviewer."
+    ],
+    "limitations": "General code-review practice; adding an AI reviewer alone does not establish specialist competence or eliminate human accountability.",
+    "stages": [
+      "design",
+      "build",
+      "verify",
+      "review",
+      "retire"
+    ]
+  },
+  {
+    "id": "O14",
+    "title": "Site Reliability Engineering: Postmortem Culture—Learning from Failure",
+    "publisher": "Google SRE",
+    "url": "https://sre.google/sre-book/postmortem-culture/",
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Blameless postmortems document incident impact, contributing causes, mitigation, and prevention actions. Teams define triggers, review reports for completeness, and share learning while protecting user information. Follow-up should improve systems and processes.",
+    "supports": [
+      "Convert incidents into reviewed improvement work.",
+      "Define postmortem triggers in advance.",
+      "Protect sensitive information in incident evidence."
+    ],
+    "limitations": "Practice guidance from Google's operating context. AI-generated incident summaries still need evidence checking and accountable review.",
+    "stages": [
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "O15",
+    "title": "The AI-native SDLC playbook",
+    "publisher": "Anthropic / Louis Claxton",
+    "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+    "published": "2026-08-21",
+    "summary": "A six-stage reference for AI-assisted delivery, with versioned handoffs, governed automation and operational feedback. The adoption diagram represents a different ordering from delivery.",
+    "supports": [
+      "Reference-stage terminology and the distinction between initial intent and implementation planning."
+    ],
+    "limitations": "Article body and lifecycle/adoption images inspected. Prescriptive vendor guidance, not measured assurance. The Skills prerequisite prose and diagram differ. Examples, product availability and numerical suggestions need separate validation; no code was executed.",
+    "stages": [
+      "govern",
+      "discover",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "O16",
+    "title": "Claude Code hooks reference",
+    "publisher": "Anthropic / Claude Code documentation",
+    "url": "https://code.claude.com/docs/en/hooks",
+    "published": null,
+    "summary": "Hook behavior depends on event type, handler and result. Pre-action events can affect permission decisions; later events cannot undo an action already performed. Some handler failures continue through the normal permission flow.",
+    "supports": [
+      "Choose enforcement events and error behavior deliberately; test actual blocking paths.",
+      "Hooks may use commands, models or other handlers, so not every hook is a deterministic policy check."
+    ],
+    "limitations": "Living, host-specific documentation; relevant lifecycle and error sections inspected, not every example. A hook is not a universal sandbox or authorization guarantee.",
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "operate"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "O17",
+    "title": "Create custom subagents",
+    "publisher": "Anthropic / Claude Code documentation",
+    "url": "https://code.claude.com/docs/en/sub-agents",
+    "published": null,
+    "summary": "Custom subagents can use separate context and configured tools. Execution isolation and tool permissions are distinct configuration concerns; a scoped helper is different from a separate concurrent coding session.",
+    "supports": [
+      "Document helper context, tools and isolation separately.",
+      "Use fresh verification context while preserving actual host permission boundaries."
+    ],
+    "limitations": "Describes one host. A file or role label does not establish that a tool cannot mutate state; not all hosts share the same discovery or execution model.",
+    "stages": [
+      "plan",
+      "build",
+      "verify",
+      "review"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "O18",
+    "title": "Configure permissions",
+    "publisher": "Anthropic / Claude Code documentation",
+    "url": "https://code.claude.com/docs/en/permissions",
+    "published": null,
+    "summary": "Permission rules and modes control tool use in the configured host. Mode behavior has exceptions and interacts with managed policy, so an informal mode name should not be treated as proof of an enforced organizational boundary.",
+    "supports": [
+      "Inspect effective host settings and verify the permitted action rather than assuming a label is sufficient."
+    ],
+    "limitations": "Current documentation is vendor-specific. No permission settings were applied or verified against a live Claude Code session.",
+    "stages": [
+      "govern",
+      "plan",
+      "build",
+      "release"
+    ],
+    "type": "primary",
+    "accessed": "2026-10-08",
+    "access": "full"
+  },
+  {
+    "id": "G01",
+    "title": "Spec Kit: artifact consistency, dependency slices and workflow contract tests",
+    "publisher": "GitHub",
+    "url": "https://github.com/github/spec-kit",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Actual command templates and a shipped workflow make handoff consistency and independent increments concrete; an upstream contract test detects drift between documentation and execution.",
+    "supports": [
+      "Maintain stable requirement IDs and explicit requirement-to-task coverage.",
+      "Record task dependencies, assigned files and independent acceptance checks before parallel work.",
+      "Validate documentation examples against the shipped machine-readable contract."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "license": "MIT; repository LICENSE inspected. Dependency and extension licenses not audited.",
+    "stages": [
+      "discover",
+      "specify",
+      "plan",
+      "verify"
+    ],
+    "revision": {
+      "sha": "1e933c49fd6d5d5390b28f18faefa5728c95b2e3",
+      "observed_via": "https://api.github.com/repos/github/spec-kit/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "inspected_files": [
+      {
+        "path": "templates/commands/analyze.md",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/templates/commands/analyze.md",
+        "kind": "instruction",
+        "observation": "Builds FR/SC-to-task coverage, detects ambiguity/contradiction/unmapped tasks, and produces a read-only findings report."
+      },
+      {
+        "path": "templates/commands/tasks.md",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/templates/commands/tasks.md",
+        "kind": "instruction",
+        "observation": "Maps story IDs to tasks, paths and dependencies; parallel marker requires separate files and no unfinished dependency. Tests are conditional in this upstream template."
+      },
+      {
+        "path": "templates/tasks-template.md",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/templates/tasks-template.md",
+        "kind": "template",
+        "observation": "Groups independent story increments and checkpoints; does not make a checklist proof of implementation."
+      },
+      {
+        "path": "workflows/speckit/workflow.yml",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/workflows/speckit/workflow.yml",
+        "kind": "configuration",
+        "observation": "Sequences specify, plan, tasks and implement; review-spec and review-plan gates abort on rejection."
+      },
+      {
+        "path": "tests/workflows/test_bundled_speckit_workflow.py",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/tests/workflows/test_bundled_speckit_workflow.py",
+        "kind": "test-code",
+        "observation": "Checks unused scope input removal and parsed equality between documented and bundled workflow YAML."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT notice."
+      }
+    ],
+    "failure_modes": [
+      "Keyword-inferred requirement mappings need review; numeric coverage does not prove behavior.",
+      "Upstream optional-test policy must not override local assurance requirements.",
+      "Declared mandatory hooks are not safe to execute until locally reviewed and authorized."
+    ],
+    "portability_boundary": "Portable artifact and test-design patterns; slash commands, extension hooks, workflow engine and approval gates are Spec Kit mechanisms. Do not silently install them.",
+    "playbook_phases": [
+      "Plan",
+      "Design",
+      "Build",
+      "Test"
+    ],
+    "playbook_practices": [
+      "authoritative handoffs",
+      "implementation planning",
+      "cross-artifact verification"
+    ],
+    "proposed_local_practice": "ai-sdlc-plan emits a requirement/task/path/dependency map; ai-sdlc-review compares it against candidate evidence and reports missing links before accepting.",
+    "proposed_scenario_tests": [
+      "A story has no task: report the uncovered stable ID.",
+      "Two parallel tasks touch one writable path: serialize or isolate.",
+      "Documentation adds an unused input: contract check fails."
+    ],
+    "aliases": [
+      "DG01"
+    ]
+  },
+  {
+    "id": "G02",
+    "title": "Anthropic skill-creator: paired runs, graders, trigger tests and schema boundaries",
+    "publisher": "Anthropic",
+    "url": "https://github.com/anthropics/skills",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Skill quality is evaluated through matched baseline comparisons and inspectable artifacts, while description routing has its own suite. The runnable trigger harness is specific to Claude CLI discovery and stream events.",
+    "supports": [
+      "Separate skill selection, delivery-agent execution and AI-product behavior evaluations.",
+      "Preserve a previous snapshot before comparing a modified skill.",
+      "Judge generated artifacts and actual traces, not just completion claims.",
+      "Use hard near-miss triggers and inspect variance plus time/cost tradeoffs."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "license": "Apache-2.0 for inspected skills/skill-creator/LICENSE.txt scope. Other skills in the repository have different licenses.",
+    "stages": [
+      "govern",
+      "verify",
+      "improve"
+    ],
+    "revision": {
+      "sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "observed_via": "https://api.github.com/repos/anthropics/skills/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "inspected_files": [
+      {
+        "path": "skills/skill-creator/SKILL.md",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/SKILL.md",
+        "kind": "instruction",
+        "observation": "Pairs skill/no-skill or changed/prior-skill outputs, captures timing, grades artifacts, reviews variance and tests descriptions with positives and near misses."
+      },
+      {
+        "path": "skills/skill-creator/agents/grader.md",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/agents/grader.md",
+        "kind": "instruction",
+        "observation": "Inspects transcript plus actual output, verifies implicit claims and critiques superficial/non-discriminating assertions."
+      },
+      {
+        "path": "skills/skill-creator/references/schemas.md",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/references/schemas.md",
+        "kind": "schema-document",
+        "observation": "Defines eval, grading, benchmark and history record shapes; grading expectations carry text, passed and evidence."
+      },
+      {
+        "path": "skills/skill-creator/scripts/run_eval.py",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/scripts/run_eval.py",
+        "kind": "runtime-code",
+        "observation": "Creates temporary Claude command metadata, calls claude -p and detects early Skill/Read stream events; this is trigger detection rather than task-success evaluation."
+      },
+      {
+        "path": "skills/skill-creator/scripts/run_loop.py",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/scripts/run_loop.py",
+        "kind": "runtime-code",
+        "observation": "Stratifies positive/negative holdout, blinds improvement history to test fields and selects best iteration using test scores."
+      },
+      {
+        "path": "skills/skill-creator/LICENSE.txt",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/LICENSE.txt",
+        "kind": "license",
+        "observation": "Skill-specific Apache-2.0 notice."
+      }
+    ],
+    "failure_modes": [
+      "Repeated holdout-based candidate selection is validation, not a pristine final test.",
+      "Early trigger detection does not establish later successful task completion.",
+      "Weak assertions can reward an empty file or correct filename.",
+      "SKILL.md uses assertions terminology while schemas.md declares expectations; local adapters need one explicit schema."
+    ],
+    "portability_boundary": "Transfer experimental design and evidence fields. Do not assume Claude CLI discovery, subagent notifications, viewer lifecycle or .claude/commands behavior in other hosts.",
+    "playbook_phases": [
+      "Build",
+      "Test",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "skills",
+      "agent evaluations",
+      "iterative improvement"
+    ],
+    "proposed_local_practice": "ai-sdlc-agent-evals owns three scopes, baseline modes, fixture provenance, validation/final-suite separation, independent artifact/trace grading and regression decisions.",
+    "proposed_scenario_tests": [
+      "A skill triggers but output is empty: routing pass, execution fail.",
+      "New version passes fixtures used for tuning but fails untouched negative case: do not promote.",
+      "Grader rewards file existence for wrong content: invalidate assertion and retain the failed artifact."
+    ],
+    "aliases": [
+      "DG03"
+    ]
+  },
+  {
+    "id": "G03",
+    "title": "Google ADK: tool-trajectory criteria and confirmation event fixtures",
+    "publisher": "Google",
+    "url": "https://github.com/google/adk-python",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Evaluation criteria have precise semantics that matter for safety claims. Flexible trajectory matching tolerates useful alternate steps, but also requires separate prohibited-action checks.",
+    "supports": [
+      "Choose exact, ordered-subsequence or unordered-subset trace expectations according to requirement.",
+      "Check safety invariants separately from average task score.",
+      "Bind confirmation to original tool call identity and arguments.",
+      "Record denial as an explicit outcome rather than a fabricated success."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "license": "Apache-2.0; repository LICENSE and file headers inspected. Transitive licenses not audited.",
+    "stages": [
+      "verify",
+      "release",
+      "operate"
+    ],
+    "revision": {
+      "sha": "ea656b03d3f3c6dd041ba8e3f65d612017592c42",
+      "observed_via": "https://api.github.com/repos/google/adk-python/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "inspected_files": [
+      {
+        "path": "src/google/adk/evaluation/trajectory_evaluator.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/src/google/adk/evaluation/trajectory_evaluator.py",
+        "kind": "runtime-code",
+        "observation": "Exact requires full call equality; in-order and any-order accept additional calls; ignore_args can suppress argument checking."
+      },
+      {
+        "path": "src/google/adk/evaluation/eval_metrics.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/src/google/adk/evaluation/eval_metrics.py",
+        "kind": "runtime-code",
+        "observation": "Typed trajectory criterion, match modes, argument option and threshold declaration. Selected relevant sections inspected."
+      },
+      {
+        "path": "tests/unittests/evaluation/test_trajectory_evaluator.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/tests/unittests/evaluation/test_trajectory_evaluator.py",
+        "kind": "test-code",
+        "observation": "Exercises extra calls, wrong order, missing/duplicate calls, different arguments and ignore_args. Selected scenario bodies and parametrization inspected."
+      },
+      {
+        "path": "contributing/samples/hitl/tool_confirmation/agent.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/contributing/samples/hitl/tool_confirmation/agent.py",
+        "kind": "example-code",
+        "observation": "A conditional transfer requests confirmation; destructive close uses require_confirmation. Returns illustrative results, not real banking integration."
+      },
+      {
+        "path": "contributing/samples/hitl/tool_confirmation/tests/transfer_200_declined.json",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/contributing/samples/hitl/tool_confirmation/tests/transfer_200_declined.json",
+        "kind": "fixture",
+        "observation": "Carries original call identity, confirmation response and rejected tool result through an event sequence."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/LICENSE",
+        "kind": "license",
+        "observation": "Repository Apache-2.0 notice."
+      }
+    ],
+    "failure_modes": [
+      "In-order/any-order passing does not prove no unexpected tool was called.",
+      "Ignoring arguments can conceal wrong targets.",
+      "A sample event transcript is a fixture, not proof of production confirmation enforcement.",
+      "Aggregate scores can hide a single consequential failure."
+    ],
+    "portability_boundary": "Transfer trace/confirmation concepts; ADK models, event IDs and runtime APIs need an adapter. No ADK installation or live model call was performed.",
+    "playbook_phases": [
+      "Test",
+      "Deploy",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "agent evaluations",
+      "tool confirmation",
+      "event evidence"
+    ],
+    "proposed_local_practice": "ai-sdlc-agent-evals reports task correctness, forbidden-action count and argument validity separately; release evidence checks current action identity.",
+    "proposed_scenario_tests": [
+      "Expected read then report, actual read then delete then report: subset metric may pass but forbidden-action invariant fails.",
+      "Approved recipient changes after confirmation: reject stale authorization.",
+      "Same tool name, wrong environment argument: fail despite name-only match."
+    ],
+    "aliases": [
+      "DG06"
+    ]
+  },
+  {
+    "id": "G04",
+    "title": "LangGraph",
+    "publisher": "LangChain",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "A low-level framework for stateful agent workflows with persistence and human interaction. Inspected types expose bounded retries, timeout policy, durability modes, checkpoint state and interrupts, useful as implementation references for resumable delivery workflows.",
+    "supports": [
+      "The README documents durable execution and human-in-the-loop state inspection.",
+      "types.py defines RetryPolicy, TimeoutPolicy, Interrupt and StateSnapshot.",
+      "TracePolicy documentation warns that node-only trace transformation is not comprehensive secret redaction."
+    ],
+    "limitations": "No execution or full code audit was performed. Workflow persistence does not itself establish authorization or prevent duplicate external effects. MIT license verified; dependencies, security and maintenance were not independently audited.",
+    "license": "MIT (LICENSE inspected)",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "G05",
+    "title": "Promptfoo: skill version comparisons, structured outputs and semantic scoring",
+    "publisher": "Promptfoo maintainers",
+    "url": "https://github.com/promptfoo/promptfoo",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Actual evaluation YAML compares two skill versions with a shared output contract and outcome scoring, including a case that penalizes reporting outside the requested scope.",
+    "supports": [
+      "Compare candidate and baseline on the same task fixtures and runtime configuration.",
+      "Validate output structure separately from semantic correctness.",
+      "Measure false positives as well as missed findings.",
+      "Verify the intended skill was consulted when evaluating its contribution."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "license": "MIT terms in repository LICENSE inspected. Provider SDK and transitive licenses not audited.",
+    "stages": [
+      "verify",
+      "improve"
+    ],
+    "revision": {
+      "sha": "2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f",
+      "observed_via": "https://api.github.com/repos/promptfoo/promptfoo/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "inspected_files": [
+      {
+        "path": "examples/claude-agent-sdk/skill-comparison/promptfooconfig.yaml",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/skill-comparison/promptfooconfig.yaml",
+        "kind": "configuration",
+        "observation": "Two fixture directories and skill versions share prompt/model/schema; checks skill-used and issue precision/recall, with narrow-scope case and disabled list-variable expansion."
+      },
+      {
+        "path": "examples/claude-agent-sdk/skill-comparison/fixtures/v1/.claude/skills/review-standards/SKILL.md",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/skill-comparison/fixtures/v1/.claude/skills/review-standards/SKILL.md",
+        "kind": "instruction",
+        "observation": "Baseline limits review to one issue."
+      },
+      {
+        "path": "examples/claude-agent-sdk/skill-comparison/fixtures/v2/.claude/skills/review-standards/SKILL.md",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/skill-comparison/fixtures/v2/.claude/skills/review-standards/SKILL.md",
+        "kind": "instruction",
+        "observation": "Candidate adds a second issue type and explicitly respects requested scope."
+      },
+      {
+        "path": "examples/claude-agent-sdk/structured-output/promptfooconfig.yaml",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/structured-output/promptfooconfig.yaml",
+        "kind": "configuration",
+        "observation": "Combines JSON shape and separate semantic expectations on a code-analysis result."
+      },
+      {
+        "path": "test/assertions/json.test.ts",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/test/assertions/json.test.ts",
+        "kind": "test-code",
+        "observation": "Tests valid/invalid JSON schema handling and missing schema-file exports."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT terms."
+      }
+    ],
+    "failure_modes": [
+      "Model-specific object-vs-string outputs require adapters.",
+      "A fixture directory is not necessarily an OS security boundary.",
+      "Remote providers transmit configured context; local CLI does not imply local inference.",
+      "Precision/recall against an incomplete expected set can punish valid novel findings."
+    ],
+    "portability_boundary": "Use the experiment design without requiring Promptfoo, Claude SDK, its current model ID, arbitrary JavaScript assertion execution or remote provider access.",
+    "playbook_phases": [
+      "Test",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "agent evaluations",
+      "skill regression",
+      "output contracts"
+    ],
+    "proposed_local_practice": "ai-sdlc-agent-evals includes schema validity, scoped precision/recall and observed routing evidence; human adjudication handles credible findings outside the labeled set.",
+    "proposed_scenario_tests": [
+      "Candidate finds more defects but reports outside requested scope: precision/scope regression.",
+      "Valid JSON asserts success with wrong artifact: structural pass, semantic fail.",
+      "List-valued fixture expands into separate cases unexpectedly: compare resolved case manifest before scoring."
+    ],
+    "aliases": [
+      "DG07"
+    ]
+  },
+  {
+    "id": "G06",
+    "title": "OpenSSF Scorecard",
+    "publisher": "OpenSSF",
+    "url": "https://github.com/ossf/scorecard",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Automated repository security heuristics support dependency assessment and engineering controls. Check documentation covers branch protection, human review, dangerous workflows, permissions and dependency pinning. The README explicitly rejects universal interpretation of aggregate scores.",
+    "supports": [
+      "Checks are heuristics with false positives and false negatives.",
+      "The Code-Review check explicitly excludes bot and AI review.",
+      "Dangerous-Workflow checks include untrusted checkouts and input injection into scripts."
+    ],
+    "limitations": "Scorecard is not a complete vulnerability audit or universal pass/fail gate. Check visibility depends on platform and access. No scan was run, and repository license, security and maintenance were not independently audited.",
+    "stages": [
+      "govern",
+      "design",
+      "build",
+      "verify",
+      "review",
+      "release",
+      "improve"
+    ]
+  },
+  {
+    "id": "G07",
+    "title": "SLSA specification",
+    "publisher": "OpenSSF / SLSA project",
+    "url": "https://github.com/slsa-framework/slsa",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Supply-chain requirements distinguish basic build provenance, provenance from a hosted build platform and hardened builds. The inspected v1.2 build-track page provides versioned requirements; the README identifies main as draft content.",
+    "supports": [
+      "Build L1 requires provenance; L2 adds hosted-build provenance authenticity; L3 adds hardened build controls.",
+      "Consumers must validate provenance authenticity at L2.",
+      "Released specifications are maintained separately from main's draft."
+    ],
+    "limitations": "Provenance is not evidence of correct or vulnerability-free software. v1.2 build-track text was inspected, without a compliance audit. Licensing is mixed by contribution history; operational security and maintenance were not independently audited.",
+    "license": "Community Specification License 1.0; some pre-existing contributions Apache-2.0, per README",
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "release",
+      "operate"
+    ]
+  },
+  {
+    "id": "G08",
+    "title": "OpenTelemetry specification",
+    "publisher": "OpenTelemetry / CNCF",
+    "url": "https://github.com/open-telemetry/opentelemetry-specification",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "Cross-language observability specification separates instrumentation APIs, SDK implementation and semantic conventions. The overview explains traces, metrics, logs, context propagation and exporters, supplying a portable base for workflow evidence and operations.",
+    "supports": [
+      "Instrumentation and SDK responsibilities are separated.",
+      "Traces use spans and causal relationships; metrics and logs are separate signals.",
+      "Specification versions and implementation compliance are tracked explicitly."
+    ],
+    "limitations": "A specification does not install instrumentation or define an organization's SLOs and data policy. No exporter or collector was executed. Apache-2.0 is declared; downstream licenses, security and maintenance were not independently audited.",
+    "license": "Apache-2.0 (repository declaration)",
+    "stages": [
+      "design",
+      "build",
+      "verify",
+      "operate",
+      "improve"
+    ]
+  },
+  {
+    "id": "G09",
+    "title": "Agent Client Protocol",
+    "publisher": "Agent Client Protocol maintainers",
+    "url": "https://github.com/agentclientprotocol/agent-client-protocol",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "A protocol between code editors and coding agents. The README describes versioned schemas and separates negotiated wire protocol compatibility from SDK or schema-artifact versions, a useful reference for tool-neutral integration boundaries.",
+    "supports": [
+      "ACP addresses editor-to-coding-agent communication.",
+      "Protocol version and capabilities determine wire compatibility.",
+      "Artifact version numbers alone do not establish protocol compatibility."
+    ],
+    "limitations": "ACP is neither an SDLC methodology nor a universal agent-to-agent protocol. Only README-level capabilities were assessed. Apache-2.0 contribution terms are stated; complete license applicability, security and maintenance were not independently audited.",
+    "stages": [
+      "design",
+      "build",
+      "operate"
+    ]
+  },
+  {
+    "id": "G10",
+    "title": "AGENTS.md format",
+    "publisher": "agentsmd maintainers",
+    "url": "https://github.com/agentsmd/agents.md",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "summary": "A simple format for project context and coding-agent instructions. The README's example groups environment guidance, test commands and pull-request conventions in a discoverable repository file.",
+    "supports": [
+      "AGENTS.md provides project context and instructions for coding agents.",
+      "Examples include test and PR conventions.",
+      "The repository also contains the format's explanatory website."
+    ],
+    "limitations": "Instruction files are guidance, not sandbox or access-control enforcement. Host discovery and precedence must be checked separately. MIT license verified; security and maintenance were not independently audited.",
+    "license": "MIT (LICENSE inspected)",
+    "stages": [
+      "govern",
+      "plan",
+      "build",
+      "verify",
+      "review"
+    ]
+  },
+  {
+    "id": "M01",
+    "title": "New Open-Source Context Specs Released",
+    "publisher": "Capital One Tech; Rico Romero, Komal Pandamaneti and Marseld Dedgjonaj",
+    "url": "https://medium.com/capital-one-tech/new-open-source-context-specs-released-1f65bfa9db9f",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-06-24",
+    "access": "full",
+    "summary": "The authors describe codebase-grounded slices, reusable domain context and per-slice checks. Parallel implementation follows dependencies.",
+    "supports": [
+      "Give each task a context manifest, base revision, dependency list and check contract; verify returned artifacts independently."
+    ],
+    "limitations": "Framework author account and promotion; no independent outcomes study. Agreement between reviewers is not proof. Full body reopened; repository is a newer mutable snapshot.",
+    "stages": [
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ],
+    "related_source_id": "M01",
+    "observation_kind": "framework-author report",
+    "phases": [
+      "design",
+      "build",
+      "test",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P04",
+      "DM-P05",
+      "DM-P12"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://github.com/capitalone/context-specs",
+        "supports": "Documents a reusable harness and project environments; does not establish safety."
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "supports": "Selective context and persistent notes are supported patterns."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Give each task a context manifest, base revision, dependency list and check contract; verify returned artifacts independently.",
+      "adaptation_question": "Which domain rules and verification commands are specific to this project?",
+      "failure_scenario": "A task runs after its dependency changes but uses stale file paths and assumptions."
+    },
+    "aliases": [
+      "DM01"
+    ]
+  },
+  {
+    "id": "M02",
+    "title": "I Replaced My SDLC with AI Agents — Here’s the Framework That Actually Worked",
+    "publisher": "Brett Luelling / Medium",
+    "url": "https://medium.com/@brettluelling/i-replaced-my-sdlc-with-ai-agents-heres-the-framework-that-actually-worked-fcfbfa5e72d0",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-02-27",
+    "access": "full",
+    "summary": "The author separates structural artifact checks from critique and maintains decision records across role handoffs, with bounded revision attempts.",
+    "supports": [
+      "Validate required fields and trace links before content review; preserve unresolved questions and escalation state in every handoff."
+    ],
+    "limitations": "Self-report from one project. Performance and coverage claims excluded. Full body reopened; source scripts were not executed.",
+    "stages": [
+      "discover",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ],
+    "related_source_id": "M02",
+    "observation_kind": "single-project retrospective",
+    "phases": [
+      "plan",
+      "design",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "practice_ids": [
+      "DM-P01",
+      "DM-P05"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "supports": "Supports explicit workflow gates and bounded evaluator loops."
+      },
+      {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "supports": "Provides the six-stage framework and artifact handoff model."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Validate required fields and trace links before content review; preserve unresolved questions and escalation state in every handoff.",
+      "adaptation_question": "What record is authoritative, and who may accept the handoff?",
+      "failure_scenario": "A correctly formatted requirement contains untestable acceptance criteria and advances automatically."
+    },
+    "aliases": [
+      "DM02"
+    ]
+  },
+  {
+    "id": "M03",
+    "title": "The New Engineering Stack: Specs, Context, and Agents",
+    "publisher": "Dave Patten / Medium",
+    "url": "https://medium.com/@dave-patten/the-new-engineering-stack-specs-context-and-agents-f3454529768e",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-02-18",
+    "access": "full",
+    "summary": "The article argues for explicit intent, nonfunctional constraints and persistent context instead of relying on a session conversation.",
+    "supports": [
+      "Separate facts, assumptions, nonfunctional constraints and unresolved decisions in the specification."
+    ],
+    "limitations": "General opinion rather than a detailed implementation evaluation. Full body reopened. No productivity claims or assertion that MCP enforces safety is adopted.",
+    "stages": [
+      "govern",
+      "specify",
+      "design",
+      "build",
+      "verify",
+      "improve"
+    ],
+    "related_source_id": "M03",
+    "observation_kind": "prescriptive practitioner opinion",
+    "phases": [
+      "plan",
+      "design",
+      "build"
+    ],
+    "practice_ids": [
+      "DM-P02",
+      "DM-P04"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "supports": "Supports context curation and durable notes."
+      },
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "supports": "Distinguishes contextual instructions from enforced configuration."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Separate facts, assumptions, nonfunctional constraints and unresolved decisions in the specification.",
+      "adaptation_question": "Which requirements need measurable thresholds and which sources establish them?",
+      "failure_scenario": "The agent invents a latency target and later reports compliance against its own assumption."
+    },
+    "aliases": [
+      "DM03"
+    ]
+  },
+  {
+    "id": "M04",
+    "title": "Agentic Development Best Practices",
+    "publisher": "Paul Johnston / Medium",
+    "url": "https://pauldjohnston.medium.com/agentic-development-best-practices-0e23ab07c1f8",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-06-04",
+    "access": "full",
+    "summary": "The author proposes identifying governance versions, limiting autonomy and keeping humans accountable for consequential policy decisions.",
+    "supports": [
+      "Record effective policy revision and action authority; separate a proposed policy update from its adoption."
+    ],
+    "limitations": "Not a standard or proof of compliance. Full body reopened. Exact approval gates are local decisions; tests alone do not establish correctness.",
+    "stages": [
+      "govern",
+      "plan",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ],
+    "related_source_id": "M04",
+    "observation_kind": "governance proposal from practitioner experience",
+    "phases": [
+      "plan",
+      "design",
+      "build",
+      "test",
+      "deploy",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P08",
+      "DM-P12"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+        "supports": "Supports integrating secure practices into the lifecycle, not this exact approval model."
+      },
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "supports": "Confirms prose instructions are not hard enforcement."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Record effective policy revision and action authority; separate a proposed policy update from its adoption.",
+      "adaptation_question": "Which roles can authorize each action class, and how is that authority enforced?",
+      "failure_scenario": "An agent broadens its own permissions to resolve a failing workflow."
+    },
+    "aliases": [
+      "DM04"
+    ]
+  },
+  {
+    "id": "M05",
+    "title": "Testing the Testers: How to Validate AI-Generated Automation Scripts",
+    "publisher": "Harsha Suraweera / Medium",
+    "url": "https://harshasuraweera.medium.com/testing-the-testers-how-to-validate-ai-generated-automation-scripts-aff225b1baca",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2025-12-22",
+    "access": "full",
+    "summary": "The author describes weak generated assertions and unrealistic data, then proposes test review and mutation testing.",
+    "supports": [
+      "Link assertions to intended behavior and use targeted negative, boundary or mutation checks where informative."
+    ],
+    "limitations": "Anecdotal numerical results excluded. Full body reopened. Mutation results are diagnostic evidence rather than a completeness guarantee.",
+    "stages": [
+      "specify",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ],
+    "related_source_id": "M05",
+    "observation_kind": "testing experience and advice",
+    "phases": [
+      "design",
+      "build",
+      "test"
+    ],
+    "practice_ids": [
+      "DM-P06"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://stryker-mutator.io/docs/",
+        "supports": "Defines mutation-testing mechanics and coverage limitations."
+      },
+      {
+        "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+        "supports": "Calls for reviewing test quality, not merely presence."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Link assertions to intended behavior and use targeted negative, boundary or mutation checks where informative.",
+      "adaptation_question": "Which critical behaviors need evidence that the test detects a defect?",
+      "failure_scenario": "Tests execute the changed branch but never assert the required response content."
+    },
+    "aliases": [
+      "DM05"
+    ]
+  },
+  {
+    "id": "M06",
+    "title": "Shifting Observability Left in the SDLC",
+    "publisher": "DeveloperSteve / Lumigo on Medium",
+    "url": "https://medium.com/lumigo/shifting-observability-left-in-the-sdlc-43ce83695a49",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2024-01-11",
+    "access": "full",
+    "summary": "The article promotes adding telemetry while developing software, so deployments and troubleshooting have usable operational signals.",
+    "supports": [
+      "Treat signals, dashboards, alert ownership and data handling as explicit release artifacts."
+    ],
+    "limitations": "Vendor-associated and promotional; not an AI-delivery experiment. Full body reopened. No claimed improvement was independently measured.",
+    "stages": [
+      "design",
+      "build",
+      "verify",
+      "release",
+      "operate",
+      "improve"
+    ],
+    "related_source_id": "M06",
+    "observation_kind": "vendor-associated observability advocacy",
+    "phases": [
+      "design",
+      "build",
+      "test",
+      "deploy",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P10"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
+        "supports": "Documents instrumentation and vendor-neutral telemetry interfaces."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Treat signals, dashboards, alert ownership and data handling as explicit release artifacts.",
+      "adaptation_question": "Which signal proves user-visible health, and who owns its threshold and response?",
+      "failure_scenario": "A rollout passes synthetic health checks while a core user journey has no measured signal."
+    },
+    "aliases": [
+      "DM06"
+    ]
+  },
+  {
+    "id": "M07",
+    "title": "Comparing 15 Spec-Driven Development Frameworks, Artifacts, and Decision Paths— SDD",
+    "publisher": "Jaroslaw Wasowski / Medium",
+    "url": "https://medium.com/@wasowski.jarek/comparing-15-spec-driven-development-frameworks-sdd-c052df529274",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-04-24",
+    "access": "partial",
+    "summary": "Only the introduction advertises a comparison of framework rigor and artifacts. The comparison body was unavailable.",
+    "supports": [],
+    "limitations": "Member-only boundary reconfirmed. Not used to choose a framework or design a skill; rankings, star counts and hidden matrix excluded.",
+    "stages": [
+      "govern",
+      "plan"
+    ],
+    "related_source_id": "M07",
+    "observation_kind": "member-only comparison lead",
+    "phases": [
+      "plan"
+    ],
+    "practice_ids": [],
+    "primary_corroboration": [],
+    "design_inference": {
+      "workflow_choice": "No implementation conclusion adopted from inaccessible comparison content.",
+      "adaptation_question": "Use primary project documentation to evaluate a candidate instead.",
+      "failure_scenario": "A framework is selected because an unread comparison appeared in search results."
+    },
+    "aliases": [
+      "DM07"
+    ]
+  },
+  {
+    "id": "DG02",
+    "title": "Context Specs: durable slice contracts, external completion checks and bounded retries",
+    "publisher": "Capital One",
+    "url": "https://github.com/capitalone/context-specs",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "d6538c7859bcab55175ba596dc76d49efb221462",
+      "observed_via": "https://api.github.com/repos/capitalone/context-specs/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "Apache-2.0; repository LICENSE inspected. Bundled integrations and transitive dependencies not audited.",
+    "summary": "Planning and implementation use persistent slice files while a deterministic dispatcher observes completion and retry budgets. Several upstream autonomy and checkpoint choices are deliberately unsuitable as generic defaults.",
+    "supports": [
+      "Keep one authoritative intent artifact and supply each worker only the relevant slice.",
+      "Assign git/integration duties separately from bounded implementation.",
+      "Use an external observer for completion and an explicit retry/stuck state.",
+      "Promote only durable verified lessons; routine work should often produce no memory change."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "skills/sdd/spec-planning/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/spec-planning/SKILL.md",
+        "kind": "instruction",
+        "observation": "Consumes a PRD and acceptance runner, grounds mainspec/slices in repository paths and records a dependency map."
+      },
+      {
+        "path": "skills/sdd/implement-slice/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/implement-slice/SKILL.md",
+        "kind": "instruction",
+        "observation": "Single slice produces uncommitted changes, tests and an optional high-bar reflection; parent owns git operations."
+      },
+      {
+        "path": "skills/sdd/implement-mainspec/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/implement-mainspec/SKILL.md",
+        "kind": "instruction",
+        "observation": "Sequential dependency-ordered delegation; resume by slice commit messages; explicitly requests permission bypass and commits/pushes."
+      },
+      {
+        "path": "skills/sdd/spec-validate/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/spec-validate/SKILL.md",
+        "kind": "instruction",
+        "observation": "Three-reviewer consensus, automatic corrections and final sentinel; discards single-reviewer findings."
+      },
+      {
+        "path": "scripts/poll-and-dispatch.sh",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/scripts/poll-and-dispatch.sh",
+        "kind": "runtime-code",
+        "observation": "Per-environment flock, retry caps and stuck escalation; disposable worktree reset; external PRD runner first success cached in .prd-passed."
+      },
+      {
+        "path": "subagents/slice-implementer.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/subagents/slice-implementer.md",
+        "kind": "role-configuration",
+        "observation": "Narrows worker git duties in prose while setting bypassPermissions."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/LICENSE",
+        "kind": "license",
+        "observation": "Repository Apache-2.0 notice."
+      }
+    ],
+    "failure_modes": [
+      "A cached success sentinel can outlive later edits; current revision evidence is still required.",
+      "Commit-message-based resume is weaker than validated artifact identity.",
+      "Reviewer consensus can discard a true singleton finding.",
+      "Worktree wipe, automatic push and bypassPermissions require specific runtime authority."
+    ],
+    "portability_boundary": "Adapt handoff and bounded-loop ideas; do not import destructive cleanup, unconditional spawning, permission bypass, automatic writes or fixed model/three-agent choices.",
+    "playbook_phases": [
+      "Plan",
+      "Design",
+      "Build",
+      "Test",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "durable context",
+      "bounded delegation",
+      "continuous self-checks",
+      "learning"
+    ],
+    "stages": [
+      "specify",
+      "plan",
+      "build",
+      "verify",
+      "improve"
+    ],
+    "proposed_local_practice": "ai-sdlc-orchestrate records candidate identity, dependency state and authoritative acceptance; ai-sdlc-review keeps evidence-backed singleton findings and invalidates relevant acceptance after edits.",
+    "proposed_scenario_tests": [
+      "Resume after a crash with an unverified commit label: inspect artifacts before marking complete.",
+      "Candidate changes after green gate: invalidate that gate.",
+      "One independent reviewer finds a reproducible defect: preserve it despite disagreement."
+    ]
+  },
+  {
+    "id": "DG04",
+    "title": "Claude Code Action: review workflow, actor validation and token provenance",
+    "publisher": "Anthropic",
+    "url": "https://github.com/anthropics/claude-code-action",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "6fed3ca145920b639991cb756090506e1bcaf515",
+      "observed_via": "https://api.github.com/repos/anthropics/claude-code-action/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "MIT; repository LICENSE inspected. Bundled base action and dependencies require their own adoption review.",
+    "summary": "The action separates workflow triggers, actor checks, token acquisition and tool permissions. Its effective authority cannot be inferred solely from the example job permissions.",
+    "supports": [
+      "Review the complete event-to-actor-to-token-to-tool path.",
+      "Treat source content/comments as evidence, not action authority.",
+      "Check originating actor as well as workflow actor for chained events.",
+      "Bind review output and repair rechecks to the actual PR revision."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "examples/pr-review-comprehensive.yml",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/examples/pr-review-comprehensive.yml",
+        "kind": "configuration",
+        "observation": "PR events, contents-read/pull-request-write/id-token-write job permissions, explicit review prompt and a narrow allowed-tools list."
+      },
+      {
+        "path": "action.yml",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/action.yml",
+        "kind": "configuration",
+        "observation": "Declares bot/non-write-user exceptions, token override, additional permissions and revocation of generated app tokens."
+      },
+      {
+        "path": "src/github/validation/permissions.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/github/validation/permissions.ts",
+        "kind": "runtime-code",
+        "observation": "Checks write/admin users and workflow_run upstream actor; explicit non-write exceptions require supplied token."
+      },
+      {
+        "path": "src/github/validation/actor.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/github/validation/actor.ts",
+        "kind": "runtime-code",
+        "observation": "Separate account-type/bot allowlist handling; ordinary user names are not granted bot exemptions."
+      },
+      {
+        "path": "src/github/token.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/github/token.ts",
+        "kind": "runtime-code",
+        "observation": "Uses supplied override token or OIDC-to-App exchange; additional permission mapping merges write defaults for contents, PRs and issues."
+      },
+      {
+        "path": "src/entrypoints/run.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/entrypoints/run.ts",
+        "kind": "runtime-code",
+        "observation": "Calls permission checks for entity and workflow_run contexts before preparing agent/tag execution."
+      },
+      {
+        "path": "src/modes/agent/index.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/modes/agent/index.ts",
+        "kind": "runtime-code",
+        "observation": "Calls separate human/bot actor validation during agent preparation."
+      },
+      {
+        "path": "src/modes/tag/index.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/modes/tag/index.ts",
+        "kind": "runtime-code",
+        "observation": "Calls separate human/bot actor validation during tag preparation."
+      },
+      {
+        "path": "test/permissions.test.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/test/permissions.test.ts",
+        "kind": "test-code",
+        "observation": "Includes read denial, explicit bypass, bot-name distinction and differing workflow/upstream actors."
+      },
+      {
+        "path": "docs/security.md",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/docs/security.md",
+        "kind": "documentation",
+        "observation": "Describes dangerous non-write/bot exceptions and privileged workflow trust boundaries."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT notice."
+      }
+    ],
+    "failure_modes": [
+      "Job GITHUB_TOKEN permissions do not by themselves describe a separately exchanged App token.",
+      "A narrow review prompt cannot establish read-only capability.",
+      "Privileged events with untrusted checkouts expose a different boundary from ordinary PR review.",
+      "Tag-version references are mutable and should be pinned during adoption."
+    ],
+    "portability_boundary": "GitHub event payloads, OIDC/App token exchange, tool names and workflow YAML are host-specific. Local practice produces a permission inventory and draft workflow; it does not install CI or post reviews.",
+    "playbook_phases": [
+      "Test",
+      "Deploy",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "PR review",
+      "event automation",
+      "runtime permissions"
+    ],
+    "stages": [
+      "review",
+      "release",
+      "operate"
+    ],
+    "proposed_local_practice": "ai-sdlc-review distinguishes incoming review from repairing feedback; runtime adapter verifies token provenance, actor and exact permitted write operations before an authorized external action.",
+    "proposed_scenario_tests": [
+      "Job declares contents read but App token has write: report effective authority mismatch.",
+      "workflow_run actor trusted, originating fork actor untrusted: deny or escalate via explicit policy.",
+      "Review request contains instruction to push a fix: keep review scope unless task authorization changes."
+    ]
+  },
+  {
+    "id": "DG05",
+    "title": "Claude Agent SDK: hook and permission-callback semantics with e2e limits",
+    "publisher": "Anthropic",
+    "url": "https://github.com/anthropics/claude-agent-sdk-python",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4",
+      "observed_via": "https://api.github.com/repos/anthropics/claude-agent-sdk-python/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "MIT; repository LICENSE inspected. Bundled CLI is a separate runtime dependency, not audited here.",
+    "summary": "An SDK permission callback is not universally invoked. Hook contracts provide a stronger interception seam, but examples and callback-invocation tests do not establish a complete security boundary.",
+    "supports": [
+      "Specify event, matcher, input schema, decision schema, timeout and failure disposition for every hook.",
+      "Evaluate effective permissions after allow rules and settings are loaded.",
+      "Assert denied side effects never occur, not merely that the callback ran.",
+      "Distinguish pre-execution denial from post-execution observation."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "src/claude_agent_sdk/types.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/src/claude_agent_sdk/types.py",
+        "kind": "runtime-code",
+        "observation": "Defines hook inputs/outputs and warns broad allowed_tools or bypassPermissions can shadow can_use_tool; PreToolUse is an earlier interception point. Selected hook, permission and options sections inspected."
+      },
+      {
+        "path": "examples/hooks.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/examples/hooks.py",
+        "kind": "example-code",
+        "observation": "Shows PreToolUse deny, PostToolUse context and stop output; substring checks and broad allow example are demonstrations."
+      },
+      {
+        "path": "e2e-tests/test_hooks.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/e2e-tests/test_hooks.py",
+        "kind": "test-code",
+        "observation": "Several real-API hook tests assert callback invocation, not absence of a forbidden side effect. Tests were read, not executed."
+      },
+      {
+        "path": "e2e-tests/test_tool_permissions.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/e2e-tests/test_tool_permissions.py",
+        "kind": "test-code",
+        "observation": "Explains CLI auto-allow bypass and uses non-read-only operations to exercise callbacks; includes streaming callback regression."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT notice."
+      }
+    ],
+    "failure_modes": [
+      "A broad allowed tool or permission bypass may skip can_use_tool.",
+      "An explicit PreToolUse allow can skip the later callback.",
+      "Substring checks miss equivalent commands or alternative tools.",
+      "A post-tool stop cannot undo an already completed mutation."
+    ],
+    "portability_boundary": "Event names, matcher syntax, return fields and CLI behavior belong to this versioned SDK. OS sandbox and credential/egress controls remain separate.",
+    "playbook_phases": [
+      "Build",
+      "Test",
+      "Deploy",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "hooks",
+      "guardrails",
+      "runtime evaluation"
+    ],
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "release",
+      "operate"
+    ],
+    "proposed_local_practice": "The guardrails practice should create an event-contract matrix and negative suite covering shadowed callbacks, malformed output, timeout, alternate tools and exact-action identity.",
+    "proposed_scenario_tests": [
+      "Allowed Bash plus can_use_tool deny: verify whether callback is skipped and prohibit deployment until enforcement is corrected.",
+      "Deny a protected write and assert file content unchanged.",
+      "PostToolUse reports critical error after mutation: record partial effect and recover rather than claim prevention."
+    ]
+  },
+  {
+    "id": "DM08",
+    "title": "Beyond ‘It Works’: Why AI-Assisted Development Still Needs Architectural Discipline",
+    "publisher": "Hiraq Citra M / lifefunk on Medium",
+    "url": "https://medium.com/lifefunk/beyond-it-works-why-ai-assisted-development-still-needs-architectural-discipline-7a0b3d3f99ea",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2025-09-01",
+    "access": "full",
+    "summary": "Reflecting on an experimental project, the author distinguishes functional success from maintainable component boundaries and proposes documenting dependency direction, interfaces and change scenarios.",
+    "supports": [
+      "Add a boundary/dependency review and accepted ADR references to the design handoff."
+    ],
+    "limitations": "Full body accessible. Personal account; project implementation not independently audited. Broad productivity and model-capability assertions excluded.",
+    "stages": [
+      "specify",
+      "design",
+      "review"
+    ],
+    "phases": [
+      "design",
+      "build",
+      "deploy"
+    ],
+    "practice_ids": [
+      "DM-P03"
+    ],
+    "observation_kind": "single-project architecture retrospective",
+    "primary_corroboration": [
+      {
+        "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+        "supports": "Documents architecture decisions, context, consequences, ownership and accepted/superseded states."
+      },
+      {
+        "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+        "supports": "Includes system design, complexity and overall code health in review."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Add a boundary/dependency review and accepted ADR references to the design handoff.",
+      "adaptation_question": "Which boundaries are local architectural invariants, and when may a decision be superseded?",
+      "failure_scenario": "A feature passes tests while coupling a shared domain module to one user interface."
+    }
+  },
+  {
+    "id": "DM09",
+    "title": "I Audited My Own Test Suite for AI-Generated Code. 22% of My Tests Were Not Written by My Team and Three of Them Were Hiding a Production-Ready Bug.",
+    "publisher": "Prrammod Dutta / Medium",
+    "url": "https://scrolltest.medium.com/i-audited-my-own-test-suite-for-ai-generated-code-baac8a69fd13",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-03-20",
+    "access": "full",
+    "summary": "The author reports finding mocks where the team required an external sandbox integration. He attributes the mismatch to missing test-policy context.",
+    "supports": [
+      "Record required integration boundaries and allowed test doubles with reasons; report unavailable integration evidence explicitly."
+    ],
+    "limitations": "Full body accessible. Attribution and statistics are informal; cited study claims were not verified. Title preserves the published wording but its percentage is not adopted as evidence.",
+    "stages": [
+      "specify",
+      "build",
+      "verify",
+      "review"
+    ],
+    "phases": [
+      "design",
+      "build",
+      "test"
+    ],
+    "practice_ids": [
+      "DM-P07"
+    ],
+    "observation_kind": "informal two-project test audit and course promotion",
+    "primary_corroboration": [
+      {
+        "url": "https://testing.googleblog.com/2013/05/testing-on-toilet-dont-overuse-mocks.html?hl=sk",
+        "supports": "Explains how simulated dependency behavior can diverge from real implementations."
+      },
+      {
+        "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+        "supports": "Supports checking whether tests are useful and correctly scoped."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Record required integration boundaries and allowed test doubles with reasons; report unavailable integration evidence explicitly.",
+      "adaptation_question": "Which dependencies require real, hermetic, contract or approved sandbox tests?",
+      "failure_scenario": "An unavailable sandbox silently causes the agent to replace an integration check with a passing mock."
+    }
+  },
+  {
+    "id": "DM10",
+    "title": "Building an ECS Golden Path with Claude Code and AWS CDK",
+    "publisher": "Adrian Taut / ZAR Engineering on Medium",
+    "url": "https://medium.com/zar-engineering/building-an-ecs-golden-path-with-claude-code-and-aws-cdk-d4a580496801",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-01-20",
+    "access": "full",
+    "summary": "The team describes preserving deployed resource identity, previewing replacements and migrating incrementally. Lessons were packaged into a migration skill.",
+    "supports": [
+      "Require resource-identity analysis, a method-labelled deployment preview, rollback constraints and post-deployment evidence."
+    ],
+    "limitations": "Full body accessible. Internal implementation not audited. Echo-only warning hook is not enforcement. Current AWS documentation supersedes article snippets; no commands executed.",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "release"
+    ],
+    "phases": [
+      "design",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "practice_ids": [
+      "DM-P08",
+      "DM-P09"
+    ],
+    "observation_kind": "company infrastructure-migration retrospective",
+    "primary_corroboration": [
+      {
+        "url": "https://docs.aws.amazon.com/cdk/v2/guide/identifiers.html",
+        "supports": "Confirms logical-ID changes can cause resource replacement."
+      },
+      {
+        "url": "https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-diff.html",
+        "supports": "Documents diff methods, change-set side effects and fallback limitations."
+      },
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "supports": "Documents actual hook decision semantics; printed warnings are not blocking decisions."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Require resource-identity analysis, a method-labelled deployment preview, rollback constraints and post-deployment evidence.",
+      "adaptation_question": "Which adapter actions create remote state, and what identity/data must survive migration?",
+      "failure_scenario": "A harmless-looking refactor renames a stateful resource; unit tests pass but deployment replaces it."
+    }
+  },
+  {
+    "id": "DM11",
+    "title": "AI For Debugging Production Issues",
+    "publisher": "Nazar Boyko / Medium",
+    "url": "https://medium.com/@nazarboyko/ai-for-debugging-production-issues-411bdb21fe8d",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-06-14",
+    "access": "full",
+    "summary": "The article proposes structured telemetry, alternative diagnostic hypotheses, versioned runbooks and feedback from closed incidents rather than accepting a confident diagnosis.",
+    "supports": [
+      "Produce hypotheses with disconfirming checks, evidence windows and bounded authorized response; feed verified follow-up into intent."
+    ],
+    "limitations": "Full body accessible, dated explicitly on page. No controlled incident evaluation. Vendor speed claims and majority-vote correctness excluded. Read-only labels do not remove data-access or query-cost risks.",
+    "stages": [
+      "operate",
+      "improve",
+      "discover"
+    ],
+    "phases": [
+      "maintain",
+      "plan"
+    ],
+    "practice_ids": [
+      "DM-P11",
+      "DM-P12"
+    ],
+    "observation_kind": "prescriptive operational synthesis with vendor examples",
+    "primary_corroboration": [
+      {
+        "url": "https://sre.google/sre-book/effective-troubleshooting/",
+        "supports": "Supports hypothesis testing and choosing diagnostics with regard to system risk."
+      },
+      {
+        "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
+        "supports": "Documents telemetry signals and instrumentation."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Produce hypotheses with disconfirming checks, evidence windows and bounded authorized response; feed verified follow-up into intent.",
+      "adaptation_question": "What runbooks, query limits, sensitive-data rules and action authority apply to this service?",
+      "failure_scenario": "The agent treats a recurring historical diagnosis as fact and executes an unrelated remediation."
+    }
+  },
+  {
+    "id": "DM12",
+    "title": "A week with Claude Code: lessons, surprises and smarter workflows",
+    "publisher": "Ujjavala Singh / DiUS on Medium",
+    "url": "https://dius-au.medium.com/a-week-with-claude-code-lessons-surprises-and-smarter-workflows-47584eb55e8d",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-04-29 (Medium); article credits original publication 2025-09-10",
+    "access": "full",
+    "summary": "The author reports wrong-folder edits, excessive mocks and tooling-version mismatches, then adds scoped repository and legacy-system context.",
+    "supports": [
+      "Load relevant package ownership, version constraints and legacy behaviors; review lessons before promoting them into shared guidance."
+    ],
+    "limitations": "Full body accessible. Reprinted experience, not a tool comparison study. Custom command examples are not verified built-ins. Blanket staging and broad competing-product claims rejected.",
+    "stages": [
+      "discover",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "improve"
+    ],
+    "phases": [
+      "plan",
+      "design",
+      "build",
+      "test",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P04",
+      "DM-P12"
+    ],
+    "observation_kind": "company monorepo and legacy-code experience",
+    "primary_corroboration": [
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "supports": "Documents actual context-file loading and the distinction from enforced settings."
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "supports": "Supports selective relevant context rather than indiscriminate loading."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Load relevant package ownership, version constraints and legacy behaviors; review lessons before promoting them into shared guidance.",
+      "adaptation_question": "Which package and legacy constraints differ from the organization default?",
+      "failure_scenario": "A task stages unrelated user edits or applies a current API to a pinned older toolchain."
+    }
+  }
+]

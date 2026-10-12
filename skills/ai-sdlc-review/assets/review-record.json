@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "template_only": true,
+  "input": {
+    "mode": null,
+    "candidate": {
+      "artifact_ref": null,
+      "base_revision": null,
+      "head_revision_or_digest": null,
+      "uncommitted_state_ref": null,
+      "changed_paths": []
+    },
+    "requirements": [],
+    "verification_refs": [],
+    "review_request": {
+      "scope": null,
+      "producer": null,
+      "reviewer": null,
+      "allowed_effects": [],
+      "required_specialists": []
+    },
+    "incoming_findings": []
+  },
+  "output": {
+    "reviewed_identity": null,
+    "final_identity": null,
+    "coverage": [],
+    "findings": [
+      {
+        "id": null,
+        "type": null,
+        "severity": null,
+        "location": null,
+        "requirement_or_risk": null,
+        "reproduction": [],
+        "expected": null,
+        "observed": null,
+        "impact": null,
+        "evidence_refs": [],
+        "uncertainty": null,
+        "proposed_fix": null,
+        "disposition": "open",
+        "fix_identity": null,
+        "recheck_refs": [],
+        "owner": null
+      }
+    ],
+    "checks": [
+      {
+        "name": null,
+        "candidate_identity": null,
+        "command_or_tool": null,
+        "environment_ref": null,
+        "status": "not-run",
+        "evidence_ref": null
+      }
+    ],
+    "draft_responses": [
+      {
+        "finding_id": null,
+        "text": null,
+        "posted": false,
+        "posting_authority_ref": null
+      }
+    ],
+    "independence": {
+      "producer": null,
+      "reviewer": null,
+      "reviewer_authored_fix": null,
+      "final_independent_recheck_ref": null
+    },
+    "limitations": [],
+    "evidence_status": "not-run",
+    "owner_acceptance": {
+      "status": "pending",
+      "owner": null,
+      "reference": null,
+      "candidate_identity": null
+    },
+    "next_action": null
+  }
+}

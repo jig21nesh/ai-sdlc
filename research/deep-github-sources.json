@@ -1,0 +1,675 @@
+[
+  {
+    "id": "DG01",
+    "title": "Spec Kit: artifact consistency, dependency slices and workflow contract tests",
+    "publisher": "GitHub",
+    "url": "https://github.com/github/spec-kit",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "1e933c49fd6d5d5390b28f18faefa5728c95b2e3",
+      "observed_via": "https://api.github.com/repos/github/spec-kit/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "MIT; repository LICENSE inspected. Dependency and extension licenses not audited.",
+    "summary": "Actual command templates and a shipped workflow make handoff consistency and independent increments concrete; an upstream contract test detects drift between documentation and execution.",
+    "supports": [
+      "Maintain stable requirement IDs and explicit requirement-to-task coverage.",
+      "Record task dependencies, assigned files and independent acceptance checks before parallel work.",
+      "Validate documentation examples against the shipped machine-readable contract."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "templates/commands/analyze.md",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/templates/commands/analyze.md",
+        "kind": "instruction",
+        "observation": "Builds FR/SC-to-task coverage, detects ambiguity/contradiction/unmapped tasks, and produces a read-only findings report."
+      },
+      {
+        "path": "templates/commands/tasks.md",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/templates/commands/tasks.md",
+        "kind": "instruction",
+        "observation": "Maps story IDs to tasks, paths and dependencies; parallel marker requires separate files and no unfinished dependency. Tests are conditional in this upstream template."
+      },
+      {
+        "path": "templates/tasks-template.md",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/templates/tasks-template.md",
+        "kind": "template",
+        "observation": "Groups independent story increments and checkpoints; does not make a checklist proof of implementation."
+      },
+      {
+        "path": "workflows/speckit/workflow.yml",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/workflows/speckit/workflow.yml",
+        "kind": "configuration",
+        "observation": "Sequences specify, plan, tasks and implement; review-spec and review-plan gates abort on rejection."
+      },
+      {
+        "path": "tests/workflows/test_bundled_speckit_workflow.py",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/tests/workflows/test_bundled_speckit_workflow.py",
+        "kind": "test-code",
+        "observation": "Checks unused scope input removal and parsed equality between documented and bundled workflow YAML."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/github/spec-kit/blob/1e933c49fd6d5d5390b28f18faefa5728c95b2e3/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT notice."
+      }
+    ],
+    "failure_modes": [
+      "Keyword-inferred requirement mappings need review; numeric coverage does not prove behavior.",
+      "Upstream optional-test policy must not override local assurance requirements.",
+      "Declared mandatory hooks are not safe to execute until locally reviewed and authorized."
+    ],
+    "portability_boundary": "Portable artifact and test-design patterns; slash commands, extension hooks, workflow engine and approval gates are Spec Kit mechanisms. Do not silently install them.",
+    "playbook_phases": [
+      "Plan",
+      "Design",
+      "Build",
+      "Test"
+    ],
+    "playbook_practices": [
+      "authoritative handoffs",
+      "implementation planning",
+      "cross-artifact verification"
+    ],
+    "stages": [
+      "discover",
+      "specify",
+      "plan",
+      "verify"
+    ],
+    "proposed_local_practice": "ai-sdlc-plan emits a requirement/task/path/dependency map; ai-sdlc-review compares it against candidate evidence and reports missing links before accepting.",
+    "proposed_scenario_tests": [
+      "A story has no task: report the uncovered stable ID.",
+      "Two parallel tasks touch one writable path: serialize or isolate.",
+      "Documentation adds an unused input: contract check fails."
+    ]
+  },
+  {
+    "id": "DG02",
+    "title": "Context Specs: durable slice contracts, external completion checks and bounded retries",
+    "publisher": "Capital One",
+    "url": "https://github.com/capitalone/context-specs",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "d6538c7859bcab55175ba596dc76d49efb221462",
+      "observed_via": "https://api.github.com/repos/capitalone/context-specs/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "Apache-2.0; repository LICENSE inspected. Bundled integrations and transitive dependencies not audited.",
+    "summary": "Planning and implementation use persistent slice files while a deterministic dispatcher observes completion and retry budgets. Several upstream autonomy and checkpoint choices are deliberately unsuitable as generic defaults.",
+    "supports": [
+      "Keep one authoritative intent artifact and supply each worker only the relevant slice.",
+      "Assign git/integration duties separately from bounded implementation.",
+      "Use an external observer for completion and an explicit retry/stuck state.",
+      "Promote only durable verified lessons; routine work should often produce no memory change."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "skills/sdd/spec-planning/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/spec-planning/SKILL.md",
+        "kind": "instruction",
+        "observation": "Consumes a PRD and acceptance runner, grounds mainspec/slices in repository paths and records a dependency map."
+      },
+      {
+        "path": "skills/sdd/implement-slice/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/implement-slice/SKILL.md",
+        "kind": "instruction",
+        "observation": "Single slice produces uncommitted changes, tests and an optional high-bar reflection; parent owns git operations."
+      },
+      {
+        "path": "skills/sdd/implement-mainspec/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/implement-mainspec/SKILL.md",
+        "kind": "instruction",
+        "observation": "Sequential dependency-ordered delegation; resume by slice commit messages; explicitly requests permission bypass and commits/pushes."
+      },
+      {
+        "path": "skills/sdd/spec-validate/SKILL.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/skills/sdd/spec-validate/SKILL.md",
+        "kind": "instruction",
+        "observation": "Three-reviewer consensus, automatic corrections and final sentinel; discards single-reviewer findings."
+      },
+      {
+        "path": "scripts/poll-and-dispatch.sh",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/scripts/poll-and-dispatch.sh",
+        "kind": "runtime-code",
+        "observation": "Per-environment flock, retry caps and stuck escalation; disposable worktree reset; external PRD runner first success cached in .prd-passed."
+      },
+      {
+        "path": "subagents/slice-implementer.md",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/subagents/slice-implementer.md",
+        "kind": "role-configuration",
+        "observation": "Narrows worker git duties in prose while setting bypassPermissions."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/capitalone/context-specs/blob/d6538c7859bcab55175ba596dc76d49efb221462/LICENSE",
+        "kind": "license",
+        "observation": "Repository Apache-2.0 notice."
+      }
+    ],
+    "failure_modes": [
+      "A cached success sentinel can outlive later edits; current revision evidence is still required.",
+      "Commit-message-based resume is weaker than validated artifact identity.",
+      "Reviewer consensus can discard a true singleton finding.",
+      "Worktree wipe, automatic push and bypassPermissions require specific runtime authority."
+    ],
+    "portability_boundary": "Adapt handoff and bounded-loop ideas; do not import destructive cleanup, unconditional spawning, permission bypass, automatic writes or fixed model/three-agent choices.",
+    "playbook_phases": [
+      "Plan",
+      "Design",
+      "Build",
+      "Test",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "durable context",
+      "bounded delegation",
+      "continuous self-checks",
+      "learning"
+    ],
+    "stages": [
+      "specify",
+      "plan",
+      "build",
+      "verify",
+      "improve"
+    ],
+    "proposed_local_practice": "ai-sdlc-orchestrate records candidate identity, dependency state and authoritative acceptance; ai-sdlc-review keeps evidence-backed singleton findings and invalidates relevant acceptance after edits.",
+    "proposed_scenario_tests": [
+      "Resume after a crash with an unverified commit label: inspect artifacts before marking complete.",
+      "Candidate changes after green gate: invalidate that gate.",
+      "One independent reviewer finds a reproducible defect: preserve it despite disagreement."
+    ]
+  },
+  {
+    "id": "DG03",
+    "title": "Anthropic skill-creator: paired runs, graders, trigger tests and schema boundaries",
+    "publisher": "Anthropic",
+    "url": "https://github.com/anthropics/skills",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "observed_via": "https://api.github.com/repos/anthropics/skills/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "Apache-2.0 for inspected skills/skill-creator/LICENSE.txt scope. Other skills in the repository have different licenses.",
+    "summary": "Skill quality is evaluated through matched baseline comparisons and inspectable artifacts, while description routing has its own suite. The runnable trigger harness is specific to Claude CLI discovery and stream events.",
+    "supports": [
+      "Separate skill selection, delivery-agent execution and AI-product behavior evaluations.",
+      "Preserve a previous snapshot before comparing a modified skill.",
+      "Judge generated artifacts and actual traces, not just completion claims.",
+      "Use hard near-miss triggers and inspect variance plus time/cost tradeoffs."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "skills/skill-creator/SKILL.md",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/SKILL.md",
+        "kind": "instruction",
+        "observation": "Pairs skill/no-skill or changed/prior-skill outputs, captures timing, grades artifacts, reviews variance and tests descriptions with positives and near misses."
+      },
+      {
+        "path": "skills/skill-creator/agents/grader.md",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/agents/grader.md",
+        "kind": "instruction",
+        "observation": "Inspects transcript plus actual output, verifies implicit claims and critiques superficial/non-discriminating assertions."
+      },
+      {
+        "path": "skills/skill-creator/references/schemas.md",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/references/schemas.md",
+        "kind": "schema-document",
+        "observation": "Defines eval, grading, benchmark and history record shapes; grading expectations carry text, passed and evidence."
+      },
+      {
+        "path": "skills/skill-creator/scripts/run_eval.py",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/scripts/run_eval.py",
+        "kind": "runtime-code",
+        "observation": "Creates temporary Claude command metadata, calls claude -p and detects early Skill/Read stream events; this is trigger detection rather than task-success evaluation."
+      },
+      {
+        "path": "skills/skill-creator/scripts/run_loop.py",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/scripts/run_loop.py",
+        "kind": "runtime-code",
+        "observation": "Stratifies positive/negative holdout, blinds improvement history to test fields and selects best iteration using test scores."
+      },
+      {
+        "path": "skills/skill-creator/LICENSE.txt",
+        "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/skill-creator/LICENSE.txt",
+        "kind": "license",
+        "observation": "Skill-specific Apache-2.0 notice."
+      }
+    ],
+    "failure_modes": [
+      "Repeated holdout-based candidate selection is validation, not a pristine final test.",
+      "Early trigger detection does not establish later successful task completion.",
+      "Weak assertions can reward an empty file or correct filename.",
+      "SKILL.md uses assertions terminology while schemas.md declares expectations; local adapters need one explicit schema."
+    ],
+    "portability_boundary": "Transfer experimental design and evidence fields. Do not assume Claude CLI discovery, subagent notifications, viewer lifecycle or .claude/commands behavior in other hosts.",
+    "playbook_phases": [
+      "Build",
+      "Test",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "skills",
+      "agent evaluations",
+      "iterative improvement"
+    ],
+    "stages": [
+      "govern",
+      "verify",
+      "improve"
+    ],
+    "proposed_local_practice": "ai-sdlc-agent-evals owns three scopes, baseline modes, fixture provenance, validation/final-suite separation, independent artifact/trace grading and regression decisions.",
+    "proposed_scenario_tests": [
+      "A skill triggers but output is empty: routing pass, execution fail.",
+      "New version passes fixtures used for tuning but fails untouched negative case: do not promote.",
+      "Grader rewards file existence for wrong content: invalidate assertion and retain the failed artifact."
+    ]
+  },
+  {
+    "id": "DG04",
+    "title": "Claude Code Action: review workflow, actor validation and token provenance",
+    "publisher": "Anthropic",
+    "url": "https://github.com/anthropics/claude-code-action",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "6fed3ca145920b639991cb756090506e1bcaf515",
+      "observed_via": "https://api.github.com/repos/anthropics/claude-code-action/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "MIT; repository LICENSE inspected. Bundled base action and dependencies require their own adoption review.",
+    "summary": "The action separates workflow triggers, actor checks, token acquisition and tool permissions. Its effective authority cannot be inferred solely from the example job permissions.",
+    "supports": [
+      "Review the complete event-to-actor-to-token-to-tool path.",
+      "Treat source content/comments as evidence, not action authority.",
+      "Check originating actor as well as workflow actor for chained events.",
+      "Bind review output and repair rechecks to the actual PR revision."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "examples/pr-review-comprehensive.yml",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/examples/pr-review-comprehensive.yml",
+        "kind": "configuration",
+        "observation": "PR events, contents-read/pull-request-write/id-token-write job permissions, explicit review prompt and a narrow allowed-tools list."
+      },
+      {
+        "path": "action.yml",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/action.yml",
+        "kind": "configuration",
+        "observation": "Declares bot/non-write-user exceptions, token override, additional permissions and revocation of generated app tokens."
+      },
+      {
+        "path": "src/github/validation/permissions.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/github/validation/permissions.ts",
+        "kind": "runtime-code",
+        "observation": "Checks write/admin users and workflow_run upstream actor; explicit non-write exceptions require supplied token."
+      },
+      {
+        "path": "src/github/validation/actor.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/github/validation/actor.ts",
+        "kind": "runtime-code",
+        "observation": "Separate account-type/bot allowlist handling; ordinary user names are not granted bot exemptions."
+      },
+      {
+        "path": "src/github/token.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/github/token.ts",
+        "kind": "runtime-code",
+        "observation": "Uses supplied override token or OIDC-to-App exchange; additional permission mapping merges write defaults for contents, PRs and issues."
+      },
+      {
+        "path": "src/entrypoints/run.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/entrypoints/run.ts",
+        "kind": "runtime-code",
+        "observation": "Calls permission checks for entity and workflow_run contexts before preparing agent/tag execution."
+      },
+      {
+        "path": "src/modes/agent/index.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/modes/agent/index.ts",
+        "kind": "runtime-code",
+        "observation": "Calls separate human/bot actor validation during agent preparation."
+      },
+      {
+        "path": "src/modes/tag/index.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/src/modes/tag/index.ts",
+        "kind": "runtime-code",
+        "observation": "Calls separate human/bot actor validation during tag preparation."
+      },
+      {
+        "path": "test/permissions.test.ts",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/test/permissions.test.ts",
+        "kind": "test-code",
+        "observation": "Includes read denial, explicit bypass, bot-name distinction and differing workflow/upstream actors."
+      },
+      {
+        "path": "docs/security.md",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/docs/security.md",
+        "kind": "documentation",
+        "observation": "Describes dangerous non-write/bot exceptions and privileged workflow trust boundaries."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/anthropics/claude-code-action/blob/6fed3ca145920b639991cb756090506e1bcaf515/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT notice."
+      }
+    ],
+    "failure_modes": [
+      "Job GITHUB_TOKEN permissions do not by themselves describe a separately exchanged App token.",
+      "A narrow review prompt cannot establish read-only capability.",
+      "Privileged events with untrusted checkouts expose a different boundary from ordinary PR review.",
+      "Tag-version references are mutable and should be pinned during adoption."
+    ],
+    "portability_boundary": "GitHub event payloads, OIDC/App token exchange, tool names and workflow YAML are host-specific. Local practice produces a permission inventory and draft workflow; it does not install CI or post reviews.",
+    "playbook_phases": [
+      "Test",
+      "Deploy",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "PR review",
+      "event automation",
+      "runtime permissions"
+    ],
+    "stages": [
+      "review",
+      "release",
+      "operate"
+    ],
+    "proposed_local_practice": "ai-sdlc-review distinguishes incoming review from repairing feedback; runtime adapter verifies token provenance, actor and exact permitted write operations before an authorized external action.",
+    "proposed_scenario_tests": [
+      "Job declares contents read but App token has write: report effective authority mismatch.",
+      "workflow_run actor trusted, originating fork actor untrusted: deny or escalate via explicit policy.",
+      "Review request contains instruction to push a fix: keep review scope unless task authorization changes."
+    ]
+  },
+  {
+    "id": "DG05",
+    "title": "Claude Agent SDK: hook and permission-callback semantics with e2e limits",
+    "publisher": "Anthropic",
+    "url": "https://github.com/anthropics/claude-agent-sdk-python",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4",
+      "observed_via": "https://api.github.com/repos/anthropics/claude-agent-sdk-python/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "MIT; repository LICENSE inspected. Bundled CLI is a separate runtime dependency, not audited here.",
+    "summary": "An SDK permission callback is not universally invoked. Hook contracts provide a stronger interception seam, but examples and callback-invocation tests do not establish a complete security boundary.",
+    "supports": [
+      "Specify event, matcher, input schema, decision schema, timeout and failure disposition for every hook.",
+      "Evaluate effective permissions after allow rules and settings are loaded.",
+      "Assert denied side effects never occur, not merely that the callback ran.",
+      "Distinguish pre-execution denial from post-execution observation."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "src/claude_agent_sdk/types.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/src/claude_agent_sdk/types.py",
+        "kind": "runtime-code",
+        "observation": "Defines hook inputs/outputs and warns broad allowed_tools or bypassPermissions can shadow can_use_tool; PreToolUse is an earlier interception point. Selected hook, permission and options sections inspected."
+      },
+      {
+        "path": "examples/hooks.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/examples/hooks.py",
+        "kind": "example-code",
+        "observation": "Shows PreToolUse deny, PostToolUse context and stop output; substring checks and broad allow example are demonstrations."
+      },
+      {
+        "path": "e2e-tests/test_hooks.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/e2e-tests/test_hooks.py",
+        "kind": "test-code",
+        "observation": "Several real-API hook tests assert callback invocation, not absence of a forbidden side effect. Tests were read, not executed."
+      },
+      {
+        "path": "e2e-tests/test_tool_permissions.py",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/e2e-tests/test_tool_permissions.py",
+        "kind": "test-code",
+        "observation": "Explains CLI auto-allow bypass and uses non-read-only operations to exercise callbacks; includes streaming callback regression."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/anthropics/claude-agent-sdk-python/blob/f7b0b62c2a8d110d4da0eec0aa70cf795ec3afc4/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT notice."
+      }
+    ],
+    "failure_modes": [
+      "A broad allowed tool or permission bypass may skip can_use_tool.",
+      "An explicit PreToolUse allow can skip the later callback.",
+      "Substring checks miss equivalent commands or alternative tools.",
+      "A post-tool stop cannot undo an already completed mutation."
+    ],
+    "portability_boundary": "Event names, matcher syntax, return fields and CLI behavior belong to this versioned SDK. OS sandbox and credential/egress controls remain separate.",
+    "playbook_phases": [
+      "Build",
+      "Test",
+      "Deploy",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "hooks",
+      "guardrails",
+      "runtime evaluation"
+    ],
+    "stages": [
+      "govern",
+      "build",
+      "verify",
+      "release",
+      "operate"
+    ],
+    "proposed_local_practice": "The guardrails practice should create an event-contract matrix and negative suite covering shadowed callbacks, malformed output, timeout, alternate tools and exact-action identity.",
+    "proposed_scenario_tests": [
+      "Allowed Bash plus can_use_tool deny: verify whether callback is skipped and prohibit deployment until enforcement is corrected.",
+      "Deny a protected write and assert file content unchanged.",
+      "PostToolUse reports critical error after mutation: record partial effect and recover rather than claim prevention."
+    ]
+  },
+  {
+    "id": "DG06",
+    "title": "Google ADK: tool-trajectory criteria and confirmation event fixtures",
+    "publisher": "Google",
+    "url": "https://github.com/google/adk-python",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "ea656b03d3f3c6dd041ba8e3f65d612017592c42",
+      "observed_via": "https://api.github.com/repos/google/adk-python/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "Apache-2.0; repository LICENSE and file headers inspected. Transitive licenses not audited.",
+    "summary": "Evaluation criteria have precise semantics that matter for safety claims. Flexible trajectory matching tolerates useful alternate steps, but also requires separate prohibited-action checks.",
+    "supports": [
+      "Choose exact, ordered-subsequence or unordered-subset trace expectations according to requirement.",
+      "Check safety invariants separately from average task score.",
+      "Bind confirmation to original tool call identity and arguments.",
+      "Record denial as an explicit outcome rather than a fabricated success."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "src/google/adk/evaluation/trajectory_evaluator.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/src/google/adk/evaluation/trajectory_evaluator.py",
+        "kind": "runtime-code",
+        "observation": "Exact requires full call equality; in-order and any-order accept additional calls; ignore_args can suppress argument checking."
+      },
+      {
+        "path": "src/google/adk/evaluation/eval_metrics.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/src/google/adk/evaluation/eval_metrics.py",
+        "kind": "runtime-code",
+        "observation": "Typed trajectory criterion, match modes, argument option and threshold declaration. Selected relevant sections inspected."
+      },
+      {
+        "path": "tests/unittests/evaluation/test_trajectory_evaluator.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/tests/unittests/evaluation/test_trajectory_evaluator.py",
+        "kind": "test-code",
+        "observation": "Exercises extra calls, wrong order, missing/duplicate calls, different arguments and ignore_args. Selected scenario bodies and parametrization inspected."
+      },
+      {
+        "path": "contributing/samples/hitl/tool_confirmation/agent.py",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/contributing/samples/hitl/tool_confirmation/agent.py",
+        "kind": "example-code",
+        "observation": "A conditional transfer requests confirmation; destructive close uses require_confirmation. Returns illustrative results, not real banking integration."
+      },
+      {
+        "path": "contributing/samples/hitl/tool_confirmation/tests/transfer_200_declined.json",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/contributing/samples/hitl/tool_confirmation/tests/transfer_200_declined.json",
+        "kind": "fixture",
+        "observation": "Carries original call identity, confirmation response and rejected tool result through an event sequence."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/google/adk-python/blob/ea656b03d3f3c6dd041ba8e3f65d612017592c42/LICENSE",
+        "kind": "license",
+        "observation": "Repository Apache-2.0 notice."
+      }
+    ],
+    "failure_modes": [
+      "In-order/any-order passing does not prove no unexpected tool was called.",
+      "Ignoring arguments can conceal wrong targets.",
+      "A sample event transcript is a fixture, not proof of production confirmation enforcement.",
+      "Aggregate scores can hide a single consequential failure."
+    ],
+    "portability_boundary": "Transfer trace/confirmation concepts; ADK models, event IDs and runtime APIs need an adapter. No ADK installation or live model call was performed.",
+    "playbook_phases": [
+      "Test",
+      "Deploy",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "agent evaluations",
+      "tool confirmation",
+      "event evidence"
+    ],
+    "stages": [
+      "verify",
+      "release",
+      "operate"
+    ],
+    "proposed_local_practice": "ai-sdlc-agent-evals reports task correctness, forbidden-action count and argument validity separately; release evidence checks current action identity.",
+    "proposed_scenario_tests": [
+      "Expected read then report, actual read then delete then report: subset metric may pass but forbidden-action invariant fails.",
+      "Approved recipient changes after confirmation: reject stale authorization.",
+      "Same tool name, wrong environment argument: fail despite name-only match."
+    ]
+  },
+  {
+    "id": "DG07",
+    "title": "Promptfoo: skill version comparisons, structured outputs and semantic scoring",
+    "publisher": "Promptfoo maintainers",
+    "url": "https://github.com/promptfoo/promptfoo",
+    "type": "repository",
+    "accessed": "2026-10-08",
+    "published": null,
+    "access": "full",
+    "revision": {
+      "sha": "2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f",
+      "observed_via": "https://api.github.com/repos/promptfoo/promptfoo/commits/HEAD",
+      "observed_at": "2026-10-08",
+      "meaning": "Observed repository commit identity; not a signed-release or supply-chain verification."
+    },
+    "license": "MIT terms in repository LICENSE inspected. Provider SDK and transitive licenses not audited.",
+    "summary": "Actual evaluation YAML compares two skill versions with a shared output contract and outcome scoring, including a case that penalizes reporting outside the requested scope.",
+    "supports": [
+      "Compare candidate and baseline on the same task fixtures and runtime configuration.",
+      "Validate output structure separately from semantic correctness.",
+      "Measure false positives as well as missed findings.",
+      "Verify the intended skill was consulted when evaluating its contribution."
+    ],
+    "limitations": "Selected pinned files inspected read-only; no upstream code, package, workflow, test or live provider was executed. Observed tests describe intended assertions, not independently reproduced passing results. No full security, maintenance, dependency or license audit.",
+    "inspected_files": [
+      {
+        "path": "examples/claude-agent-sdk/skill-comparison/promptfooconfig.yaml",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/skill-comparison/promptfooconfig.yaml",
+        "kind": "configuration",
+        "observation": "Two fixture directories and skill versions share prompt/model/schema; checks skill-used and issue precision/recall, with narrow-scope case and disabled list-variable expansion."
+      },
+      {
+        "path": "examples/claude-agent-sdk/skill-comparison/fixtures/v1/.claude/skills/review-standards/SKILL.md",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/skill-comparison/fixtures/v1/.claude/skills/review-standards/SKILL.md",
+        "kind": "instruction",
+        "observation": "Baseline limits review to one issue."
+      },
+      {
+        "path": "examples/claude-agent-sdk/skill-comparison/fixtures/v2/.claude/skills/review-standards/SKILL.md",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/skill-comparison/fixtures/v2/.claude/skills/review-standards/SKILL.md",
+        "kind": "instruction",
+        "observation": "Candidate adds a second issue type and explicitly respects requested scope."
+      },
+      {
+        "path": "examples/claude-agent-sdk/structured-output/promptfooconfig.yaml",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/examples/claude-agent-sdk/structured-output/promptfooconfig.yaml",
+        "kind": "configuration",
+        "observation": "Combines JSON shape and separate semantic expectations on a code-analysis result."
+      },
+      {
+        "path": "test/assertions/json.test.ts",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/test/assertions/json.test.ts",
+        "kind": "test-code",
+        "observation": "Tests valid/invalid JSON schema handling and missing schema-file exports."
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/promptfoo/promptfoo/blob/2dbf3ecc75966e6d924c2c9dde5bcbd5c0cd2d2f/LICENSE",
+        "kind": "license",
+        "observation": "Repository MIT terms."
+      }
+    ],
+    "failure_modes": [
+      "Model-specific object-vs-string outputs require adapters.",
+      "A fixture directory is not necessarily an OS security boundary.",
+      "Remote providers transmit configured context; local CLI does not imply local inference.",
+      "Precision/recall against an incomplete expected set can punish valid novel findings."
+    ],
+    "portability_boundary": "Use the experiment design without requiring Promptfoo, Claude SDK, its current model ID, arbitrary JavaScript assertion execution or remote provider access.",
+    "playbook_phases": [
+      "Test",
+      "Maintain"
+    ],
+    "playbook_practices": [
+      "agent evaluations",
+      "skill regression",
+      "output contracts"
+    ],
+    "stages": [
+      "verify",
+      "improve"
+    ],
+    "proposed_local_practice": "ai-sdlc-agent-evals includes schema validity, scoped precision/recall and observed routing evidence; human adjudication handles credible findings outside the labeled set.",
+    "proposed_scenario_tests": [
+      "Candidate finds more defects but reports outside requested scope: precision/scope regression.",
+      "Valid JSON asserts success with wrong artifact: structural pass, semantic fail.",
+      "List-valued fixture expands into separate cases unexpectedly: compare resolved case manifest before scoring."
+    ]
+  }
+]

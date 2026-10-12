@@ -1,0 +1,1 @@
+Create a reusable refund-policy skill draft from the owned policy and repair the local context guidance where evidence supports it. This authorizes local draft files only.

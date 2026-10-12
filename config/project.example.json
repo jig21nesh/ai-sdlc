@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "profile_type": "project",
+  "context": {
+    "id": null,
+    "description": null,
+    "repository_url": null,
+    "root": ".",
+    "instructions_paths": [],
+    "artifact_dir": "artifacts/ai-sdlc",
+    "adapter_profile_ref": null,
+    "model_id": null,
+    "ai_data_classes": null,
+    "tool_ids": null,
+    "network_origins": null
+  },
+  "product": {
+    "problem_statement": null,
+    "users": null,
+    "success_metrics": null,
+    "requirements_ref": null,
+    "accessibility_target": null
+  },
+  "risk": {
+    "tier": null,
+    "rationale": null,
+    "data_classes": null,
+    "contains_ai_product_features": null,
+    "threats_ref": null,
+    "approved_exception_refs": []
+  },
+  "quality": {
+    "required_checks": null,
+    "acceptance_ref": null,
+    "eval_suite_refs": [],
+    "performance_budgets_ref": null,
+    "security_verification_ref": null,
+    "accessibility_verification_ref": null
+  },
+  "architecture": {
+    "overview_ref": null,
+    "decision_record_dir": "docs/decisions",
+    "interfaces_ref": null,
+    "dependency_manifest_paths": [],
+    "data_flow_ref": null,
+    "migration_plan_ref": null
+  },
+  "workflow": {
+    "branch_strategy": null,
+    "review_policy_ref": null,
+    "task_artifact_dir": "artifacts/ai-sdlc/tasks",
+    "max_parallel_agents": null,
+    "allowed_read_paths": null,
+    "allowed_write_paths": null,
+    "stop_conditions": null
+  },
+  "commands": {
+    "test": {
+      "argv": null,
+      "cwd": ".",
+      "purpose": "verify",
+      "timeout_seconds": null,
+      "mutates": false,
+      "authorization_ref": null
+    }
+  },
+  "release": {
+    "enabled": null,
+    "target_environment_id": null,
+    "production": null,
+    "artifact_dir": "artifacts/releases",
+    "provenance_ref": null,
+    "deploy_command_id": null,
+    "rollback_command_id": null,
+    "rollout_plan_ref": null,
+    "restore_plan_ref": null,
+    "authorization_ref": null
+  },
+  "operations": {
+    "slo_ref": null,
+    "telemetry_ref": null,
+    "runbooks_dir": "docs/runbooks",
+    "on_call_ref": null,
+    "incident_record_dir": "artifacts/incidents",
+    "kill_switch_ref": null
+  },
+  "retirement": {
+    "planned": null,
+    "dependency_inventory_ref": null,
+    "transition_plan_ref": null,
+    "retention_plan_ref": null,
+    "legal_hold_status": null,
+    "disposition_approval_ref": null,
+    "deletion_command_id": null,
+    "closure_evidence_dir": "artifacts/retirement"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "template_only": true,
+  "input": {
+    "candidate": {
+      "reference": null,
+      "revision_or_digest": null,
+      "build_ref": null
+    },
+    "audience": {
+      "description": null,
+      "evidence_ref": null,
+      "assumptions": []
+    },
+    "tasks": [],
+    "platforms": [],
+    "accessibility_target": null,
+    "mode": null,
+    "authority": {
+      "task_ref": null,
+      "allowed_tools": [],
+      "approved_data_ref": null,
+      "write_paths": [],
+      "fixes_authorized": false
+    }
+  },
+  "output": {
+    "reviewed_identity": null,
+    "final_identity": null,
+    "environments": [
+      {
+        "id": null,
+        "browser_or_host": null,
+        "device_or_viewport": null,
+        "input_method": null,
+        "assistive_technology": null,
+        "method": null
+      }
+    ],
+    "journeys": [
+      {
+        "id": null,
+        "goal": null,
+        "start_state": null,
+        "steps": [],
+        "success_condition": null,
+        "error_and_recovery": null,
+        "environment_id": null,
+        "observed": null,
+        "status": "not-run",
+        "evidence_refs": [],
+        "limitation": null
+      }
+    ],
+    "findings": [
+      {
+        "id": null,
+        "journey_id": null,
+        "severity": null,
+        "location": null,
+        "expected": null,
+        "observed": null,
+        "user_impact": null,
+        "evidence_method": null,
+        "evidence_refs": [],
+        "suggested_fix": null,
+        "disposition": "open",
+        "fix_identity": null,
+        "recheck_refs": []
+      }
+    ],
+    "unperformed_checks": [],
+    "representative_user_evidence": null,
+    "independence_limitations": [],
+    "evidence_status": "not-run",
+    "owner_acceptance": {
+      "status": "pending",
+      "owner": null,
+      "reference": null,
+      "candidate_identity": null
+    },
+    "next_action": null
+  }
+}

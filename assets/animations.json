@@ -1,0 +1,56 @@
+{
+  "lifecycle": {
+    "title": "Anthropic six-stage reference",
+    "alt": "Plan, Design, Build, Test, Deploy and Maintain form a loop. Implementation planning is part of Build. This layout uses the article's stage names, not its adoption graph.",
+    "caption": "Reference stage names, original layout. Module assignments and additional governance/retirement coverage are our synthesis.",
+    "frames": [
+      "Plan and Design",
+      "Build and Test",
+      "Deploy and Maintain",
+      "Feedback to Plan"
+    ],
+    "gif": "assets/lifecycle.gif",
+    "static": "assets/lifecycle.png",
+    "width": 1080,
+    "height": 420,
+    "frame_duration_ms": 2400,
+    "loop": true,
+    "semantic_content_identical_in_static": true
+  },
+  "delegation": {
+    "title": "Bounded agent delegation",
+    "alt": "A coordinator assigns independent research and risk analysis, integrates their results into implementation with continuous checks, then obtains independent candidate review when policy requires it.",
+    "caption": "An optional toolkit workflow. Continuous self-checking and independent candidate review serve different purposes; dependent work is sequential.",
+    "frames": [
+      "Coordinator sets scope",
+      "Independent helpers investigate",
+      "Implementation checks the change",
+      "Independent candidate review when required"
+    ],
+    "gif": "assets/delegation.gif",
+    "static": "assets/delegation.png",
+    "width": 1080,
+    "height": 420,
+    "frame_duration_ms": 2400,
+    "loop": true,
+    "semantic_content_identical_in_static": true
+  },
+  "adaptation": {
+    "title": "A portable core with local configuration",
+    "alt": "Invariant stage contracts combine with organization policy and project facts. Runtime permissions, sandboxing, CI checks and adapters enforce the configured boundaries.",
+    "caption": "Keep the core portable. Configure organization policy and project facts, then enforce boundaries through runtime controls and tool adapters.",
+    "frames": [
+      "Invariant core",
+      "Organization policy",
+      "Project facts",
+      "Runtime enforcement and adapters"
+    ],
+    "gif": "assets/adaptation.gif",
+    "static": "assets/adaptation.png",
+    "width": 1080,
+    "height": 420,
+    "frame_duration_ms": 2400,
+    "loop": true,
+    "semantic_content_identical_in_static": true
+  }
+}

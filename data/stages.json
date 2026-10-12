@@ -1,0 +1,513 @@
+[
+  {
+    "id": "govern",
+    "name": "Govern & enable",
+    "number": "00",
+    "question": "What may AI do, with which data and authority?",
+    "summary": "Establish the operating agreement before giving an agent tools, credentials or organizational context.",
+    "skills": [
+      "Policy resolution",
+      "Data classification",
+      "Tool and model assessment",
+      "Agent evaluation"
+    ],
+    "activities": [
+      "Inventory systems, stakeholders, data classes, applicable obligations and AI use cases; distinguish AI assisting delivery from AI embedded in the product.",
+      "Map human accountability, permitted models, retention, residency, training use and vendor terms. Record unresolved decisions and policy precedence.",
+      "Define least-privilege tool access, sandbox boundaries, network destinations, budgets, audit evidence and emergency shutdown; evaluate the smallest useful workflow first.",
+      "Name the authoritative system, record identifier and acceptance owner for each artifact type. Keep mirrored Markdown linked to its source revision. Separate advisory policies from tested pre-action enforcement, and configure routine permissions and consequential approvals according to actual risk."
+    ],
+    "inputs": [
+      "Business objectives and system inventory",
+      "Organization policies and risk appetite",
+      "Provider and tool terms"
+    ],
+    "outputs": [
+      "Approved organization and project profiles",
+      "Risk and responsibility register",
+      "Versioned tool inventory and baseline evaluation set"
+    ],
+    "gate": "A named owner has accepted the scope and risk. Sensitive data use and consequential tool actions have explicit authorization; unresolved critical policy fields block those actions.",
+    "human": "Engineering owner + security/privacy owner",
+    "configure": [
+      "org.roles",
+      "org.data",
+      "org.ai",
+      "org.tools",
+      "org.assurance",
+      "project.context"
+    ],
+    "metrics": [
+      "Policy exceptions with owners and expiry",
+      "Agent task success and cost per accepted outcome"
+    ],
+    "failure": "A confident agent or a policy file is not an enforcement boundary. Apply permissions in the actual runner and CI/CD platform.",
+    "placement": "Cross-cutting governance (toolkit grouping)"
+  },
+  {
+    "id": "discover",
+    "name": "Discover & frame",
+    "number": "01",
+    "question": "Whose problem is worth solving?",
+    "summary": "Use AI to organize evidence and explore options while keeping people and observed needs at the center.",
+    "skills": [
+      "Stakeholder synthesis",
+      "Problem framing",
+      "Feasibility assessment",
+      "Baseline measurement"
+    ],
+    "activities": [
+      "Gather user research, support signals and process constraints with provenance and consent. Separate observations, assumptions and generated suggestions.",
+      "Compare build, buy, reuse and no-change options; check accessibility, operational burden, cost and organizational readiness.",
+      "Define a measurable outcome, affected users, exclusions and the smallest useful experiment. Identify safety or business-critical consequences early."
+    ],
+    "inputs": [
+      "Authorized research and existing service data",
+      "Strategy and constraints"
+    ],
+    "outputs": [
+      "Problem/intent record with provenance, author corrections and acceptance status",
+      "Stakeholder map and assumptions log",
+      "Success baseline and experiment proposal"
+    ],
+    "gate": "The product owner accepts the problem, target users, success measure and explicit scope; uncertain assumptions have a validation plan.",
+    "human": "Product owner + representative users",
+    "configure": [
+      "org.roles",
+      "org.data",
+      "project.product",
+      "project.risk"
+    ],
+    "metrics": [
+      "Validated versus unresolved assumptions",
+      "Baseline user outcome"
+    ],
+    "failure": "Generated personas, market statements or interviews cannot substitute for evidence from real users.",
+    "placement": "Plan"
+  },
+  {
+    "id": "specify",
+    "name": "Specify & validate",
+    "number": "02",
+    "question": "What observable behavior counts as success?",
+    "summary": "Turn the problem into testable requirements, including failure behavior and nonfunctional constraints.",
+    "skills": [
+      "Requirements engineering",
+      "Acceptance scenarios",
+      "Traceability",
+      "Data and privacy requirements"
+    ],
+    "activities": [
+      "Write functional requirements with stable identifiers, positive/negative scenarios, edge cases and non-goals. Clarify ambiguity with the relevant owner.",
+      "Define accessibility, security, privacy, performance, availability, cost and recovery requirements proportional to the system's risk.",
+      "Map each requirement to its source and planned verification. For AI product features add behavior boundaries, evaluation data provenance, uncertainty and fallback behavior.",
+      "Keep the requirements and design evidence linked to the same accepted intent. They may be developed together; separate skill modules do not require separate meetings, documents or approvals."
+    ],
+    "inputs": [
+      "Accepted problem brief",
+      "Existing contracts and policies"
+    ],
+    "outputs": [
+      "Versioned specification",
+      "Acceptance scenarios and traceability matrix",
+      "Open decisions and requirement change log"
+    ],
+    "gate": "Requirements are testable and scoped; unresolved decisions affecting safety, privacy or irreversible behavior are resolved by their owners.",
+    "human": "Product owner + technical owner",
+    "configure": [
+      "org.assurance",
+      "project.product",
+      "project.quality",
+      "project.context"
+    ],
+    "metrics": [
+      "Requirements with verification coverage",
+      "Requirement churn and ambiguity discovered late"
+    ],
+    "failure": "Do not invent missing business rules or silently convert suggestions into approved requirements.",
+    "placement": "Design"
+  },
+  {
+    "id": "design",
+    "name": "Design & assess",
+    "number": "03",
+    "question": "How will the system work and fail safely?",
+    "summary": "Explore alternatives, document tradeoffs and expose trust boundaries before implementation.",
+    "skills": [
+      "Architecture decisions",
+      "Threat modeling",
+      "Interface and data design",
+      "Usability prototyping"
+    ],
+    "activities": [
+      "Inspect the actual system and constraints. Compare a small set of designs for maintainability, performance, cost, operability and reversibility.",
+      "Define interfaces, data flows, authorization boundaries, schemas, migrations, error states and dependencies. Review software licenses and supply-chain exposure.",
+      "Threat-model external content, retrieval, tools, secrets and agents. Prototype critical user journeys including keyboard, assistive technology and recovery from mistakes.",
+      "Check the proposed design against the originating need and resolve flagged policy conflicts with their owners. Record the accepted specification revision for implementation, retaining links to an existing requirements system when it is authoritative."
+    ],
+    "inputs": [
+      "Specification and existing architecture",
+      "Dependency inventory and trust boundaries"
+    ],
+    "outputs": [
+      "Architecture decision records and diagrams",
+      "Threat model and abuse cases",
+      "Interface contracts and usability findings"
+    ],
+    "gate": "Applicable design reviewers accept the relevant decisions under organization policy, with recorded tradeoffs, remediation owners and any needed migration or recovery strategy.",
+    "human": "Technical owner + security reviewer + design owner",
+    "configure": [
+      "org.tools",
+      "org.data",
+      "org.assurance",
+      "project.architecture",
+      "project.risk"
+    ],
+    "metrics": [
+      "High-impact design risks unresolved",
+      "Critical journeys validated with users"
+    ],
+    "failure": "A diagram or AI critique is not proof of a security control. Link risks to implementation and verification.",
+    "placement": "Design"
+  },
+  {
+    "id": "plan",
+    "name": "Plan implementation & delegate",
+    "number": "04",
+    "question": "What is the smallest verifiable unit of work?",
+    "summary": "Resolve how an accepted change will be implemented, then create bounded tasks and verification evidence.",
+    "skills": [
+      "Work decomposition",
+      "Dependency planning",
+      "Context packaging",
+      "Bounded agent orchestration"
+    ],
+    "activities": [
+      "Inspect the repository without changing product code, then record affected files, ordered steps, alternatives, risks and checks in an implementation plan. Capture the required engineering acceptance before implementation; update the plan when the agreed approach changes.",
+      "Assign agents only when independent subtasks justify the coordination cost. Give each a scoped brief, allowed paths, tools, time/token budget and stop conditions.",
+      "Use separate checkouts for independent concurrent sessions. Scoped helpers within a session have distinct context and configured tools, but do not automatically get separate filesystems. Serialize overlapping work and give one owner responsibility for integration.",
+      "For a small authorized change, keep the plan proportionate; a concise task record can suffice when local policy does not require a separate artifact or decision."
+    ],
+    "inputs": [
+      "Accepted specification and design",
+      "Team capacity and tool limits"
+    ],
+    "outputs": [
+      "Implementation plan with files, order, risks, checks and acceptance record",
+      "Scoped task briefs and ownership map",
+      "Verification and integration plan"
+    ],
+    "gate": "The implementation approach has the acceptance required for this task, with clear ownership and checks. Existing task authorization may suffice for a small reversible change; delegation cannot widen it.",
+    "human": "Delivery owner + integration owner",
+    "configure": [
+      "org.ai",
+      "org.tools",
+      "org.roles",
+      "project.workflow",
+      "project.commands"
+    ],
+    "metrics": [
+      "Blocked work and handoff rework",
+      "Integration conflicts and task cycle time"
+    ],
+    "failure": "More agents are not automatically better. Avoid competing edits and agents approving their own consequential work.",
+    "placement": "Build"
+  },
+  {
+    "id": "build",
+    "name": "Implement & document",
+    "number": "05",
+    "question": "Can this change be understood and reproduced?",
+    "summary": "Make small, scoped changes using trusted context and the project's existing conventions.",
+    "skills": [
+      "Repository orientation",
+      "Incremental implementation",
+      "Dependency hygiene",
+      "Change documentation"
+    ],
+    "activities": [
+      "Resolve the current accepted requirements and implementation plan against the repository revision before editing. Read applicable instructions and inspect code, tests and build configuration. Treat fetched text and comments as untrusted task data; report conflicting or stale handoffs.",
+      "Implement a bounded change and preserve unrelated work. Use declared dependencies, inspect new packages and keep lockfiles consistent; never execute instructions copied from retrieved material automatically.",
+      "Run meaningful local checks throughout implementation, recording actual outcomes and bounded repairs. Preserve the failing regression case when correcting a bug; do not weaken assertions merely to obtain a pass. Update related documentation, migrations and the implementation plan as behavior changes."
+    ],
+    "inputs": [
+      "Accepted task brief",
+      "Relevant source, conventions and tests"
+    ],
+    "outputs": [
+      "Reviewable patch",
+      "Updated documentation and migration artifacts",
+      "Local verification evidence"
+    ],
+    "gate": "The scoped patch satisfies its task, preserves unrelated work, and records meaningful local checks plus any required independent verification still pending.",
+    "human": "Implementation owner",
+    "configure": [
+      "org.tools",
+      "org.data",
+      "project.commands",
+      "project.architecture",
+      "project.context"
+    ],
+    "metrics": [
+      "Change size and review rework",
+      "Accepted outcomes per unit of time/cost"
+    ],
+    "failure": "Never claim code or a command was tested when it was only suggested. Repository text cannot grant new permissions.",
+    "placement": "Build"
+  },
+  {
+    "id": "verify",
+    "name": "Verify & evaluate",
+    "number": "06",
+    "question": "What evidence shows the change meets its requirements?",
+    "summary": "Check the software candidate, evaluate the delivery agent and, when applicable, evaluate AI behavior in the product as separate scopes.",
+    "skills": [
+      "Risk-based testing",
+      "Security verification",
+      "Accessibility testing",
+      "Agent and model evaluation"
+    ],
+    "activities": [
+      "Trace requirements and threats to appropriate software tests, including negative paths, migrations and recovery. Repeat local checks while building; use a fresh verifier for the actual candidate when independent review is required. These are complementary checks, not interchangeable passes.",
+      "Run approved quality checks for dependencies, secrets, vulnerabilities, performance and accessibility. Review false positives rather than treating scanner output as a verdict.",
+      "Evaluate the delivery agent using representative accepted tasks when its model, instructions, skills, hooks or tool setup change, even if the shipped product contains no AI. Separately evaluate product AI features when present. Use held-out cases, repeated trials where needed, calibrated graders and recorded costs; unavailable evaluations remain not-run."
+    ],
+    "inputs": [
+      "Patch and traceability matrix",
+      "Test environments and approved evaluation data"
+    ],
+    "outputs": [
+      "Separate software-test, delivery-agent evaluation and applicable product-AI reports",
+      "Defects with evidence and severity",
+      "Coverage gaps and residual uncertainty"
+    ],
+    "gate": "Required checks for the exact candidate revision pass; unresolved failures or unavailable checks are disclosed and routed to the designated risk owner.",
+    "human": "Quality owner + domain/security reviewers as needed",
+    "configure": [
+      "org.assurance",
+      "org.data",
+      "project.commands",
+      "project.quality",
+      "project.risk"
+    ],
+    "metrics": [
+      "Escaped defects and flaky checks",
+      "Task success distribution, tool misuse and cost"
+    ],
+    "failure": "Passing generated tests is insufficient if they encode the same mistaken assumption as the implementation.",
+    "placement": "Test"
+  },
+  {
+    "id": "review",
+    "name": "Review & accept",
+    "number": "07",
+    "question": "Has someone independent assessed the actual change?",
+    "summary": "Combine technical, security and usability review with accountable acceptance of residual risk.",
+    "skills": [
+      "Evidence-based code review",
+      "Security review",
+      "Usability review",
+      "Risk acceptance"
+    ],
+    "activities": [
+      "Review the actual candidate diff against accepted requirements, design and implementation plan. Use scoped passes for correctness, security and local policy, distinguishing substantive findings from optional style suggestions. Check authorization, data handling, dependencies and failure behavior.",
+      "Walk critical user journeys with realistic tasks. Check keyboard use, focus, language, empty/error states, responsive layouts and assistive technology where applicable.",
+      "Record evidence, severity, owner and disposition for each finding. Fix supported defects within scope, rerun affected checks and record any plan changes. Apply the organization's configured human-review requirements and risk thresholds; an agent finding is neither an approval nor an automatic merge veto."
+    ],
+    "inputs": [
+      "Candidate patch and test evidence",
+      "Threat model and user journeys"
+    ],
+    "outputs": [
+      "Review findings and remediation evidence",
+      "Explicit acceptance tied to the candidate revision",
+      "Updated documentation and known limitations"
+    ],
+    "gate": "Required checks and configured independent reviews cover the exact revision. Route unresolved risks to their designated owner; record actual acceptance separately and reuse existing valid authorization.",
+    "human": "Independent reviewer + accountable risk owner",
+    "configure": [
+      "org.roles",
+      "org.assurance",
+      "project.workflow",
+      "project.risk"
+    ],
+    "metrics": [
+      "Review lead time and actionable findings",
+      "Repeated defect patterns"
+    ],
+    "failure": "Review is invalidated by relevant changes after approval. A checklist alone does not establish acceptance.",
+    "placement": "Deploy"
+  },
+  {
+    "id": "release",
+    "name": "Release & transition",
+    "number": "08",
+    "question": "Can we deploy, observe and reverse this exact artifact?",
+    "summary": "Move a verified artifact through a controlled release with clear operational ownership.",
+    "skills": [
+      "Release readiness",
+      "Artifact provenance",
+      "Migration planning",
+      "Rollback rehearsal"
+    ],
+    "activities": [
+      "Bind approval and checks to the exact commit and immutable artifact. Record dependencies, provenance, release notes and required license notices.",
+      "Verify environment configuration, secrets handling, migration compatibility, backup/restore and rollback or roll-forward steps. Destructive migrations may require recovery from backup, not a code rollback.",
+      "Prepare staged rollout criteria, health signals, on-call ownership, communication and stop conditions. Perform external deployment only within existing authorization and configured platform controls.",
+      "Before enabling unattended execution, test real enforcement for the exact environment and tool paths, including timeouts and hook errors. A prompt, command-name substring or editable approval flag is insufficient authorization. Keep production credentials out of ordinary build jobs.",
+      "For a preparation-only request, deliver the release plan and unresolved readiness evidence. Mark deployment, recovery rehearsal and handover not-run when not performed; their absence does not justify inventing an execution record or publishing anything."
+    ],
+    "inputs": [
+      "Accepted revision and immutable build",
+      "Release and recovery plans"
+    ],
+    "outputs": [
+      "Release evidence bundle",
+      "Deployment and migration record",
+      "Verified handover and rollback results"
+    ],
+    "gate": "Configured release checks and required owner decisions cover the exact artifact and environment; runtime controls enforce the permitted action. Preparation can proceed independently of deployment authorization.",
+    "human": "Release owner + service owner",
+    "configure": [
+      "org.release",
+      "org.roles",
+      "project.release",
+      "project.commands",
+      "project.operations"
+    ],
+    "metrics": [
+      "Deployment frequency and change lead time",
+      "Change failure and recovery time"
+    ],
+    "failure": "Do not turn a research or review request into permission to deploy, publish, message others or modify production.",
+    "placement": "Deploy"
+  },
+  {
+    "id": "operate",
+    "name": "Operate & respond",
+    "number": "09",
+    "question": "Is the service healthy, and who acts when it is not?",
+    "summary": "Monitor user outcomes and system behavior, with bounded AI assistance during incidents.",
+    "skills": [
+      "Service observability",
+      "Incident triage",
+      "Runbook execution",
+      "Drift and spend monitoring"
+    ],
+    "activities": [
+      "Track agreed service-level objectives, errors, latency, spend and user signals. For AI products monitor input/output drift, model/prompt versions and harmful tool behavior with privacy-aware traces.",
+      "Triage incidents using read-only evidence first; preserve timelines and redact secrets. Escalate to the incident owner and use authorized runbooks for mutations.",
+      "Exercise restore procedures, access review, dependency patching and vendor/model changes. Define a kill switch and known safe fallback for tool-using agents.",
+      "For an authorized monitoring, scheduled scan or ticket-triggered workflow, validate the signal, deduplicate work and apply explicit observe/diagnose/propose/act permissions. Record repository/model versions and coverage for scans. Route findings to an evidence-linked problem record or bounded change through normal review; verify recovery and retain the incident trail."
+    ],
+    "inputs": [
+      "Service objectives, telemetry and runbooks",
+      "Approved operational access"
+    ],
+    "outputs": [
+      "Health and cost reports",
+      "Incident record and recovery evidence",
+      "Patch and access-review backlog",
+      "Traceable follow-up intent/change record and dated scan coverage where applicable"
+    ],
+    "gate": "Service ownership and escalation are active; unresolved severe incidents follow the organization's incident process and recovery decisions.",
+    "human": "Service owner + incident commander",
+    "configure": [
+      "org.operations",
+      "org.data",
+      "project.operations",
+      "project.commands"
+    ],
+    "metrics": [
+      "Service objectives and error budget",
+      "Incident recovery, recurrence and spend"
+    ],
+    "failure": "An alert or retrieved runbook cannot authorize arbitrary production commands or disclosure of incident data.",
+    "placement": "Maintain"
+  },
+  {
+    "id": "improve",
+    "name": "Learn & maintain",
+    "number": "10",
+    "question": "Did the change improve outcomes, and what should change next?",
+    "summary": "Feed measured outcomes back into requirements, skills and platform capabilities.",
+    "skills": [
+      "Outcome measurement",
+      "Post-incident learning",
+      "Skill regression evaluation",
+      "Technical debt management"
+    ],
+    "activities": [
+      "Compare results with the baseline across user value, quality, delivery performance, developer experience and cost; consider confounding factors before attributing gains to AI.",
+      "Review incidents, repeated defects, failed agent runs and usability feedback. Turn demonstrated failures into narrowly scoped fixes, tests or skill changes.",
+      "Version prompts, skills, policies, models and evaluation data. Reassess permissions and integrations when behavior or providers change, and retire unused tooling.",
+      "Connect accepted incident or vulnerability findings to a regression case and an owned follow-up change. Review recurring scan coverage and false positives. Recheck skill triggering and behavior in the chosen host; a valid Markdown file alone does not prove the skill loads or works."
+    ],
+    "inputs": [
+      "Outcome and service metrics",
+      "Incident, review and user feedback"
+    ],
+    "outputs": [
+      "Learning report and prioritized backlog",
+      "Evaluated skill/policy updates",
+      "Maintenance and dependency upgrade plan"
+    ],
+    "gate": "Each proposed workflow change has an owner and an observable evaluation; high-impact changes repeat the relevant assurance stages.",
+    "human": "Product owner + engineering/service owner",
+    "configure": [
+      "org.ai",
+      "org.assurance",
+      "org.operations",
+      "project.product",
+      "project.quality"
+    ],
+    "metrics": [
+      "User outcome change and developer experience",
+      "Regression rate after skill or model updates"
+    ],
+    "failure": "Lines of code, agent count or suggestion acceptance alone do not establish improved delivery performance.",
+    "placement": "Maintain"
+  },
+  {
+    "id": "retire",
+    "name": "Retire & preserve",
+    "number": "11",
+    "question": "Can the service end without losing obligations or control?",
+    "summary": "Make decommissioning an explicit lifecycle activity with migration, retention and access closure.",
+    "skills": [
+      "Decommission planning",
+      "Data disposition",
+      "Dependency migration",
+      "Access revocation"
+    ],
+    "activities": [
+      "Inventory consumers, owners, integrations, data, backups, contracts, scheduled jobs, agent credentials and operational dependencies.",
+      "Plan user transition, export and compatibility windows. Resolve retention and legal-hold decisions with the designated owner before deleting any records.",
+      "Within explicit authorization, revoke access, disable jobs and integrations, archive required evidence and verify deletion or expiry where applicable, including vendor-held copies and backups."
+    ],
+    "inputs": [
+      "Approved retirement decision",
+      "Dependency inventory and retention obligations"
+    ],
+    "outputs": [
+      "Transition and decommission plan",
+      "Data disposition and access closure records",
+      "Archived decision and verification evidence"
+    ],
+    "gate": "Service and data owners accept transition and closure evidence; destructive actions have explicit scope and unresolved holds block deletion.",
+    "human": "Service owner + data/retention owner",
+    "configure": [
+      "org.data",
+      "org.operations",
+      "org.roles",
+      "project.retirement",
+      "project.operations"
+    ],
+    "metrics": [
+      "Residual credentials and scheduled jobs",
+      "Consumers migrated and disposition verified"
+    ],
+    "failure": "Deletion is not the default for every artifact. Preserve required evidence and distinguish active copies, backups and provider retention.",
+    "placement": "Retirement extension (toolkit addition)"
+  }
+]

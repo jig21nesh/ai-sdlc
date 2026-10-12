@@ -1,0 +1,15 @@
+{
+  "title": "Anthropic six-stage reference",
+  "source_id": "O15",
+  "mapping_note": "Stage names come from Anthropic; module assignments are this project's interpretation. Delivery sequence and practice-adoption dependencies are different views.",
+  "stages": [
+    {"id": "plan", "name": "Plan", "modules": ["discover"]},
+    {"id": "design", "name": "Design", "modules": ["specify", "design"]},
+    {"id": "build", "name": "Build", "modules": ["plan", "build"]},
+    {"id": "test", "name": "Test", "modules": ["verify"]},
+    {"id": "deploy", "name": "Deploy", "modules": ["review", "release"]},
+    {"id": "maintain", "name": "Maintain", "modules": ["operate", "improve"]}
+  ],
+  "cross_cutting": ["govern"],
+  "extensions": ["retire"]
+}

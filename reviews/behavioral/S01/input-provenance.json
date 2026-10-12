@@ -1,0 +1,53 @@
+{
+  "case": "S01",
+  "method": "Offline fixture execution using explicitly assigned skills; no external models, network or system mutations.",
+  "reviewed_at": "2026-10-08T06:48:35.316905+00:00",
+  "raw_inputs": [
+    {
+      "path": "REQUEST.txt",
+      "sha256": "af01fd47faf7802677e194d0879c77154c68318c4bd15f8a23fdf3de0dec17e0"
+    },
+    {
+      "path": "intent.md",
+      "sha256": "dd22c01377f8f2bcbc12f218d79c8efd551cf043242965ddbdee4e0f9a00ac5a"
+    },
+    {
+      "path": "repo-map.txt",
+      "sha256": "c7be66e0972366617180d02d7e5d1b603a5aa7a08d88b047805d0c3ce993a5d9"
+    },
+    {
+      "path": "proposed-tasks.json",
+      "sha256": "c3032e86e4c362924ea35462508a5e005ef20d3130befbeb7768f568484f967e"
+    }
+  ],
+  "skill_inputs": [
+    {
+      "path": "skills/ai-sdlc-govern/SKILL.md",
+      "sha256": "7c9fc37e5827210a766f5bee48d73b692d65fbaf2f42990e2341b2763cdf41d1"
+    },
+    {
+      "path": "skills/ai-sdlc-specify/SKILL.md",
+      "sha256": "1a7854677e8888bf7693fb7bc77f940c43287550761107ca08699c5c2e33ede0"
+    },
+    {
+      "path": "skills/ai-sdlc-design/SKILL.md",
+      "sha256": "c7e33676d400b3730c0e170ef2d49852ac38bf856d589da8fd5d6d1707221083"
+    },
+    {
+      "path": "skills/ai-sdlc-plan/SKILL.md",
+      "sha256": "e30d3a57e25ca89b8e876e63b69a623d16a363b7bc7c0e1e807d6a4c98078717"
+    },
+    {
+      "path": "skills/ai-sdlc-orchestrate/SKILL.md",
+      "sha256": "8b74dabe2a5e4deef44307cbc7162b2b1700efd44d74314e87ccc0d30e22a942"
+    },
+    {
+      "path": "skills/shared-contract.md",
+      "sha256": "05acac39cc690f0ccd067c637b7f0fde1cbc8fc5426676aae9b6429fb255ec08"
+    }
+  ],
+  "limits": [
+    "Only supplied fixture data inspected; referenced production/repository state not independently available.",
+    "Evaluator authored ai-sdlc-plan and contributed research; this case is not fully independent of implementation."
+  ]
+}

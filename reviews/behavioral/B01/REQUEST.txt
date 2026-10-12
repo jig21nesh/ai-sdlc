@@ -1,0 +1,1 @@
+Fix the invoice lookup so the accepted behavior holds, add meaningful regression coverage, and return the actual verification evidence. Work only in this fixture; preserve unrelated edits.

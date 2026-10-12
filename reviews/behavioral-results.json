@@ -1,0 +1,82 @@
+{
+  "reviewed_at": "2026-10-08",
+  "method": "Integrating agent inspected outputs; no benchmark or no-skill comparison",
+  "cases": [
+    {
+      "id": "B01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/B01/REPORT.md",
+      "report_sha256": "48998ddca49ffc3a0d32a0ddea23f1642bfe3bdbe8b42fe542de034fa1c59e33",
+      "retest_report": null
+    },
+    {
+      "id": "V01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/V01/REPORT.md",
+      "report_sha256": "3613722a3a492256eeb62e7d92f62326a0838ab4b188b5a8fd51ab881c4bd602",
+      "retest_report": null
+    },
+    {
+      "id": "R01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/R01/REPORT.md",
+      "report_sha256": "08909d3bea02e6c35ff6b95f9dae997423c7151da254ec7ea16139899f8a809f",
+      "retest_report": null
+    },
+    {
+      "id": "G01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/G01/REPORT.md",
+      "report_sha256": "b2f91295257ca26bfa1fec28f2d4e4f115de75aef75cedb9819e38c698a466e8",
+      "retest_report": null
+    },
+    {
+      "id": "E01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/E01/REPORT.md",
+      "report_sha256": "e010db0a23a7c3e2262155b03eb2623db02283020d19b3e91878a32d9ad0e164",
+      "retest_report": null
+    },
+    {
+      "id": "P01",
+      "result": "passed-after-portability-repair",
+      "report": "reviews/behavioral/P01/REPORT.md",
+      "report_sha256": "df348d845710809b0f7067f17d7887968a40865c9876350119ecd67b15e07f21",
+      "retest_report": "reviews/behavioral/P01-rerun/REPORT.md"
+    },
+    {
+      "id": "O01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/O01/REPORT.md",
+      "report_sha256": "04ce2b442955ad594cd8b0c64de48f029d70de2e615d63ed4cb6812a8d1f1abb",
+      "retest_report": null
+    },
+    {
+      "id": "S01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/S01/REPORT.md",
+      "report_sha256": "b54efe184aab677d401b27c74b96082f6dafcf32459ad71d71fd057e6e691fba",
+      "retest_report": null
+    },
+    {
+      "id": "U01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/U01/REPORT.md",
+      "report_sha256": "b0f61114ff9e0d4426566807f3fa8f0f034fa6ee2279991dc445fa18a86b91cf",
+      "retest_report": null
+    },
+    {
+      "id": "C01",
+      "result": "observed-contract-satisfied",
+      "report": "reviews/behavioral/C01/REPORT.md",
+      "report_sha256": "fd54b4539d6b541ac4120bf60b7956c717118516bf2ffb6a438e3c8e895fe13a",
+      "retest_report": null
+    }
+  ],
+  "integrator_rechecks": {
+    "B01": "python3 -B -m unittest -v: 4 passed",
+    "C01": "python3 -B -m unittest -v: 3 passed",
+    "P01-initial-and-rerun": "Both generated skills passed official quick_validate using existing PyYAML interpreter",
+    "policy_source": "Changed ai-sdlc-policy-skills passed quick_validate after repair"
+  }
+}

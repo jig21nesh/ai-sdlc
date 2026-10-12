@@ -1,0 +1,1 @@
+Assess whether candidate rev-B is verified for release using these raw records. Produce a verification report; no service access is available.

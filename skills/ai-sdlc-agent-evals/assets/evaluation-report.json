@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "template_only": true,
+  "plan_ref": null,
+  "scope": null,
+  "candidate_identity": null,
+  "baseline_identity": null,
+  "runs": [
+    {
+      "case_id": null,
+      "arm": null,
+      "trial": null,
+      "status": "not-run",
+      "invalid_reason": null,
+      "artifact_refs": [],
+      "trace_ref": null,
+      "environment_ref": null,
+      "assertions": [
+        {
+          "id": null,
+          "status": "not-run",
+          "evidence_ref": null
+        }
+      ],
+      "forbidden_actions": [],
+      "measurements": {
+        "duration_seconds": null,
+        "total_tokens": null,
+        "cost_usd": null
+      },
+      "measurement_gaps": []
+    }
+  ],
+  "metrics_by_scope": {},
+  "comparison_limitations": [],
+  "grader_findings": [],
+  "final_suite": {
+    "candidate_frozen_ref": null,
+    "access_log_ref": null,
+    "contaminated": null
+  },
+  "evidence_status": "not-run",
+  "owner_decision": {
+    "status": "pending",
+    "owner": null,
+    "reference": null
+  },
+  "next_action": null
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "template_only": true,
+  "scope": null,
+  "candidate": {
+    "artifact_ref": null,
+    "revision_or_digest": null,
+    "skill_version": null,
+    "prompt_version": null,
+    "model_id": null,
+    "host_version": null,
+    "tool_versions": {}
+  },
+  "baseline": {
+    "mode": null,
+    "artifact_ref": null,
+    "revision_or_digest": null,
+    "reason": null
+  },
+  "fixtures": [
+    {
+      "case_id": null,
+      "input_refs": [],
+      "input_digests": [],
+      "provenance_ref": null,
+      "data_class": null,
+      "expected_artifacts": [],
+      "assertions": [],
+      "prohibited_actions": [],
+      "reset_ref": null
+    }
+  ],
+  "splits": {
+    "tuning": [],
+    "validation": [],
+    "unexposed_final_ref": null,
+    "final_access_owner": null,
+    "contamination_status": "unknown"
+  },
+  "runtime": {
+    "adapter_ref": null,
+    "settings_ref": null,
+    "permission_ref": null,
+    "provider_origins": [],
+    "workspace_isolation": null,
+    "trials_per_case": null,
+    "max_seconds": null,
+    "max_cost_usd": null
+  },
+  "criteria": {
+    "metrics": [],
+    "invariants": [],
+    "grader_ref": null,
+    "grader_calibration_ref": null,
+    "promotion_rule_ref": null,
+    "frozen_at": null
+  },
+  "authority": {
+    "task_ref": null,
+    "allowed_effects": [],
+    "acceptance_owner": null
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "example_only": true,
+  "task_id": "example-security-review",
+  "role": "security-reviewer",
+  "objective": "Review the supplied candidate skill bundle for permission escalation and unsafe evidence handling.",
+  "stage": "review",
+  "stage_field_meaning": "Legacy field containing the toolkit work-module ID",
+  "reference_stage": "Deploy",
+  "candidate": {
+    "revision": null,
+    "artifact_digest": null,
+    "required_before_verdict": true
+  },
+  "authorization": {
+    "parent_request_reference": null,
+    "owner": null,
+    "scope": "Read-only local review and a report in the assigned output path.",
+    "production_mutations": false,
+    "external_messages": false,
+    "new_permissions": false,
+    "example_grants_no_authority": true
+  },
+  "inputs": {
+    "accepted_requirements": [],
+    "candidate_paths": ["skills/", "agents/"],
+    "organization_profile": null,
+    "project_profile": null,
+    "evidence_paths": [],
+    "sensitive_data": "Use sanitized fixtures; do not include secrets or unrelated personal data."
+  },
+  "scope": {
+    "read_paths": ["skills/", "agents/", "config/", "research/"],
+    "write_paths": ["reviews/security-findings.md"],
+    "allowed_tools": ["local-read", "local-search", "write-assigned-report"],
+    "network_destinations": [],
+    "capabilities_require_runtime_enforcement": true
+  },
+  "budget": {
+    "max_minutes": 20,
+    "max_tokens": 12000,
+    "max_repair_attempts": 2,
+    "runtime_must_enforce_limits_if_available": true
+  },
+  "expected_outputs": [
+    "Findings with path, severity, reproduction evidence, impact and proposed correction",
+    "Actual checks run, untested areas and residual risk",
+    "Status tied to the reviewed revision and requested owner decisions"
+  ],
+  "acceptance_criteria": [
+    "Candidate identity is recorded before a final verdict",
+    "Every finding distinguishes observed behavior from hypothesis",
+    "No live security testing, external messages or scope expansion occurs"
+  ],
+  "independence": {
+    "producer_identity": null,
+    "reviewer_identity": null,
+    "reviewer_must_differ_from_producer": true,
+    "high_risk_acceptance_owner": null,
+    "acceptance_status": "pending"
+  },
+  "stop_conditions": [
+    "Requested action exceeds actual user authorization or runtime permissions",
+    "Secrets or sensitive data would leave the authorized boundary",
+    "Unexpected material harm, conflicting path ownership or exhausted budget",
+    "Two unsuccessful repair attempts on the same failure"
+  ],
+  "handoff": {
+    "evidence_status": "not-run",
+    "known_gaps": ["Example has no actual candidate, accepted profiles, identities or authorization reference."],
+    "next_owner": null
+  }
+}

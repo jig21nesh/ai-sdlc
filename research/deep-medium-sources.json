@@ -1,0 +1,566 @@
+[
+  {
+    "id": "DM01",
+    "title": "New Open-Source Context Specs Released",
+    "publisher": "Capital One Tech; Rico Romero, Komal Pandamaneti and Marseld Dedgjonaj",
+    "url": "https://medium.com/capital-one-tech/new-open-source-context-specs-released-1f65bfa9db9f",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-06-24",
+    "access": "full",
+    "summary": "The authors describe codebase-grounded slices, reusable domain context and per-slice checks. Parallel implementation follows dependencies.",
+    "supports": [
+      "Give each task a context manifest, base revision, dependency list and check contract; verify returned artifacts independently."
+    ],
+    "limitations": "Framework author account and promotion; no independent outcomes study. Agreement between reviewers is not proof. Full body reopened; repository is a newer mutable snapshot.",
+    "stages": [
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ],
+    "related_source_id": "M01",
+    "observation_kind": "framework-author report",
+    "phases": [
+      "design",
+      "build",
+      "test",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P04",
+      "DM-P05",
+      "DM-P12"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://github.com/capitalone/context-specs",
+        "supports": "Documents a reusable harness and project environments; does not establish safety."
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "supports": "Selective context and persistent notes are supported patterns."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Give each task a context manifest, base revision, dependency list and check contract; verify returned artifacts independently.",
+      "adaptation_question": "Which domain rules and verification commands are specific to this project?",
+      "failure_scenario": "A task runs after its dependency changes but uses stale file paths and assumptions."
+    }
+  },
+  {
+    "id": "DM02",
+    "title": "I Replaced My SDLC with AI Agents — Here’s the Framework That Actually Worked",
+    "publisher": "Brett Luelling / Medium",
+    "url": "https://medium.com/@brettluelling/i-replaced-my-sdlc-with-ai-agents-heres-the-framework-that-actually-worked-fcfbfa5e72d0",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-02-27",
+    "access": "full",
+    "summary": "The author separates structural artifact checks from critique and maintains decision records across role handoffs, with bounded revision attempts.",
+    "supports": [
+      "Validate required fields and trace links before content review; preserve unresolved questions and escalation state in every handoff."
+    ],
+    "limitations": "Self-report from one project. Performance and coverage claims excluded. Full body reopened; source scripts were not executed.",
+    "stages": [
+      "discover",
+      "specify",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ],
+    "related_source_id": "M02",
+    "observation_kind": "single-project retrospective",
+    "phases": [
+      "plan",
+      "design",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "practice_ids": [
+      "DM-P01",
+      "DM-P05"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "supports": "Supports explicit workflow gates and bounded evaluator loops."
+      },
+      {
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+        "supports": "Provides the six-stage framework and artifact handoff model."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Validate required fields and trace links before content review; preserve unresolved questions and escalation state in every handoff.",
+      "adaptation_question": "What record is authoritative, and who may accept the handoff?",
+      "failure_scenario": "A correctly formatted requirement contains untestable acceptance criteria and advances automatically."
+    }
+  },
+  {
+    "id": "DM03",
+    "title": "The New Engineering Stack: Specs, Context, and Agents",
+    "publisher": "Dave Patten / Medium",
+    "url": "https://medium.com/@dave-patten/the-new-engineering-stack-specs-context-and-agents-f3454529768e",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-02-18",
+    "access": "full",
+    "summary": "The article argues for explicit intent, nonfunctional constraints and persistent context instead of relying on a session conversation.",
+    "supports": [
+      "Separate facts, assumptions, nonfunctional constraints and unresolved decisions in the specification."
+    ],
+    "limitations": "General opinion rather than a detailed implementation evaluation. Full body reopened. No productivity claims or assertion that MCP enforces safety is adopted.",
+    "stages": [
+      "govern",
+      "specify",
+      "design",
+      "build",
+      "verify",
+      "improve"
+    ],
+    "related_source_id": "M03",
+    "observation_kind": "prescriptive practitioner opinion",
+    "phases": [
+      "plan",
+      "design",
+      "build"
+    ],
+    "practice_ids": [
+      "DM-P02",
+      "DM-P04"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "supports": "Supports context curation and durable notes."
+      },
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "supports": "Distinguishes contextual instructions from enforced configuration."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Separate facts, assumptions, nonfunctional constraints and unresolved decisions in the specification.",
+      "adaptation_question": "Which requirements need measurable thresholds and which sources establish them?",
+      "failure_scenario": "The agent invents a latency target and later reports compliance against its own assumption."
+    }
+  },
+  {
+    "id": "DM04",
+    "title": "Agentic Development Best Practices",
+    "publisher": "Paul Johnston / Medium",
+    "url": "https://pauldjohnston.medium.com/agentic-development-best-practices-0e23ab07c1f8",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-06-04",
+    "access": "full",
+    "summary": "The author proposes identifying governance versions, limiting autonomy and keeping humans accountable for consequential policy decisions.",
+    "supports": [
+      "Record effective policy revision and action authority; separate a proposed policy update from its adoption."
+    ],
+    "limitations": "Not a standard or proof of compliance. Full body reopened. Exact approval gates are local decisions; tests alone do not establish correctness.",
+    "stages": [
+      "govern",
+      "plan",
+      "review",
+      "release",
+      "operate",
+      "improve"
+    ],
+    "related_source_id": "M04",
+    "observation_kind": "governance proposal from practitioner experience",
+    "phases": [
+      "plan",
+      "design",
+      "build",
+      "test",
+      "deploy",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P08",
+      "DM-P12"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+        "supports": "Supports integrating secure practices into the lifecycle, not this exact approval model."
+      },
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "supports": "Confirms prose instructions are not hard enforcement."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Record effective policy revision and action authority; separate a proposed policy update from its adoption.",
+      "adaptation_question": "Which roles can authorize each action class, and how is that authority enforced?",
+      "failure_scenario": "An agent broadens its own permissions to resolve a failing workflow."
+    }
+  },
+  {
+    "id": "DM05",
+    "title": "Testing the Testers: How to Validate AI-Generated Automation Scripts",
+    "publisher": "Harsha Suraweera / Medium",
+    "url": "https://harshasuraweera.medium.com/testing-the-testers-how-to-validate-ai-generated-automation-scripts-aff225b1baca",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2025-12-22",
+    "access": "full",
+    "summary": "The author describes weak generated assertions and unrealistic data, then proposes test review and mutation testing.",
+    "supports": [
+      "Link assertions to intended behavior and use targeted negative, boundary or mutation checks where informative."
+    ],
+    "limitations": "Anecdotal numerical results excluded. Full body reopened. Mutation results are diagnostic evidence rather than a completeness guarantee.",
+    "stages": [
+      "specify",
+      "build",
+      "verify",
+      "review",
+      "improve"
+    ],
+    "related_source_id": "M05",
+    "observation_kind": "testing experience and advice",
+    "phases": [
+      "design",
+      "build",
+      "test"
+    ],
+    "practice_ids": [
+      "DM-P06"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://stryker-mutator.io/docs/",
+        "supports": "Defines mutation-testing mechanics and coverage limitations."
+      },
+      {
+        "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+        "supports": "Calls for reviewing test quality, not merely presence."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Link assertions to intended behavior and use targeted negative, boundary or mutation checks where informative.",
+      "adaptation_question": "Which critical behaviors need evidence that the test detects a defect?",
+      "failure_scenario": "Tests execute the changed branch but never assert the required response content."
+    }
+  },
+  {
+    "id": "DM06",
+    "title": "Shifting Observability Left in the SDLC",
+    "publisher": "DeveloperSteve / Lumigo on Medium",
+    "url": "https://medium.com/lumigo/shifting-observability-left-in-the-sdlc-43ce83695a49",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2024-01-11",
+    "access": "full",
+    "summary": "The article promotes adding telemetry while developing software, so deployments and troubleshooting have usable operational signals.",
+    "supports": [
+      "Treat signals, dashboards, alert ownership and data handling as explicit release artifacts."
+    ],
+    "limitations": "Vendor-associated and promotional; not an AI-delivery experiment. Full body reopened. No claimed improvement was independently measured.",
+    "stages": [
+      "design",
+      "build",
+      "verify",
+      "release",
+      "operate",
+      "improve"
+    ],
+    "related_source_id": "M06",
+    "observation_kind": "vendor-associated observability advocacy",
+    "phases": [
+      "design",
+      "build",
+      "test",
+      "deploy",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P10"
+    ],
+    "primary_corroboration": [
+      {
+        "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
+        "supports": "Documents instrumentation and vendor-neutral telemetry interfaces."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Treat signals, dashboards, alert ownership and data handling as explicit release artifacts.",
+      "adaptation_question": "Which signal proves user-visible health, and who owns its threshold and response?",
+      "failure_scenario": "A rollout passes synthetic health checks while a core user journey has no measured signal."
+    }
+  },
+  {
+    "id": "DM07",
+    "title": "Comparing 15 Spec-Driven Development Frameworks, Artifacts, and Decision Paths— SDD",
+    "publisher": "Jaroslaw Wasowski / Medium",
+    "url": "https://medium.com/@wasowski.jarek/comparing-15-spec-driven-development-frameworks-sdd-c052df529274",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-04-24",
+    "access": "partial",
+    "summary": "Only the introduction advertises a comparison of framework rigor and artifacts. The comparison body was unavailable.",
+    "supports": [],
+    "limitations": "Member-only boundary reconfirmed. Not used to choose a framework or design a skill; rankings, star counts and hidden matrix excluded.",
+    "stages": [
+      "govern",
+      "plan"
+    ],
+    "related_source_id": "M07",
+    "observation_kind": "member-only comparison lead",
+    "phases": [
+      "plan"
+    ],
+    "practice_ids": [],
+    "primary_corroboration": [],
+    "design_inference": {
+      "workflow_choice": "No implementation conclusion adopted from inaccessible comparison content.",
+      "adaptation_question": "Use primary project documentation to evaluate a candidate instead.",
+      "failure_scenario": "A framework is selected because an unread comparison appeared in search results."
+    }
+  },
+  {
+    "id": "DM08",
+    "title": "Beyond ‘It Works’: Why AI-Assisted Development Still Needs Architectural Discipline",
+    "publisher": "Hiraq Citra M / lifefunk on Medium",
+    "url": "https://medium.com/lifefunk/beyond-it-works-why-ai-assisted-development-still-needs-architectural-discipline-7a0b3d3f99ea",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2025-09-01",
+    "access": "full",
+    "summary": "Reflecting on an experimental project, the author distinguishes functional success from maintainable component boundaries and proposes documenting dependency direction, interfaces and change scenarios.",
+    "supports": [
+      "Add a boundary/dependency review and accepted ADR references to the design handoff."
+    ],
+    "limitations": "Full body accessible. Personal account; project implementation not independently audited. Broad productivity and model-capability assertions excluded.",
+    "stages": [
+      "specify",
+      "design",
+      "review"
+    ],
+    "phases": [
+      "design",
+      "build",
+      "deploy"
+    ],
+    "practice_ids": [
+      "DM-P03"
+    ],
+    "observation_kind": "single-project architecture retrospective",
+    "primary_corroboration": [
+      {
+        "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+        "supports": "Documents architecture decisions, context, consequences, ownership and accepted/superseded states."
+      },
+      {
+        "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+        "supports": "Includes system design, complexity and overall code health in review."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Add a boundary/dependency review and accepted ADR references to the design handoff.",
+      "adaptation_question": "Which boundaries are local architectural invariants, and when may a decision be superseded?",
+      "failure_scenario": "A feature passes tests while coupling a shared domain module to one user interface."
+    }
+  },
+  {
+    "id": "DM09",
+    "title": "I Audited My Own Test Suite for AI-Generated Code. 22% of My Tests Were Not Written by My Team and Three of Them Were Hiding a Production-Ready Bug.",
+    "publisher": "Prrammod Dutta / Medium",
+    "url": "https://scrolltest.medium.com/i-audited-my-own-test-suite-for-ai-generated-code-baac8a69fd13",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-03-20",
+    "access": "full",
+    "summary": "The author reports finding mocks where the team required an external sandbox integration. He attributes the mismatch to missing test-policy context.",
+    "supports": [
+      "Record required integration boundaries and allowed test doubles with reasons; report unavailable integration evidence explicitly."
+    ],
+    "limitations": "Full body accessible. Attribution and statistics are informal; cited study claims were not verified. Title preserves the published wording but its percentage is not adopted as evidence.",
+    "stages": [
+      "specify",
+      "build",
+      "verify",
+      "review"
+    ],
+    "phases": [
+      "design",
+      "build",
+      "test"
+    ],
+    "practice_ids": [
+      "DM-P07"
+    ],
+    "observation_kind": "informal two-project test audit and course promotion",
+    "primary_corroboration": [
+      {
+        "url": "https://testing.googleblog.com/2013/05/testing-on-toilet-dont-overuse-mocks.html?hl=sk",
+        "supports": "Explains how simulated dependency behavior can diverge from real implementations."
+      },
+      {
+        "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+        "supports": "Supports checking whether tests are useful and correctly scoped."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Record required integration boundaries and allowed test doubles with reasons; report unavailable integration evidence explicitly.",
+      "adaptation_question": "Which dependencies require real, hermetic, contract or approved sandbox tests?",
+      "failure_scenario": "An unavailable sandbox silently causes the agent to replace an integration check with a passing mock."
+    }
+  },
+  {
+    "id": "DM10",
+    "title": "Building an ECS Golden Path with Claude Code and AWS CDK",
+    "publisher": "Adrian Taut / ZAR Engineering on Medium",
+    "url": "https://medium.com/zar-engineering/building-an-ecs-golden-path-with-claude-code-and-aws-cdk-d4a580496801",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-01-20",
+    "access": "full",
+    "summary": "The team describes preserving deployed resource identity, previewing replacements and migrating incrementally. Lessons were packaged into a migration skill.",
+    "supports": [
+      "Require resource-identity analysis, a method-labelled deployment preview, rollback constraints and post-deployment evidence."
+    ],
+    "limitations": "Full body accessible. Internal implementation not audited. Echo-only warning hook is not enforcement. Current AWS documentation supersedes article snippets; no commands executed.",
+    "stages": [
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "review",
+      "release"
+    ],
+    "phases": [
+      "design",
+      "build",
+      "test",
+      "deploy"
+    ],
+    "practice_ids": [
+      "DM-P08",
+      "DM-P09"
+    ],
+    "observation_kind": "company infrastructure-migration retrospective",
+    "primary_corroboration": [
+      {
+        "url": "https://docs.aws.amazon.com/cdk/v2/guide/identifiers.html",
+        "supports": "Confirms logical-ID changes can cause resource replacement."
+      },
+      {
+        "url": "https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-diff.html",
+        "supports": "Documents diff methods, change-set side effects and fallback limitations."
+      },
+      {
+        "url": "https://code.claude.com/docs/en/hooks",
+        "supports": "Documents actual hook decision semantics; printed warnings are not blocking decisions."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Require resource-identity analysis, a method-labelled deployment preview, rollback constraints and post-deployment evidence.",
+      "adaptation_question": "Which adapter actions create remote state, and what identity/data must survive migration?",
+      "failure_scenario": "A harmless-looking refactor renames a stateful resource; unit tests pass but deployment replaces it."
+    }
+  },
+  {
+    "id": "DM11",
+    "title": "AI For Debugging Production Issues",
+    "publisher": "Nazar Boyko / Medium",
+    "url": "https://medium.com/@nazarboyko/ai-for-debugging-production-issues-411bdb21fe8d",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-06-14",
+    "access": "full",
+    "summary": "The article proposes structured telemetry, alternative diagnostic hypotheses, versioned runbooks and feedback from closed incidents rather than accepting a confident diagnosis.",
+    "supports": [
+      "Produce hypotheses with disconfirming checks, evidence windows and bounded authorized response; feed verified follow-up into intent."
+    ],
+    "limitations": "Full body accessible, dated explicitly on page. No controlled incident evaluation. Vendor speed claims and majority-vote correctness excluded. Read-only labels do not remove data-access or query-cost risks.",
+    "stages": [
+      "operate",
+      "improve",
+      "discover"
+    ],
+    "phases": [
+      "maintain",
+      "plan"
+    ],
+    "practice_ids": [
+      "DM-P11",
+      "DM-P12"
+    ],
+    "observation_kind": "prescriptive operational synthesis with vendor examples",
+    "primary_corroboration": [
+      {
+        "url": "https://sre.google/sre-book/effective-troubleshooting/",
+        "supports": "Supports hypothesis testing and choosing diagnostics with regard to system risk."
+      },
+      {
+        "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
+        "supports": "Documents telemetry signals and instrumentation."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Produce hypotheses with disconfirming checks, evidence windows and bounded authorized response; feed verified follow-up into intent.",
+      "adaptation_question": "What runbooks, query limits, sensitive-data rules and action authority apply to this service?",
+      "failure_scenario": "The agent treats a recurring historical diagnosis as fact and executes an unrelated remediation."
+    }
+  },
+  {
+    "id": "DM12",
+    "title": "A week with Claude Code: lessons, surprises and smarter workflows",
+    "publisher": "Ujjavala Singh / DiUS on Medium",
+    "url": "https://dius-au.medium.com/a-week-with-claude-code-lessons-surprises-and-smarter-workflows-47584eb55e8d",
+    "type": "practitioner",
+    "accessed": "2026-10-08",
+    "published": "2026-04-29 (Medium); article credits original publication 2025-09-10",
+    "access": "full",
+    "summary": "The author reports wrong-folder edits, excessive mocks and tooling-version mismatches, then adds scoped repository and legacy-system context.",
+    "supports": [
+      "Load relevant package ownership, version constraints and legacy behaviors; review lessons before promoting them into shared guidance."
+    ],
+    "limitations": "Full body accessible. Reprinted experience, not a tool comparison study. Custom command examples are not verified built-ins. Blanket staging and broad competing-product claims rejected.",
+    "stages": [
+      "discover",
+      "design",
+      "plan",
+      "build",
+      "verify",
+      "improve"
+    ],
+    "phases": [
+      "plan",
+      "design",
+      "build",
+      "test",
+      "maintain"
+    ],
+    "practice_ids": [
+      "DM-P04",
+      "DM-P12"
+    ],
+    "observation_kind": "company monorepo and legacy-code experience",
+    "primary_corroboration": [
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "supports": "Documents actual context-file loading and the distinction from enforced settings."
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "supports": "Supports selective relevant context rather than indiscriminate loading."
+      }
+    ],
+    "design_inference": {
+      "workflow_choice": "Load relevant package ownership, version constraints and legacy behaviors; review lessons before promoting them into shared guidance.",
+      "adaptation_question": "Which package and legacy constraints differ from the organization default?",
+      "failure_scenario": "A task stages unrelated user edits or applies a current API to a pinned older toolchain."
+    }
+  }
+]

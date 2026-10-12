@@ -1,0 +1,689 @@
+{
+  "schema_version": "2.0",
+  "reviewed_at": "2026-10-08",
+  "primary_reference": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+  "source_taxonomy": [
+    "Plan",
+    "Design",
+    "Build",
+    "Test",
+    "Deploy",
+    "Maintain"
+  ],
+  "scope_note": "Procedural skills and templates; runtime discovery, execution, authorization and scheduling require configured host adapters. Coverage maps source practices, not universal production readiness.",
+  "skills": [
+    {
+      "id": "ai-sdlc-govern",
+      "phase": "Cross-cutting",
+      "purpose": "Establish operating agreement",
+      "path": "skills/ai-sdlc-govern/SKILL.md",
+      "practice_ids": [
+        "canonical-records",
+        "managed-controls",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O01",
+        "O02",
+        "O08",
+        "O09",
+        "O15",
+        "DG05",
+        "DM04"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-govern/assets/operating-agreement.md"
+      ],
+      "organization_fields": [
+        "org.roles",
+        "org.data",
+        "org.ai",
+        "org.tools",
+        "org.assurance",
+        "org.release",
+        "org.operations"
+      ],
+      "project_fields": [
+        "project.context",
+        "project.workflow"
+      ],
+      "success_signals": [
+        "Pilot outcome versus baseline",
+        "Unresolved control decisions affecting the pilot"
+      ]
+    },
+    {
+      "id": "ai-sdlc-discover",
+      "phase": "Plan",
+      "purpose": "Capture evidence-bearing intent",
+      "path": "skills/ai-sdlc-discover/SKILL.md",
+      "practice_ids": [
+        "intent",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O02",
+        "DM02",
+        "DM11"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-discover/assets/intent.md"
+      ],
+      "organization_fields": [
+        "org.roles.product_owner",
+        "org.data"
+      ],
+      "project_fields": [
+        "project.product",
+        "project.risk",
+        "project.workflow.review_policy_ref"
+      ],
+      "success_signals": [
+        "Time to reviewable intent",
+        "Intent changes caused by misunderstanding"
+      ]
+    },
+    {
+      "id": "ai-sdlc-specify",
+      "phase": "Design",
+      "purpose": "Write combined requirements and design",
+      "path": "skills/ai-sdlc-specify/SKILL.md",
+      "practice_ids": [
+        "spec-design",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "DG01",
+        "DM03",
+        "DM09"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-specify/assets/spec.md"
+      ],
+      "organization_fields": [
+        "org.data",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.product",
+        "project.quality",
+        "project.architecture",
+        "project.workflow.review_policy_ref"
+      ],
+      "success_signals": [
+        "Requirement-to-acceptance coverage",
+        "Behavior rework after implementation begins"
+      ]
+    },
+    {
+      "id": "ai-sdlc-design",
+      "phase": "Design",
+      "purpose": "Resolve consequential architecture choices",
+      "path": "skills/ai-sdlc-design/SKILL.md",
+      "practice_ids": [
+        "spec-design"
+      ],
+      "evidence_ids": [
+        "O02",
+        "O11",
+        "DG02",
+        "DM08",
+        "DM10"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-design/assets/decision.md"
+      ],
+      "organization_fields": [
+        "org.data",
+        "org.tools"
+      ],
+      "project_fields": [
+        "project.architecture",
+        "project.risk",
+        "project.quality.performance_budgets_ref"
+      ],
+      "success_signals": [
+        "High-impact assumptions verified",
+        "Decision revisits and migration failures"
+      ]
+    },
+    {
+      "id": "ai-sdlc-plan",
+      "phase": "Build",
+      "purpose": "Prepare repository-grounded implementation plan",
+      "path": "skills/ai-sdlc-plan/SKILL.md",
+      "practice_ids": [
+        "implementation-plan",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "DG01",
+        "DG02",
+        "DM01",
+        "DM12"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-plan/assets/implementation-plan.md"
+      ],
+      "organization_fields": [
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.context",
+        "project.architecture",
+        "project.quality",
+        "project.workflow",
+        "project.commands"
+      ],
+      "success_signals": [
+        "Unmapped requirements and orphan tasks",
+        "Material plan deviations during implementation"
+      ]
+    },
+    {
+      "id": "ai-sdlc-build",
+      "phase": "Build",
+      "purpose": "Implement with a bounded feedback loop",
+      "path": "skills/ai-sdlc-build/SKILL.md",
+      "practice_ids": [
+        "implementation-plan",
+        "feedback-tests",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O07",
+        "DG01",
+        "DG02",
+        "DM12"
+      ],
+      "output_templates": [],
+      "organization_fields": [
+        "org.tools",
+        "org.data",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.context",
+        "project.commands",
+        "project.architecture",
+        "project.workflow"
+      ],
+      "success_signals": [
+        "Meaningful local check outcomes",
+        "Reopened defects and unintended changes"
+      ]
+    },
+    {
+      "id": "ai-sdlc-repository-context",
+      "phase": "Build",
+      "purpose": "Maintain verified repository instructions",
+      "path": "skills/ai-sdlc-repository-context/SKILL.md",
+      "practice_ids": [
+        "repo-context"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O04",
+        "DG01",
+        "DG02",
+        "DM12"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-repository-context/assets/context-change.md"
+      ],
+      "organization_fields": [
+        "org.data",
+        "org.tools"
+      ],
+      "project_fields": [
+        "project.context.instructions_paths",
+        "project.commands",
+        "project.architecture"
+      ],
+      "success_signals": [
+        "Recurring mistakes attributable to stale context",
+        "Verified versus unexecuted command knowledge"
+      ]
+    },
+    {
+      "id": "ai-sdlc-policy-skills",
+      "phase": "Build",
+      "purpose": "Translate owned policy into scoped skills",
+      "path": "skills/ai-sdlc-policy-skills/SKILL.md",
+      "practice_ids": [
+        "policy-skills"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O05",
+        "DG03",
+        "DM04"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-policy-skills/assets/policy-procedure.md"
+      ],
+      "organization_fields": [
+        "org.roles",
+        "org.assurance",
+        "org.ai.evaluation_policy_ref"
+      ],
+      "project_fields": [
+        "project.context.instructions_paths",
+        "project.quality.eval_suite_refs",
+        "project.workflow.review_policy_ref"
+      ],
+      "success_signals": [
+        "Selection precision and recall",
+        "Policy-case outcomes and unnecessary blocks"
+      ]
+    },
+    {
+      "id": "ai-sdlc-guardrails",
+      "phase": "Cross-cutting",
+      "purpose": "Design and test actual action controls",
+      "path": "skills/ai-sdlc-guardrails/SKILL.md",
+      "practice_ids": [
+        "autonomy",
+        "build-hooks",
+        "approval-hooks",
+        "managed-controls"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O16",
+        "O18",
+        "O09",
+        "DG05",
+        "DG04",
+        "DM10"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-guardrails/assets/control-assessment.md"
+      ],
+      "organization_fields": [
+        "org.tools",
+        "org.release",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.context.adapter_profile_ref",
+        "project.workflow",
+        "project.release"
+      ],
+      "success_signals": [
+        "Forbidden effects observed per exercised action path",
+        "Legitimate actions incorrectly blocked"
+      ]
+    },
+    {
+      "id": "ai-sdlc-orchestrate",
+      "phase": "Build",
+      "purpose": "Partition authorized parallel work",
+      "path": "skills/ai-sdlc-orchestrate/SKILL.md",
+      "practice_ids": [
+        "sessions-helpers",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O03",
+        "O17",
+        "DG01",
+        "DG02"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-orchestrate/assets/orchestration-ledger.json"
+      ],
+      "organization_fields": [
+        "org.tools"
+      ],
+      "project_fields": [
+        "project.context",
+        "project.workflow"
+      ],
+      "success_signals": [
+        "Conflicts and stale handoffs",
+        "Integration failures and total time/cost"
+      ]
+    },
+    {
+      "id": "ai-sdlc-verify",
+      "phase": "Test",
+      "purpose": "Independently verify candidate behavior",
+      "path": "skills/ai-sdlc-verify/SKILL.md",
+      "practice_ids": [
+        "feedback-tests",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O06",
+        "DG01",
+        "DG06",
+        "DM05",
+        "DM09"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-verify/assets/verification-report.md"
+      ],
+      "organization_fields": [
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.quality",
+        "project.commands",
+        "project.risk"
+      ],
+      "success_signals": [
+        "Critical behavior with current-candidate evidence",
+        "Defect escape and ineffective assertions"
+      ]
+    },
+    {
+      "id": "ai-sdlc-agent-evals",
+      "phase": "Test",
+      "purpose": "Evaluate delivery-agent configurations",
+      "path": "skills/ai-sdlc-agent-evals/SKILL.md",
+      "practice_ids": [
+        "agent-evals"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O06",
+        "DG03",
+        "DG06",
+        "DG07",
+        "DM05"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-agent-evals/assets/evaluation-plan.json",
+        "skills/ai-sdlc-agent-evals/assets/evaluation-report.json"
+      ],
+      "organization_fields": [
+        "org.ai.evaluation_policy_ref",
+        "org.tools",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.quality.eval_suite_refs",
+        "project.context"
+      ],
+      "success_signals": [
+        "Per-case outcome versus comparable baseline",
+        "Critical invariant violations and measured resources"
+      ]
+    },
+    {
+      "id": "ai-sdlc-review",
+      "phase": "Deploy",
+      "purpose": "Review changes or resolve review findings",
+      "path": "skills/ai-sdlc-review/SKILL.md",
+      "practice_ids": [
+        "pr-review",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O13",
+        "DG04",
+        "DG02",
+        "DM04"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-review/assets/review-record.json"
+      ],
+      "organization_fields": [
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.workflow.review_policy_ref",
+        "project.quality",
+        "project.context"
+      ],
+      "success_signals": [
+        "Supported findings, misses and false positives",
+        "Time to resolve material findings"
+      ]
+    },
+    {
+      "id": "ai-sdlc-release",
+      "phase": "Deploy",
+      "purpose": "Prepare CI and execute authorized releases",
+      "path": "skills/ai-sdlc-release/SKILL.md",
+      "practice_ids": [
+        "ci-delivery",
+        "approval-hooks",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O10",
+        "O11",
+        "DG04",
+        "DM10",
+        "DM06"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-release/assets/release-record.md"
+      ],
+      "organization_fields": [
+        "org.release",
+        "org.tools",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.release",
+        "project.commands",
+        "project.context.adapter_profile_ref",
+        "project.operations"
+      ],
+      "success_signals": [
+        "Change failures and recovery outcomes",
+        "Candidate-bound evidence completeness"
+      ]
+    },
+    {
+      "id": "ai-sdlc-operate",
+      "phase": "Maintain",
+      "purpose": "Triage events and authorized incidents",
+      "path": "skills/ai-sdlc-operate/SKILL.md",
+      "practice_ids": [
+        "trigger-intake",
+        "channel-intake",
+        "artifact-transitions"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O12",
+        "G08",
+        "DM11",
+        "DM06"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-operate/assets/incident-record.md"
+      ],
+      "organization_fields": [
+        "org.operations",
+        "org.tools",
+        "org.data"
+      ],
+      "project_fields": [
+        "project.operations",
+        "project.context.adapter_profile_ref",
+        "project.risk"
+      ],
+      "success_signals": [
+        "Time to supported diagnosis and verified recovery",
+        "Duplicate events and unintended actions"
+      ]
+    },
+    {
+      "id": "ai-sdlc-security-scanning",
+      "phase": "Maintain",
+      "purpose": "Scope recurring scans and triage findings",
+      "path": "skills/ai-sdlc-security-scanning/SKILL.md",
+      "practice_ids": [
+        "recurring-scans"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O07",
+        "O09",
+        "G06",
+        "DG04"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-security-scanning/assets/scan-record.md"
+      ],
+      "organization_fields": [
+        "org.assurance",
+        "org.operations",
+        "org.tools"
+      ],
+      "project_fields": [
+        "project.risk.threats_ref",
+        "project.operations",
+        "project.quality.security_verification_ref"
+      ],
+      "success_signals": [
+        "Coverage and unresolved supported findings",
+        "Time to validated fix and false-positive burden"
+      ]
+    },
+    {
+      "id": "ai-sdlc-improve",
+      "phase": "Maintain",
+      "purpose": "Improve practices from measured failures",
+      "path": "skills/ai-sdlc-improve/SKILL.md",
+      "practice_ids": [
+        "repo-context",
+        "policy-skills",
+        "agent-evals",
+        "trigger-intake"
+      ],
+      "evidence_ids": [
+        "O02",
+        "O06",
+        "O14",
+        "DG03",
+        "DG07",
+        "DM05",
+        "DM11"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-improve/assets/improvement-record.md"
+      ],
+      "organization_fields": [
+        "org.ai.evaluation_policy_ref",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.quality.eval_suite_refs",
+        "project.product.success_metrics",
+        "project.operations.slo_ref"
+      ],
+      "success_signals": [
+        "Recurrence and user/delivery outcome versus baseline",
+        "New failures or blocked ordinary work"
+      ]
+    },
+    {
+      "id": "ai-sdlc-security-review",
+      "phase": "Cross-cutting",
+      "purpose": "Review security across skills and runtime",
+      "path": "skills/ai-sdlc-security-review/SKILL.md",
+      "practice_ids": [
+        "managed-controls",
+        "build-hooks",
+        "approval-hooks",
+        "recurring-scans"
+      ],
+      "evidence_ids": [
+        "O07",
+        "O09",
+        "O16",
+        "DG05",
+        "DG04",
+        "DM04"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-security-review/assets/security-review.md"
+      ],
+      "organization_fields": [
+        "org.data",
+        "org.tools",
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.risk",
+        "project.architecture",
+        "project.quality.security_verification_ref"
+      ],
+      "success_signals": [
+        "Confirmed boundary defects and verified fixes",
+        "Unexamined high-impact surfaces"
+      ]
+    },
+    {
+      "id": "ai-sdlc-usability-review",
+      "phase": "Cross-cutting",
+      "purpose": "Review user journeys and adoption usability",
+      "path": "skills/ai-sdlc-usability-review/SKILL.md",
+      "practice_ids": [
+        "spec-design",
+        "pr-review"
+      ],
+      "evidence_ids": [
+        "O02",
+        "O13",
+        "DG01",
+        "DM08"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-usability-review/assets/usability-record.json"
+      ],
+      "organization_fields": [
+        "org.assurance"
+      ],
+      "project_fields": [
+        "project.product.accessibility_target",
+        "project.quality.accessibility_verification_ref",
+        "project.workflow"
+      ],
+      "success_signals": [
+        "Task completion and recovery errors",
+        "Unperformed accessibility/journey checks"
+      ]
+    },
+    {
+      "id": "ai-sdlc-retire",
+      "phase": "Extension",
+      "purpose": "Retire systems and agent workflows",
+      "path": "skills/ai-sdlc-retire/SKILL.md",
+      "practice_ids": [],
+      "evidence_ids": [
+        "O08"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-retire/assets/retirement-record.md"
+      ],
+      "organization_fields": [
+        "org.data",
+        "org.roles.retention_owner"
+      ],
+      "project_fields": [
+        "project.retirement",
+        "project.operations",
+        "project.architecture"
+      ],
+      "success_signals": [
+        "Unresolved consumers, jobs and credentials",
+        "Verified disposition versus outstanding holds"
+      ]
+    }
+  ]
+}

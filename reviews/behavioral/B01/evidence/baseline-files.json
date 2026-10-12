@@ -1,0 +1,11 @@
+{
+  "python": "3.14.5 (main, May 10 2026, 10:21:34) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "files": {
+    "SPEC.md": "c94a411ecff456018aa426d5fa1861b117901c353154ce870eedb617a9728bae",
+    "USER-NOTES.md": "9af346bc49c61d784d6c78de8755ee788943c8b898156c8ed52d0c8ee9f11ce6",
+    "invoices.py": "b3f5aa27e491e36b5cb705e7c73f556fb177ce802f680748197afdb8c0061175",
+    "test_invoices.py": "5a92615355cde5ce9c00e82a0542882bafe9d4ed6366de2ae3b664bea537c82c",
+    "REQUEST.txt": "d98d33209dc13a375bdc26a1d579c64d93dae13342dabacbda97164f0a86b140"
+  }
+}

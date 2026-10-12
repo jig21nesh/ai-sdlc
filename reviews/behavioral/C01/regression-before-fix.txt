@@ -1,0 +1,22 @@
+Command: python3 -B -m unittest -v
+Exit: 1
+test_empty (test_stats.StatsTests.test_empty) ... ERROR
+test_mixed_numbers (test_stats.StatsTests.test_mixed_numbers) ... ok
+test_nonempty (test_stats.StatsTests.test_nonempty) ... ok
+
+======================================================================
+ERROR: test_empty (test_stats.StatsTests.test_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/ai-sdlc-forward-20261008/C01/test_stats.py", line 10, in test_empty
+    self.assertEqual(mean([]), 0)
+                     ~~~~^^^^
+  File "/private/tmp/ai-sdlc-forward-20261008/C01/stats.py", line 2, in mean
+    return sum(values) / len(values)
+           ~~~~~~~~~~~~^~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+FAILED (errors=1)

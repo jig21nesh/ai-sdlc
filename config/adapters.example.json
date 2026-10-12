@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "profile_type": "adapter-reference-example",
+  "note": "Illustrative runtime mapping only; validate_profiles.py does not validate this file or load adapters. Never put credential values here.",
+  "adapters": {
+    "model": {
+      "implementation_ref": null,
+      "version_or_digest": null,
+      "configuration_ref": null,
+      "credential_reference": null,
+      "permission_policy_ref": null,
+      "conformance_evidence_ref": null
+    },
+    "source_control": {
+      "implementation_ref": null,
+      "version_or_digest": null,
+      "configuration_ref": null,
+      "credential_reference": null,
+      "permission_policy_ref": null,
+      "conformance_evidence_ref": null
+    },
+    "ci": {
+      "implementation_ref": null,
+      "version_or_digest": null,
+      "configuration_ref": null,
+      "credential_reference": null,
+      "permission_policy_ref": null,
+      "conformance_evidence_ref": null
+    },
+    "observability": {
+      "implementation_ref": null,
+      "version_or_digest": null,
+      "configuration_ref": null,
+      "credential_reference": null,
+      "permission_policy_ref": null,
+      "conformance_evidence_ref": null
+    },
+    "issue_tracking": {
+      "implementation_ref": null,
+      "version_or_digest": null,
+      "configuration_ref": null,
+      "credential_reference": null,
+      "permission_policy_ref": null,
+      "conformance_evidence_ref": null
+    },
+    "secret_store": {
+      "implementation_ref": null,
+      "version_or_digest": null,
+      "configuration_ref": null,
+      "credential_reference": null,
+      "permission_policy_ref": null,
+      "conformance_evidence_ref": null
+    }
+  }
+}

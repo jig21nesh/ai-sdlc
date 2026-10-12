@@ -1,0 +1,1 @@
+Policy REF-4 revision 7, owner Finance: Refunds above USD 500 require Finance acceptance for the exact refund record. At or below USD 500, support staff may act under their existing role authority. No full card details in logs. This policy does not apply to product catalog edits. Policy owner approval of newly derived skill is pending.

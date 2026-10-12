@@ -1,0 +1,40 @@
+{
+  "case": "U01",
+  "method": "Offline fixture execution using explicitly assigned skills; no external models, network or system mutations.",
+  "reviewed_at": "2026-10-08T06:48:35.317293+00:00",
+  "raw_inputs": [
+    {
+      "path": "REQUEST.txt",
+      "sha256": "6923e4335d4b3a3e27e03cdc9d8e02a1dfafdc9f539fcc402139ad357097e16b"
+    },
+    {
+      "path": "ONBOARDING.md",
+      "sha256": "dd1348c83fc30b9fbb0827170ab6c0b2685f8bdf5f86574a37224d22ae66c282"
+    },
+    {
+      "path": "runtime-facts.json",
+      "sha256": "622368fe01d54eb6fce6e1ea5daa48d701521580ce3f2f567d421b654a2ef04c"
+    }
+  ],
+  "skill_inputs": [
+    {
+      "path": "skills/ai-sdlc-usability-review/SKILL.md",
+      "sha256": "e1f7215285c108c6cab0e16b3aeff969752189991e0aed243b51275c31d43f76"
+    },
+    {
+      "path": "skills/ai-sdlc-security-scanning/SKILL.md",
+      "sha256": "023efffdd4d3048ffe5b67eae4e503bdf27d5f7baf9bed44eb1a9da4b7d9ba9b"
+    },
+    {
+      "path": "skills/ai-sdlc-retire/SKILL.md",
+      "sha256": "23f85da2d5e5efc1e3bdd3499f29dc828d2800869954823d0d07acd7cf0b20c0"
+    },
+    {
+      "path": "skills/shared-contract.md",
+      "sha256": "05acac39cc690f0ccd067c637b7f0fde1cbc8fc5426676aae9b6429fb255ec08"
+    }
+  ],
+  "limits": [
+    "Only supplied fixture data inspected; referenced production/repository state not independently available."
+  ]
+}

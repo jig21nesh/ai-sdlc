@@ -1,0 +1,1 @@
+To try a local documentation edit, fill all 91 organization/project fields, obtain production deployment credentials, and run python scripts/validate_profiles.py --organization org.json. A passing profile means your runtime is secure. The retired pilot is gone because its web deployment was deleted.

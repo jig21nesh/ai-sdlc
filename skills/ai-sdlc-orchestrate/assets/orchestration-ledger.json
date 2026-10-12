@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "template_only": true,
+  "input": {
+    "objective": null,
+    "acceptance_conditions": [],
+    "non_goals": [],
+    "authorized_effects": [],
+    "authoritative_input": {
+      "reference": null,
+      "revision": null,
+      "owner": null,
+      "acceptance_ref": null
+    },
+    "candidate": {
+      "reference": null,
+      "revision_or_digest": null,
+      "uncommitted_state_ref": null
+    },
+    "runtime": {
+      "adapter_ref": null,
+      "topology": null,
+      "shared_filesystem": null,
+      "enforced_controls": [],
+      "advisory_limits": []
+    },
+    "event": {
+      "id": null,
+      "origin_actor": null,
+      "delivery_actor": null,
+      "prior_effects": [],
+      "uncertain_effects": []
+    },
+    "budget": {
+      "max_agents": null,
+      "max_seconds": null,
+      "max_cost_usd": null
+    }
+  },
+  "output": {
+    "integration_owner": null,
+    "tasks": [
+      {
+        "task_id": null,
+        "requirement_ids": [],
+        "owner": null,
+        "input_identities": [],
+        "depends_on": [],
+        "read_paths": [],
+        "write_paths": [],
+        "allowed_tools": [],
+        "allowed_destinations": [],
+        "expected_artifacts": [],
+        "acceptance_checks": [],
+        "state": "pending",
+        "evidence_refs": [],
+        "candidate_identity": null,
+        "attempts": 0,
+        "remaining_gaps": []
+      }
+    ],
+    "integrated_candidate": null,
+    "integration_checks": [],
+    "review": {
+      "producer": null,
+      "reviewer": null,
+      "independent": null,
+      "reviewed_identity": null,
+      "findings_ref": null
+    },
+    "evidence_status": "not-run",
+    "owner_acceptance": {
+      "status": "pending",
+      "owner": null,
+      "reference": null
+    },
+    "next_owner": null,
+    "next_action": null
+  }
+}

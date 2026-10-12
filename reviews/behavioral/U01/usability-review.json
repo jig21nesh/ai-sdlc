@@ -1,0 +1,22 @@
+{
+  "mode": "static expert walkthrough",
+  "audience_basis": "Assumed first-time contributor making the requested bounded local documentation edit; no participant research supplied.",
+  "candidate": "ONBOARDING.md; exact digest in input-provenance.json",
+  "environment": {"browser_available": false, "validator_executable_supplied": false, "profiles_supplied": false},
+  "journeys": [
+    {"id": "J1", "goal": "Complete a bounded local documentation edit without unrelated setup", "steps": ["Read first instruction", "Inspect required fields and credentials", "Compare requirements to local task scope"], "expected": "Only task-relevant local setup is required", "observed": "All 91 fields and production deployment credentials are mandatory in the source instructions", "status": "fail", "evidence_method": "static text inspection"},
+    {"id": "J2", "goal": "Follow a supported configuration-validation example when profiles are needed", "steps": ["Read documented command", "Compare its option to runtime-facts.json.validator_options"], "expected": "Example uses an advertised option", "observed": "--organization is absent; supplied interface advertises --org, --project and --ready", "status": "fail", "evidence_method": "static interface comparison; no command executed"},
+    {"id": "J3", "goal": "Understand validation and retirement status correctly", "steps": ["Read claimed runtime-security and retirement conclusions", "Compare claims with supplied pilot inventory and known validation limits"], "expected": "Configuration, runtime assurance, deployment deletion and retirement closure are distinguished", "observed": "Instructions equate profile validation with runtime security and deployment deletion with closure despite unresolved residual assets", "status": "fail", "evidence_method": "static evidence comparison"}
+  ],
+  "findings": [
+    {"id": "U-F1", "severity": "substantial friction", "location": "ONBOARDING.md first sentence", "consequence": "The first bounded task appears to require organization-wide adoption", "correction": "Let contributors begin with task-relevant local instructions; collect additional policy decisions when relevant"},
+    {"id": "U-F2", "severity": "substantial friction", "location": "ONBOARDING.md production credential prerequisite", "consequence": "Contributors are directed to obtain sensitive access that the task does not need", "correction": "Remove this prerequisite from local documentation work"},
+    {"id": "U-F3", "severity": "blocked task", "location": "ONBOARDING.md validator example", "consequence": "The supplied interface does not support the documented flag", "correction": "Use --org and actual profile paths; include --project for a project profile when present; do not claim command execution"},
+    {"id": "U-F4", "severity": "substantial friction", "location": "ONBOARDING.md runtime security claim", "consequence": "Users may mistake a configuration result for tested runtime controls", "correction": "State the validator's scope and require separate evidence for runtime assurance"},
+    {"id": "U-F5", "severity": "substantial friction", "location": "ONBOARDING.md retirement claim", "consequence": "Residual automation, access and data obligations may be missed", "correction": "Report deployment deletion separately from pending retirement closure"}
+  ],
+  "draft_recheck": {"artifact": "ONBOARDING.proposed.md", "status": "pass", "method": "Static reread: removes all-fields/production prerequisites, uses advertised option names, names actual missing runtime checks and unresolved retirement assets", "producer_disclosure": "Reviewer authored the proposed revision; this is not independent final verification", "applied_to_source": false},
+  "unperformed": ["Actual validator invocation", "Browser rendering", "Keyboard navigation", "Mobile/reflow", "Screen-reader journey", "Representative user study", "Host skill routing"],
+  "evidence_status": "partial",
+  "owner_acceptance": "not provided"
+}
