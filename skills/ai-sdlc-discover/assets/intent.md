@@ -16,6 +16,15 @@ Measurement method and owner:
 | ID | Observation | Source and date | Access / confidence limit |
 | --- | --- | --- | --- |
 
+## Research and proposed first version
+Research performed, or why unnecessary/unavailable:
+Research record (when substantial):
+Existing alternatives / current workaround:
+Key findings and their effect on scope (evidence IDs):
+Proposed differentiation (label unvalidated hypotheses):
+Smallest useful first version:
+Demand / feasibility assumptions and next validation experiment:
+
 ## Boundaries
 In scope / out of scope:
 User-selected solution constraints:

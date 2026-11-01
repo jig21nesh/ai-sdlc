@@ -156,7 +156,7 @@ def build():
   <div class="eyebrow"><span></span> A practical, evidence-backed blueprint</div>
   <h1>AI across the <em>whole</em><br>software lifecycle.</h1>
   <p class="lead">Twenty reusable skills for the whole delivery loop, grounded in Anthropic’s playbook and detailed GitHub and Medium research. Choose a procedure, supply local context, and retain evidence of the result.</p>
-  <div class="hero-actions"><a class="button primary" href="#skills">Choose a skill</a><a class="button" href="research/SYNTHESIS.md">Read the analysis</a></div>
+  <div class="hero-actions"><a class="button primary" href="README.md#start-with-a-rough-product-idea">Start with an idea</a><a class="button" href="#skills">Choose a skill</a><a class="button" href="README.md#install-once-for-codex">Install for Codex</a></div>
   <div class="stats"><div><strong>6</strong><span>reference stages</span></div><div><strong>{len(skills)}</strong><span>portable skills</span></div><div><strong>{len(sources)}</strong><span>linked sources</span></div><div><strong>3</strong><span>animated explanations</span></div></div>
   <div class="scope-note"><strong>Scope:</strong> AI assisting software delivery, including evaluation of the delivery agent itself. Product AI adds a separate evaluation scope. Anthropic supplies the six-stage reference; our 12 work modules, configuration and controls are a broader synthesis. This is a guide, not an autonomous deployment system or compliance certification.</div>
 </section>
@@ -227,7 +227,7 @@ python3 scripts/validate_profiles.py \\
   <p class="section-lead">{esc(review['summary'])}</p>
   <div class="review-status"><span class="mini-label">IMPLEMENTATION REVIEW</span><h3>{esc(review['status'])}</h3>{review_checks}</div>
   <div class="split"><div><h3>Security review scope</h3><p>Prompt injection in source material, privilege escalation across agents, secrets and data exposure, configuration ambiguity, unsafe command execution, source integrity and the browser's external connections.</p><a href="reviews/deep-security-review.md">Read security findings</a></div><div><h3>Usability review scope</h3><p>First-use guidance, discoverability, mobile layout, keyboard navigation, focus, readable source limitations, reduced motion and the difference between a template and an enforced runtime control.</p><a href="reviews/deep-usability-review.md">Read usability findings</a></div></div>
-  <p class="small">The <a href="reviews/deep-validation.md">skill-pack validation report</a> covers this revision. Earlier reports preserve historical findings. No review certifies a future organization, provider or deployment; live browser checks remain unverified.</p>
+  <p class="small">The <a href="reviews/discovery-plugin-validation.md">discovery and plugin validation</a> covers the latest intake and installation changes. The <a href="reviews/deep-validation.md">original skill-pack validation</a> preserves earlier behavioral findings. No review certifies a future organization, provider or deployment; live browser checks remain unverified.</p>
 </section>
 <footer><a class="brand-footer" href="#overview">AI SDLC / FIELD GUIDE</a><p>Original synthesis · Research reviewed 08 October 2026<br>Source ownership and individual repository licenses remain with their respective authors.</p><a href="README.md">Open repository guide</a></footer>
 </main>

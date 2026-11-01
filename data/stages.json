@@ -59,7 +59,8 @@
     "activities": [
       "Gather user research, support signals and process constraints with provenance and consent. Separate observations, assumptions and generated suggestions.",
       "Compare build, buy, reuse and no-change options; check accessibility, operational burden, cost and organizational readiness.",
-      "Define a measurable outcome, affected users, exclusions and the smallest useful experiment. Identify safety or business-critical consequences early."
+      "Define a measurable outcome, affected users, exclusions and the smallest useful experiment. Identify safety or business-critical consequences early.",
+      "Research decision-relevant competitors, alternatives, user needs or feasibility; connect dated sources to proposed scope and distinguish evidence from hypotheses."
     ],
     "inputs": [
       "Authorized research and existing service data",

@@ -1,6 +1,8 @@
 # Shared contract for the AI-SDLC skill bundle
 
-These are portable procedures, not installed agents or a workflow engine. The host chooses skill discovery, tool availability and permission enforcement. Keep the whole bundle together: skill links expect sibling `config/`, `data/`, `research/` and `agents/` directories. If distributing an individual skill, package its referenced contract and selected profile/source material and update the paths. A Markdown instruction cannot establish an access-control boundary.
+These are portable procedures, not a workflow engine. The host chooses skill discovery, tool availability and permission enforcement. The root `plugin.json` packages the bundle for central installation; see [installation](../README.md#install-once-for-codex). Keep the whole bundle together: skill links expect sibling `config/`, `data/`, `research/` and `agents/` directories. If distributing an individual skill, package its referenced contract and selected profile/source material and update the paths. A Markdown instruction cannot establish an access-control boundary.
+
+The installed bundle is a procedure/reference source. Resolve product paths, context and outputs against the user's active project workspace, not the plugin installation directory. Keep product artifacts and local profiles in that project or its established record system. Installation does not supply browsing tools, credentials or live adapters.
 
 ## Reference model and module boundaries
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product idea to intent"
+  short_description: "Research a rough product idea and draft its intent"
+  default_prompt: "Use $ai-sdlc:ai-sdlc-discover to explore my product idea, research relevant alternatives and constraints, and draft an intent in this project."

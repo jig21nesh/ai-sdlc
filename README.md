@@ -4,6 +4,42 @@ This folder contains **20 implemented skills** grounded in [Anthropic's AI-nativ
 
 Start with the [research synthesis](research/SYNTHESIS.md) and [practice-to-skill coverage](research/practice-coverage.md). Open [index.html](index.html) for the plain HTML index, evidence search and three original GIF explanations. It uses local assets and works without a build; JavaScript adds optional controls.
 
+## Start with a rough product idea
+
+Open the **product's folder** in Codex and invoke the installed discovery skill:
+
+```text
+Use $ai-sdlc:ai-sdlc-discover.
+
+My idea: <describe the product or problem in your own words>.
+Explore the idea, research relevant competitors, alternatives and feasibility,
+and draft the intent in this project. Ask focused questions where needed.
+```
+
+A short description is enough. The skill selects research that can change the product decision, inspects available sources, and separates evidence from assumptions. It does not require a competitor report for an internal bug fix. You can specify a region, audience, time limit or offline-only scope. Browsing requires the host's available tools and permissions; missing access is reported, never replaced with invented market claims.
+
+Outputs follow the product's existing convention. Otherwise discovery writes `docs/intent.md` and, for substantial research, `docs/research.md`. A distinct idea gets its own directory under `docs/intents/` if the default intent already belongs to other work. The installed kit remains separate from product output. Existing files are inspected and preserved or updated within the actual task.
+
+Review the draft, then ask for `ai-sdlc-specify` to produce the specification, followed by `ai-sdlc-plan` and `ai-sdlc-build` when ready. A discovery request ends with the intent and next decision; it does not start implementation automatically.
+
+## Install once for Codex
+
+Install the whole repository as a **user-scoped plugin** so its twenty skills and shared relative references stay together. The root [plugin.json](plugin.json) is the package manifest; the repository's `.agents/plugins/marketplace.json` exposes it through the `ai-sdlc-local` marketplace. No model service, connector, hook or background job is bundled.
+
+From this kit's root, with a Codex CLI that supports `plugin add`:
+
+```sh
+codex plugin marketplace add "$PWD"
+codex plugin add ai-sdlc@ai-sdlc-local
+codex plugin list --marketplace ai-sdlc-local --json
+```
+
+Then open a new Codex chat in any product repository and select **Product idea to intent**, or invoke `$ai-sdlc:ai-sdlc-discover`. Codex 0.166.0 exposes installed skills as `ai-sdlc:<skill-name>`; the source skill's name remains `ai-sdlc-discover`. In the desktop app, restart if the installed plugin has not appeared. Clients without `plugin add` can register the marketplace and install **AI SDLC** through the desktop Plugins directory.
+
+The native plugin installer manages the user configuration and cache; product repositories need no copies of the kit. Keep this checkout available as the local update source. Installed files are a cached snapshot: after updating this checkout, rerun `codex plugin add ai-sdlc@ai-sdlc-local`, verify the installed version, and start a new chat. A team can distribute an accepted revision through a Git-backed marketplace later. This local installation does not publish the package or make it available automatically on another machine.
+
+The commands are supported by the locally inspected Codex CLI 0.166.0. [Official plugin packaging documentation](https://developers.openai.com/plugins/build/plugins) describes package structure, marketplace scope and cached installations; check the installed client's help when adopting another version. A project or administrator can disable a plugin even when it is installed for the user.
+
 ## Use the skills
 
 1. Choose the relevant procedure from [skills/manifest.json](skills/manifest.json) or the HTML skill library. Initial intent uses `ai-sdlc-discover`; `ai-sdlc-plan` plans implementation within Build.
@@ -12,7 +48,7 @@ Start with the [research synthesis](research/SYNTHESIS.md) and [practice-to-skil
 4. Keep the bundle together so relative references resolve. The procedures read the shared contract and load supporting templates only when useful.
 5. For repeated organizational use, configure owned profiles and runtime adapters using [config/ADAPTATION.md](config/ADAPTATION.md). Verify actual controls separately from profile declarations.
 
-The skills are local instruction files, **not globally installed skills or running automation**. Automatic discovery depends on the host and its configured skill directories. Supply explicit paths or package the bundle using the host's documented discovery mechanism; no particular vendor layout is assumed.
+Cloning this repo alone does not install its skills. Use the plugin setup above for central Codex discovery, or supply explicit `skills/ai-sdlc-…/SKILL.md` paths with any capable agent. For example, point the agent at the discovery file's absolute path while working in the product repo. Keep the bundle intact. Other hosts need their own supported packaging; the procedures themselves remain portable.
 
 ## What is implemented
 
@@ -37,7 +73,8 @@ Each skill has a specific trigger, substantive procedure, output/evidence contra
 - [Consolidated evidence](research/evidence.json): 43 unique source URLs, with access/inspection limits and aliases. Repeated URLs count once.
 - [Configuration guide](config/ADAPTATION.md): exact organization, project and adapter changes.
 - [Agent briefs](agents/roles.md): optional delegation contracts, not installed agents.
-- [Current validation](reviews/deep-validation.md): checks, behavioral exercises, findings and remaining limits.
+- [Discovery and plugin validation](reviews/discovery-plugin-validation.md): current discovery changes, central installation and native host discovery checks.
+- [Original pack validation](reviews/deep-validation.md): earlier behavioral exercises, findings and their limits.
 
 The core method stays stable. Organization files supply policy and accountability; project files supply architecture, commands and acceptance; adapters supply actual permissions, tools, CI, scheduling and external integrations. Example profiles contain unresolved values intentionally. No profile or Markdown instruction grants authority or enforces a sandbox.
 

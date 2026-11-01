@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-sdlc",
+  "version": "0.1.0",
+  "description": "Research product ideas into intent and apply twenty reusable software delivery skills from any project.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AI SDLC",
+        "shortDescription": "Research ideas and deliver software with evidence",
+        "longDescription": "Start with a rough idea, research relevant alternatives and constraints, and save the intent in your project. Includes specification, implementation, verification, review, release preparation and maintenance procedures.",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": [
+          "Use $ai-sdlc:ai-sdlc-discover to research my product idea and draft its intent in this project."
+        ]
+      }
+    }
+  }
+}

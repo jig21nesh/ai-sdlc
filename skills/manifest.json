@@ -55,7 +55,7 @@
     {
       "id": "ai-sdlc-discover",
       "phase": "Plan",
-      "purpose": "Capture evidence-bearing intent",
+      "purpose": "Research an idea and capture intent",
       "path": "skills/ai-sdlc-discover/SKILL.md",
       "practice_ids": [
         "intent",
@@ -68,7 +68,8 @@
         "DM11"
       ],
       "output_templates": [
-        "skills/ai-sdlc-discover/assets/intent.md"
+        "skills/ai-sdlc-discover/assets/intent.md",
+        "skills/ai-sdlc-discover/assets/research.md"
       ],
       "organization_fields": [
         "org.roles.product_owner",
@@ -81,7 +82,8 @@
       ],
       "success_signals": [
         "Time to reviewable intent",
-        "Intent changes caused by misunderstanding"
+        "Intent changes caused by misunderstanding",
+        "Material scope decisions linked to inspected research or explicit uncertainty"
       ]
     },
     {
