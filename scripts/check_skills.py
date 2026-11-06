@@ -20,6 +20,26 @@ def check():
     inventory = read('research/playbook-inventory.json')
     skills = manifest['skills']
     errors = []
+    portable = read('plugin.json')
+    claude = read('.claude-plugin/plugin.json')
+    for field in ('name', 'version', 'description'):
+        if portable.get(field) != claude.get(field):
+            errors.append(f'Codex and Claude plugin {field} differ')
+    codex_market = read('.agents/plugins/marketplace.json')
+    claude_market = read('.claude-plugin/marketplace.json')
+    if codex_market['name'] != claude_market['name']:
+        errors.append('Host marketplace names differ from the shared install ID')
+    for host, market in (('Codex', codex_market), ('Claude', claude_market)):
+        entries = market['plugins']
+        if len(entries) != 1 or entries[0]['name'] != portable['name']:
+            errors.append(f'{host} marketplace does not identify the shared plugin')
+            continue
+        source = entries[0]['source']
+        source_path = source.get('path') if isinstance(source, dict) else source
+        if source_path != './':
+            errors.append(f'{host} marketplace must retain the whole bundle at its root')
+    if list((ROOT / 'agents').glob('**/*.md')):
+        errors.append('Role documentation would be loaded as Claude agents; keep it in references/')
     paths = {str(p.relative_to(ROOT)) for p in (ROOT / 'skills').glob('*/SKILL.md')}
     if paths != {s['path'] for s in skills} or len({s['id'] for s in skills}) != len(skills):
         errors.append('Skill manifest does not match unique skill directories')
@@ -57,6 +77,7 @@ def check():
         print('\n'.join(errors))
         return 1
     print(f'PASS: {len(skills)} skills cover {len(practices)} inventoried practices; sources, templates and configuration paths resolve.')
+    print(f'PASS: Codex and Claude package identity/version match ({portable["version"]}); both retain the shared bundle.')
     print('Integrity only: this does not establish skill selection, decision quality or enforced runtime controls.')
     return 0
 

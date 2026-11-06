@@ -1,6 +1,6 @@
 # Shared contract for the AI-SDLC skill bundle
 
-These are portable procedures, not a workflow engine. The host chooses skill discovery, tool availability and permission enforcement. The root `plugin.json` packages the bundle for central installation; see [installation](../README.md#install-once-for-codex). Keep the whole bundle together: skill links expect sibling `config/`, `data/`, `research/` and `agents/` directories. If distributing an individual skill, package its referenced contract and selected profile/source material and update the paths. A Markdown instruction cannot establish an access-control boundary.
+These are portable procedures, not a workflow engine. The host chooses skill discovery, tool availability and permission enforcement. The root `plugin.json` and `.claude-plugin/plugin.json` package the same bundle for Codex and Claude Code; see [installation](../README.md#install-once-for-your-host). Keep the whole bundle together: skill links expect sibling `config/`, `data/`, `research/` and `references/` directories. If distributing an individual skill, package its referenced contract and selected profile/source material and update the paths. A Markdown instruction cannot establish an access-control boundary.
 
 The installed bundle is a procedure/reference source. Resolve product paths, context and outputs against the user's active project workspace, not the plugin installation directory. Keep product artifacts and local profiles in that project or its established record system. Installation does not supply browsing tools, credentials or live adapters.
 
@@ -44,7 +44,7 @@ Separate three verification scopes: software behavior, the delivery agent's beha
 
 ## Delegation and repair
 
-Delegate only when authorized and when independent work helps. Use the [role briefs](../agents/roles.md) and [task brief example](../agents/task-brief.example.json) with explicit paths, capability limits and budgets. Shared permissions are not automatically narrowed by a role description. Preserve one integration owner, avoid simultaneous overlapping edits, and have reviewers assess the actual candidate independently.
+Delegate only when authorized and when independent work helps. Use the [role briefs](../references/agent-roles.md) and [task brief example](../references/task-brief.example.json) with explicit paths, capability limits and budgets. Shared permissions are not automatically narrowed by a role description. Preserve one integration owner, avoid simultaneous overlapping edits, and have reviewers assess the actual candidate independently.
 
 For a failed check or disputed review finding, attempt at most two bounded repairs within the existing scope, rerun the affected checks and then report the remaining evidence and blocker. Do not repeatedly mutate external systems to make a metric pass. Pause immediately for unauthorized side effects or observed material harm; a new authorized plan can restart work. A producer cannot accept its own high-risk residual risk.
 

@@ -1,0 +1,14 @@
+{
+  "name": "ai-sdlc-local",
+  "description": "The shared AI-SDLC skill pack for product research and software delivery.",
+  "owner": {
+    "name": "Jignesh Kakkad"
+  },
+  "plugins": [
+    {
+      "name": "ai-sdlc",
+      "source": "./",
+      "description": "Research ideas and deliver software with twenty shared AI-SDLC skills."
+    }
+  ]
+}

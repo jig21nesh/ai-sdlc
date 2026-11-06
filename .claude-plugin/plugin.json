@@ -1,0 +1,9 @@
+{
+  "name": "ai-sdlc",
+  "version": "0.2.0",
+  "description": "Research product ideas into intent and apply twenty reusable software delivery skills from any project.",
+  "author": {
+    "name": "Jignesh Kakkad"
+  },
+  "repository": "https://github.com/jig21nesh/ai-sdlc"
+}

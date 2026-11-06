@@ -64,7 +64,7 @@ Writing a draft or committing a plan does not itself accept the plan or launch i
 ## Decide whether and how to delegate
 
 Delegate only when authorized and the work benefits from separate attention or independent execution.
-Use the [task brief](../../agents/task-brief.example.json) for scope and output details.
+Use the [task brief](../../references/task-brief.example.json) for scope and output details.
 
 | Work relationship | Coordination choice |
 | --- | --- |

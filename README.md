@@ -2,19 +2,32 @@
 
 Turn a rough idea into a researched intent, a working product and a repeatable delivery process. This package contains **20 skills** grounded in [Anthropic's AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), with reusable templates and supporting research.
 
-**Install the package once; use it from each product's folder.** Codex runs the skill you request. You provide the idea, review the evidence and decide what to build.
+**Install the package once in Codex or Claude Code; use it from each product's folder.** Both hosts use the same twenty skills and templates. You provide the idea, review the evidence and decide what to build.
 
-1. **One-time setup:** [install the plugin](#install-once-for-codex) from this package's checkout.
-2. **For each product:** open its repository or an empty product folder in Codex and start a new chat.
+1. **One-time setup:** [install the plugin for your host](#install-once-for-your-host) from this package's checkout.
+2. **For each product:** open its repository or an empty product folder in Codex or Claude Code and start a new chat.
 3. **Give it your idea:** paste the [discovery prompt below](#start-with-a-rough-product-idea).
 4. **Continue when ready:** use the [step-by-step guide](#step-by-step-guide) and [next-step prompts](#continue-after-discovery).
 
 ## Start with a rough product idea
 
-Open the **product's folder** in Codex and invoke the installed discovery skill:
+Open the **product's folder** in your host and invoke the installed discovery skill.
+
+**Codex:**
 
 ```text
 Use $ai-sdlc:ai-sdlc-discover.
+
+My idea: <describe the product or problem in your own words>.
+
+Explore the idea, research relevant competitors, alternatives and feasibility,
+and draft the intent in this project. Ask focused questions where needed.
+```
+
+**Claude Code:**
+
+```text
+/ai-sdlc:ai-sdlc-discover
 
 My idea: <describe the product or problem in your own words>.
 
@@ -49,7 +62,7 @@ This is our practical usage sequence, mapped to the playbook's six lifecycle pha
 
 ## Step-by-step guide
 
-**Agent** below means the role Codex takes while using that skill. The role labels describe the work; they do not create separate agents. Click a skill to read its instructions. To invoke a linked skill such as `discover`, use **`$ai-sdlc:ai-sdlc-discover`** in your product's Codex chat. Use a separate reviewer when independent review is required.
+**Agent** below means the role your coding assistant takes while using that skill. The role labels describe the work; they do not create separate agents. Click a skill to read its instructions. Invoke `discover` with **`$ai-sdlc:ai-sdlc-discover`** in Codex or **`/ai-sdlc:ai-sdlc-discover`** in Claude Code. Use a separate reviewer when independent review is required.
 
 **Source** identifies the supporting article and its stage/topic. The nine steps and their skill procedures are this toolkit's adaptation; additions are marked below. See the [detailed practice mapping](research/practice-coverage.md) for full traceability.
 
@@ -71,7 +84,13 @@ You decide which intent, specification and plan to accept. Existing authorizatio
 
 ## Continue after discovery
 
-Send **one prompt at a time** in the same product chat, after reviewing the previous output. Replace the example paths if your project uses different ones. For later artifacts, ask Codex to follow the project's existing documentation conventions.
+Send **one prompt at a time** in the same product chat, after reviewing the previous output. Replace the example paths if your project uses different ones. For later artifacts, follow the project's existing documentation conventions.
+
+The examples below use Codex syntax. In Claude Code, replace `Use $ai-sdlc:ai-sdlc-<step>` with `/ai-sdlc:ai-sdlc-<step>` and keep the task text. For example:
+
+```text
+/ai-sdlc:ai-sdlc-specify Turn docs/intent.md into a requirements and design specification with testable acceptance scenarios.
+```
 
 ```text
 Use $ai-sdlc:ai-sdlc-specify to turn docs/intent.md into a requirements
@@ -124,9 +143,20 @@ problems. Propose one evidence-backed improvement and how to measure it.
 
 If you start a new chat, include the relevant artifact paths, candidate revision and previously accepted decisions so the next skill can resume accurately.
 
-## Install once for Codex
+## Install once for your host
 
-Install the whole repository as a **user-scoped plugin** so its twenty skills and shared relative references stay together. The root [plugin.json](plugin.json) is the package manifest; the repository's `.agents/plugins/marketplace.json` exposes it through the `ai-sdlc-local` marketplace. No model service, connector, hook or background job is bundled.
+Choose either host, or install in both. Each installation is user-scoped and available from your product folders. Keep this checkout as the update source; each host tracks its installation separately. The supported Claude host here is **Claude Code**; this setup does not install the package into Claude web or Cowork.
+
+| Host | Package metadata | Marketplace | Discovery command in chat |
+| --- | --- | --- | --- |
+| Codex | [plugin.json](plugin.json) | [.agents/plugins/marketplace.json](.agents/plugins/marketplace.json) | `$ai-sdlc:ai-sdlc-discover` |
+| Claude Code | [.claude-plugin/plugin.json](.claude-plugin/plugin.json) | [.claude-plugin/marketplace.json](.claude-plugin/marketplace.json) | `/ai-sdlc:ai-sdlc-discover` |
+
+Both marketplaces point at the whole package so shared references remain available. No model service, connector, hook, runnable agent or background job is bundled.
+
+### Install once for Codex
+
+Install the whole repository as a **user-scoped plugin** through the `ai-sdlc-local` marketplace.
 
 Run these commands in a **terminal at this package's root**, using a Codex CLI that supports `plugin add`:
 
@@ -144,7 +174,30 @@ The commands are supported by the locally inspected Codex CLI 0.166.0. [Official
 
 **If a skill is missing:** check the list command above, confirm the plugin is enabled and start a new chat. If the local marketplace points to a checkout you moved, register its current root again. Product repositories do not need their own copy of the package.
 
-Cloning this repo alone does not install its skills. Use the plugin setup above for central Codex discovery, or supply explicit `skills/ai-sdlc-…/SKILL.md` paths with any capable agent. For example, point the agent at the discovery file's absolute path while working in the product repo. Keep the bundle intact. Other hosts need their own supported packaging; the procedures themselves remain portable.
+### Install once for Claude Code
+
+Run these commands in a **terminal at this package's root**:
+
+```sh
+claude plugin marketplace add "$PWD" --scope user
+claude plugin install ai-sdlc@ai-sdlc-local --scope user
+claude plugin details ai-sdlc@ai-sdlc-local
+```
+
+The details should list all twenty skills and no agents, hooks or MCP servers. Open a new Claude Code session in your **product folder**, then run `/ai-sdlc:ai-sdlc-discover`. The plugin name before `:` and the skill name after it match Codex; Claude uses `/` for invocation.
+
+Verified with Claude Code 2.1.318. That client reports the local checkout as `readFromFolder` alongside its installed cache, so keep the registered folder available. See the [dual-host validation record](reviews/dual-host-validation.md) for the exact checks and their limits.
+
+After pulling a newer package version into this checkout:
+
+```sh
+claude plugin marketplace update ai-sdlc-local
+claude plugin update ai-sdlc@ai-sdlc-local --scope user
+```
+
+Restart Claude Code to load the update. If the skill is missing, check `claude plugin list --json`, confirm the plugin is enabled and inspect its details. A project or administrator can restrict plugins. Claude Code's [marketplace guide](https://code.claude.com/docs/en/plugin-marketplaces) and [manifest reference](https://code.claude.com/docs/en/plugins-reference) describe the host's packaging rules.
+
+Cloning this repo alone does not install its skills. Use the setup for your host above, or give a capable agent the absolute path to a `skills/ai-sdlc-…/SKILL.md` file while working in the product repository. Keep the bundle intact. Product files and profiles belong in the product repository, not either host's plugin cache.
 
 ## Add specialist skills when needed
 
@@ -190,8 +243,9 @@ Each skill has a specific trigger, substantive procedure, output/evidence contra
 - [Medium analysis](research/deep-medium-analysis.md): twelve records; eleven bodies read and one partial article excluded from implementation support.
 - [Consolidated evidence](research/evidence.json): 43 unique source URLs, with access/inspection limits and aliases. Repeated URLs count once.
 - [Configuration guide](config/ADAPTATION.md): exact organization, project and adapter changes.
-- [Agent briefs](agents/roles.md): optional delegation contracts, not installed agents.
-- [Discovery and plugin validation](reviews/discovery-plugin-validation.md): current discovery changes, central installation and native host discovery checks.
+- [Agent briefs](references/agent-roles.md): optional delegation contracts, not installed agents.
+- [Dual-host validation](reviews/dual-host-validation.md): version 0.2.0 installation and discovery in Codex and Claude Code.
+- [Discovery and plugin validation](reviews/discovery-plugin-validation.md): earlier discovery changes and Codex 0.1.0 installation checks.
 - [Original pack validation](reviews/deep-validation.md): earlier behavioral exercises, findings and their limits.
 
 The core method stays stable. Organization files supply policy and accountability; project files supply architecture, commands and acceptance; adapters supply actual permissions, tools, CI, scheduling and external integrations. Example profiles contain unresolved values intentionally. No profile or Markdown instruction grants authority or enforces a sandbox.
@@ -219,6 +273,13 @@ uv run --no-project --with pillow==11.3.0 python scripts/generate_gifs.py --only
 ```
 
 Omit `--only product-flow` to regenerate all four diagrams. Animation changes emphasis only; every frame and its static PNG contain the same instructions.
+
+For package changes, keep the name, version and description aligned in `plugin.json` and `.claude-plugin/plugin.json`; `check_skills.py` checks this and both marketplace roots. Increment both versions before distributing an update. With Claude Code installed, also run:
+
+```sh
+claude plugin validate .claude-plugin/plugin.json --strict
+claude plugin validate .claude-plugin/marketplace.json --strict
+```
 
 ## Scope of confidence
 

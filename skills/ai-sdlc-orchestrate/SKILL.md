@@ -5,7 +5,7 @@ description: Coordinate an authorized delivery task when dependencies, multiple 
 
 # Coordinate bounded work and accepted handoffs
 
-Read the [shared contract](../shared-contract.md), [reference mapping](../../data/reference-model.json) and applicable [role briefs](../../agents/roles.md). This procedure selects and integrates work; it does not install agents or a workflow engine.
+Read the [shared contract](../shared-contract.md), [reference mapping](../../data/reference-model.json) and applicable [role briefs](../../references/agent-roles.md). This procedure selects and integrates work; it does not install agents or a workflow engine.
 
 Initial product intent belongs to Plan. Dependency-ordered implementation planning belongs to Build. Incidents and maintenance can enter at the relevant module without replaying the entire lifecycle.
 

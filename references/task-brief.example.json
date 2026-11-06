@@ -23,14 +23,14 @@
   },
   "inputs": {
     "accepted_requirements": [],
-    "candidate_paths": ["skills/", "agents/"],
+    "candidate_paths": ["skills/", "references/"],
     "organization_profile": null,
     "project_profile": null,
     "evidence_paths": [],
     "sensitive_data": "Use sanitized fixtures; do not include secrets or unrelated personal data."
   },
   "scope": {
-    "read_paths": ["skills/", "agents/", "config/", "research/"],
+    "read_paths": ["skills/", "references/", "config/", "research/"],
     "write_paths": ["reviews/security-findings.md"],
     "allowed_tools": ["local-read", "local-search", "write-assigned-report"],
     "network_destinations": [],

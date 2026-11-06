@@ -1,6 +1,6 @@
 # Optional portable agent role briefs
 
-These briefs are reusable task descriptions, not installed runtime agents, live identities or enforced permissions. Use them only when the host supports delegation and the user or applicable instructions authorize it. The [shared skill contract](../skills/shared-contract.md) governs evidence and authorization; the [task example](task-brief.example.json) shows the handoff shape. If the runner cannot enforce a stated file, network or tool restriction, disclose that limitation and choose an appropriately constrained execution path.
+These briefs are reusable task descriptions, not installed runtime agents, live identities or enforced permissions. They live under `references/` so plugin hosts do not load them as agent definitions. Use them only when the host supports delegation and the user or applicable instructions authorize it. The [shared skill contract](../skills/shared-contract.md) governs evidence and authorization; the [task example](task-brief.example.json) shows the handoff shape. If the runner cannot enforce a stated file, network or tool restriction, disclose that limitation and choose an appropriately constrained execution path.
 
 | Role | Responsibility and expected output | Scope boundary |
 | --- | --- | --- |
