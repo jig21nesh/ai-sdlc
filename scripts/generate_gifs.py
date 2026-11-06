@@ -16,6 +16,7 @@ in every frame and in the static PNG; animation only changes emphasis.
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import os
@@ -61,12 +62,13 @@ def font(size: int = 22, bold: bool = False):
 
 
 class Diagram:
-    def __init__(self, title: str, subtitle: str):
-        self.image = Image.new("RGB", (WIDTH * SCALE, HEIGHT * SCALE), COLORS["background"])
+    def __init__(self, title: str, subtitle: str, *, width=WIDTH, height=HEIGHT):
+        self.width, self.height = width, height
+        self.image = Image.new("RGB", (width * SCALE, height * SCALE), COLORS["background"])
         self.draw = ImageDraw.Draw(self.image)
         self.text(28, 24, title, 29, bold=True)
         self.text(28, 65, subtitle, 22, color="body")
-        self.line([(28, 104), (WIDTH - 28, 104)], color="rule", width=1)
+        self.line([(28, 104), (width - 28, 104)], color="rule", width=1)
 
     def text(self, x, y, value, size=22, *, bold=False, color="navy", anchor="lt"):
         self.draw.text(
@@ -108,7 +110,63 @@ class Diagram:
                       color=color if active and bold else "navy", anchor="mt")
 
     def finish(self):
-        return self.image.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+        return self.image.resize((self.width, self.height), Image.Resampling.LANCZOS)
+
+
+PRODUCT_STEPS = [
+    ("Discover", "discover", "Intent + research"),
+    ("Specify", "specify", "Spec + acceptance scenarios"),
+    ("Plan", "plan", "Tasks + files + checks"),
+    ("Build", "build", "Code + tests"),
+    ("Verify", "verify", "Evidence + gaps"),
+    ("Review", "review", "Findings + resolutions"),
+    ("Release", "release", "Release plan / record"),
+    ("Operate", "operate", "Health + follow-up intent"),
+    ("Improve", "improve", "Measured improvement"),
+]
+
+
+def product_flow(step=None):
+    diagram = Diagram(
+        "From rough idea to working product",
+        "One requested skill at a time, with artifacts in your product repository.",
+        width=1200, height=900,
+    )
+    # Serpentine rows preserve one continuous path without crossing arrows.
+    positions = [(64, 140), (438, 140), (812, 140),
+                 (812, 350), (438, 350), (64, 350),
+                 (64, 560), (438, 560), (812, 560)]
+    card_width, card_height = 324, 152
+    for i, ((title, skill, output), (x, y)) in enumerate(zip(PRODUCT_STEPS, positions)):
+        diagram.card(x, y, card_width, card_height, [
+            (20, f"{i + 1}. {title}", 28, True),
+            (65, f"Skill: {skill}", 22, False),
+            (108, output, 22, False),
+        ], active=step is None or step == i)
+        if i == len(positions) - 1:
+            continue
+        next_x, next_y = positions[i + 1]
+        if next_y > y:
+            points = [(x + card_width / 2, y + card_height + 5),
+                      (next_x + card_width / 2, next_y - 7)]
+        elif next_x > x:
+            points = [(x + card_width + 5, y + card_height / 2),
+                      (next_x - 7, y + card_height / 2)]
+        else:
+            points = [(x - 5, y + card_height / 2),
+                      (next_x + card_width + 7, y + card_height / 2)]
+        diagram.arrow(points, active=step is None or step == i, width=3)
+
+    feedback = step is None or step == 8
+    diagram.arrow([(974, 717), (974, 776), (34, 776), (34, 216), (58, 216)],
+                  color="cyan" if feedback else "line", width=3)
+    diagram.draw.rectangle((410 * SCALE, 754 * SCALE, 792 * SCALE, 795 * SCALE),
+                           fill=COLORS["background"])
+    diagram.text(600, 764, "Learning feeds the next intent", 24, bold=True,
+                 color="cyan" if feedback else "body", anchor="mt")
+    diagram.text(64, 820, "Failed checks? Fix in Build, then repeat Verify and Review.", 24, bold=True)
+    diagram.text(64, 862, "Review scope and plan before building; deploy only when authorized.", 22, color="body")
+    return diagram.finish()
 
 
 def lifecycle(step=None):
@@ -227,39 +285,57 @@ ANIMATIONS = {
         "caption": "Keep the core portable. Configure organization policy and project facts, then enforce boundaries through runtime controls and tool adapters.",
         "frames": ["Invariant core", "Organization policy", "Project facts", "Runtime enforcement and adapters"],
     },
+    "product-flow": {
+        "title": "From rough idea to working product",
+        "alt": "Nine steps: Discover, Specify, Plan, Build, Verify, Review, Release, Operate and Improve. Each produces the next step's input. Learning feeds the next intent; failed checks return to Build and verification.",
+        "caption": "An original toolkit usage sequence, not nine new playbook phases or an automatic agent pipeline. Use the relevant skills and review their outputs in your product repository.",
+        "frames": [title for title, _, _ in PRODUCT_STEPS],
+    },
 }
 
 
 def main():
+    renderers = {"lifecycle": lifecycle, "delegation": delegation,
+                 "adaptation": adaptation, "product-flow": product_flow}
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--only", choices=renderers, help="Regenerate one diagram and preserve the others.")
+    args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, render in [("lifecycle", lifecycle), ("delegation", delegation), ("adaptation", adaptation)]:
-        frames = [render(step) for step in range(4)]
+    catalog_path = OUT / "animations.json"
+    catalog = json.loads(catalog_path.read_text()) if args.only and catalog_path.exists() else {}
+    selected = [args.only] if args.only else list(renderers)
+    for name in selected:
+        render = renderers[name]
+        frame_count = len(ANIMATIONS[name]["frames"])
+        frames = [render(step) for step in range(frame_count)]
+        still = render()
         # A shared palette avoids changes in antialiased text colors between frames.
-        palette = render().quantize(colors=255, method=Image.Quantize.MEDIANCUT)
+        palette = still.quantize(colors=255, method=Image.Quantize.MEDIANCUT)
         indexed = [frame.quantize(palette=palette, dither=Image.Dither.NONE) for frame in frames]
         gif_path = OUT / f"{name}.gif"
         png_path = OUT / f"{name}.png"
         indexed[0].save(gif_path, save_all=True, append_images=indexed[1:],
                         duration=FRAME_MS, loop=0, disposal=2, optimize=False)
-        render().save(png_path, optimize=True)
+        still.save(png_path, optimize=True)
         with Image.open(gif_path) as gif:
-            assert gif.format == "GIF" and gif.n_frames == 4
-            assert gif.size == (WIDTH, HEIGHT) and gif.info.get("loop") == 0
+            assert gif.format == "GIF" and gif.n_frames == frame_count
+            assert gif.size == still.size and gif.info.get("loop") == 0
             for frame in range(gif.n_frames):
                 gif.seek(frame)
                 assert gif.info["duration"] == FRAME_MS
                 assert gif.convert("RGB").getbbox() is not None
         with Image.open(png_path) as png:
-            assert png.size == (WIDTH, HEIGHT) and png.format == "PNG"
+            assert png.size == still.size and png.format == "PNG"
             assert png.getbbox() is not None
         assert gif_path.stat().st_size > 1000 and png_path.stat().st_size > 1000
-        ANIMATIONS[name].update({
+        catalog[name] = {
+            **ANIMATIONS[name],
             "gif": f"assets/{name}.gif", "static": f"assets/{name}.png",
-            "width": WIDTH, "height": HEIGHT, "frame_duration_ms": FRAME_MS,
+            "width": still.width, "height": still.height, "frame_duration_ms": FRAME_MS,
             "loop": True, "semantic_content_identical_in_static": True,
-        })
-        print(f"Validated {name}: 4 frames, {WIDTH}x{HEIGHT}, looping GIF + static PNG")
-    (OUT / "animations.json").write_text(json.dumps(ANIMATIONS, indent=2) + "\n", encoding="utf-8")
+        }
+        print(f"Validated {name}: {frame_count} frames, {still.width}x{still.height}, looping GIF + static PNG")
+    catalog_path.write_text(json.dumps(catalog, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

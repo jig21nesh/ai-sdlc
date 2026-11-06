@@ -131,9 +131,10 @@ def check():
             target = (md.parent / unquote(p.path)).resolve()
             if not target.exists():
                 errors.append(f'Broken Markdown reference in {md.relative_to(ROOT)}: {link}')
-    for name in ('lifecycle', 'delegation', 'adaptation'):
-        gif = (ROOT / f'assets/{name}.gif').read_bytes()
-        png = (ROOT / f'assets/{name}.png').read_bytes()
+    animations = json.loads((ROOT / 'assets/animations.json').read_text())
+    for name, animation in animations.items():
+        gif = (ROOT / animation['gif']).read_bytes()
+        png = (ROOT / animation['static']).read_bytes()
         if gif[:6] not in (b'GIF87a', b'GIF89a') or not png.startswith(b'\x89PNG\r\n\x1a\n'):
             errors.append(f'Invalid diagram format: {name}')
     if errors:

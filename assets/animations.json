@@ -52,5 +52,28 @@
     "frame_duration_ms": 2400,
     "loop": true,
     "semantic_content_identical_in_static": true
+  },
+  "product-flow": {
+    "title": "From rough idea to working product",
+    "alt": "Nine steps: Discover, Specify, Plan, Build, Verify, Review, Release, Operate and Improve. Each produces the next step's input. Learning feeds the next intent; failed checks return to Build and verification.",
+    "caption": "An original toolkit usage sequence, not nine new playbook phases or an automatic agent pipeline. Use the relevant skills and review their outputs in your product repository.",
+    "frames": [
+      "Discover",
+      "Specify",
+      "Plan",
+      "Build",
+      "Verify",
+      "Review",
+      "Release",
+      "Operate",
+      "Improve"
+    ],
+    "gif": "assets/product-flow.gif",
+    "static": "assets/product-flow.png",
+    "width": 1200,
+    "height": 900,
+    "frame_duration_ms": 2400,
+    "loop": true,
+    "semantic_content_identical_in_static": true
   }
 }
