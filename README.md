@@ -1,5 +1,7 @@
 # AI-SDLC skill pack
 
+[Repository](https://github.com/jig21nesh/ai-sdlc) · Maintained by [Jignesh Kakkad](https://github.com/jig21nesh)
+
 Turn a rough idea into a researched intent, a working product and a repeatable delivery process. This package contains **20 skills** grounded in [Anthropic's AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), with reusable templates and supporting research.
 
 **Install the package once in Codex or Claude Code; use it from each product's folder.** Both hosts use the same twenty skills and templates. You provide the idea, review the evidence and decide what to build.
@@ -144,6 +146,13 @@ problems. Propose one evidence-backed improvement and how to measure it.
 If you start a new chat, include the relevant artifact paths, candidate revision and previously accepted decisions so the next skill can resume accurately.
 
 ## Install once for your host
+
+Get the package from the personal repository:
+
+```sh
+git clone https://github.com/jig21nesh/ai-sdlc.git
+cd ai-sdlc
+```
 
 Choose either host, or install in both. Each installation is user-scoped and available from your product folders. Keep this checkout as the update source; each host tracks its installation separately. The supported Claude host here is **Claude Code**; this setup does not install the package into Claude web or Cowork.
 

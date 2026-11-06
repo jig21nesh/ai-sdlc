@@ -22,7 +22,7 @@ def check():
     errors = []
     portable = read('plugin.json')
     claude = read('.claude-plugin/plugin.json')
-    for field in ('name', 'version', 'description'):
+    for field in ('name', 'version', 'description', 'author', 'repository', 'license'):
         if portable.get(field) != claude.get(field):
             errors.append(f'Codex and Claude plugin {field} differ')
     codex_market = read('.agents/plugins/marketplace.json')

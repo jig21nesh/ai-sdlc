@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-sdlc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Research product ideas into intent and apply twenty reusable software delivery skills from any project.",
   "extensions": {
     "com.openai": {
@@ -10,11 +10,21 @@
         "shortDescription": "Research ideas and deliver software with evidence",
         "longDescription": "Start with a rough idea, research relevant alternatives and constraints, and save the intent in your project. Includes specification, implementation, verification, review, release preparation and maintenance procedures.",
         "category": "Productivity",
-        "capabilities": ["Read", "Write"],
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
         "defaultPrompt": [
           "Use $ai-sdlc:ai-sdlc-discover to research my product idea and draft its intent in this project."
-        ]
+        ],
+        "developerName": "Jignesh Kakkad",
+        "websiteURL": "https://github.com/jig21nesh/ai-sdlc"
       }
     }
-  }
+  },
+  "author": {
+    "name": "Jignesh Kakkad",
+    "url": "https://github.com/jig21nesh"
+  },
+  "repository": "https://github.com/jig21nesh/ai-sdlc"
 }

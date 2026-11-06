@@ -24,5 +24,6 @@
   ],
   "limits": [
     "Only supplied fixture data inspected; referenced production/repository state not independently available."
-  ]
+  ],
+  "path_note": "Skill input paths are repository-relative; hashes retain the inputs recorded at evaluation time."
 }
