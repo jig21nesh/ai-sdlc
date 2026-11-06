@@ -1,6 +1,6 @@
 # AI-SDLC skill pack
 
-[Repository](https://github.com/jig21nesh/ai-sdlc) · Maintained by [Jignesh Kakkad](https://github.com/jig21nesh)
+[Repository](https://github.com/jig21nesh/ai-sdlc) · Maintained by [Jignesh Kakkad](https://github.com/jig21nesh) · [MIT License](LICENSE)
 
 Turn a rough idea into a researched intent, a working product and a repeatable delivery process. This package contains **20 skills** grounded in [Anthropic's AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), with reusable templates and supporting research.
 
@@ -283,7 +283,7 @@ uv run --no-project --with pillow==11.3.0 python scripts/generate_gifs.py --only
 
 Omit `--only product-flow` to regenerate all four diagrams. Animation changes emphasis only; every frame and its static PNG contain the same instructions.
 
-For package changes, keep the name, version and description aligned in `plugin.json` and `.claude-plugin/plugin.json`; `check_skills.py` checks this and both marketplace roots. Increment both versions before distributing an update. With Claude Code installed, also run:
+For package changes, keep the name, version, description, author, repository and license aligned in `plugin.json` and `.claude-plugin/plugin.json`; `check_skills.py` checks this and both marketplace roots. Increment both versions before distributing an update. With Claude Code installed, also run:
 
 ```sh
 claude plugin validate .claude-plugin/plugin.json --strict
@@ -292,6 +292,12 @@ claude plugin validate .claude-plugin/marketplace.json --strict
 
 ## Scope of confidence
 
-Research reviewed 8 October 2026. GitHub files and tests were inspected, not executed upstream. Medium accounts are practitioner evidence, not benchmarks or authority. The original procedures/templates do not copy upstream executors. Source licenses remain with their owners; no repository-wide license is chosen on your behalf.
+Research reviewed 8 October 2026. GitHub files and tests were inspected, not executed upstream. Medium accounts are practitioner evidence, not benchmarks or authority. The original procedures/templates do not copy upstream executors. Referenced sources retain their own licenses and attribution.
 
 Coverage is traceable to the selected primary reference, not a claim to have exhausted every AI-SDLC practice. Production controls, vendor terms, regulatory requirements and runtime discovery require local validation. Live browser and assistive-technology checks were unavailable here; see the current validation report.
+
+## License
+
+This project's original code, skills, templates and documentation are released under the [MIT License](LICENSE). Copyright © 2026 Jignesh Kakkad.
+
+You may use, modify and redistribute them, including commercially, provided you retain the copyright and permission notice. The package is provided without warranty; see the full license for its terms. Referenced articles, repositories and other third-party materials remain subject to their respective owners' licenses and terms.
