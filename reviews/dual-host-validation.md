@@ -1,6 +1,6 @@
 # Codex and Claude Code package validation
 
-Reviewed 6 November 2026. Candidate: shared package version **0.2.0**, based on repository commit `6a7faaf`, with the packaging and reference moves recorded alongside this report. This is installation and discovery evidence, not an evaluation of product-delivery decisions.
+Reviewed 6 November 2026. Candidate: shared package version **0.2.0**, based on repository commit `28c50ef`, with the packaging and reference moves recorded alongside this report. The base commit ID was updated after ownership metadata and absolute checkout paths were normalized throughout repository history; these remain the original 0.2.0 observations. This is installation and discovery evidence, not an evaluation of product-delivery decisions.
 
 ## Changes
 
