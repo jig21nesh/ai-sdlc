@@ -2,9 +2,9 @@
 
 [Repository](https://github.com/jig21nesh/ai-sdlc) · Maintained by [Jignesh Kakkad](https://github.com/jig21nesh) · [MIT License](LICENSE)
 
-Turn a rough idea into a researched intent, a working product and a repeatable delivery process. This package contains **20 skills** grounded in [Anthropic's AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), with reusable templates and supporting research.
+Turn a rough idea into a researched intent, a working product and a repeatable delivery process. This package contains **21 skills** grounded in [Anthropic's AI-native SDLC playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), with reusable templates and supporting research.
 
-**Install the package once in Codex or Claude Code; use it from each product's folder.** Both hosts use the same twenty skills and templates. You provide the idea, review the evidence and decide what to build.
+**Install the package once in Codex or Claude Code; use it from each product's folder.** Both hosts use the same twenty-one skills and templates. You provide the idea, review the evidence and decide what to build.
 
 1. **One-time setup:** [install the plugin for your host](#install-once-for-your-host) from this package's checkout.
 2. **For each product:** open its repository or an empty product folder in Codex or Claude Code and start a new chat.
@@ -81,6 +81,24 @@ This is our practical usage sequence, mapped to the playbook's six lifecycle pha
 | **9. Improve** | Turn measured lessons into a specific workflow improvement. | Improvement analyst<br>[improve](skills/ai-sdlc-improve/SKILL.md) | Outcomes, incidents and repeated mistakes | Scoped improvement with comparison evidence | Compare with the baseline; check regressions. | Extra rules without evidence of benefit. | Toolkit synthesis: [playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) Stages 4–6, regression and feedback practices; [Google SRE](https://sre.google/sre-book/postmortem-culture/), learning from postmortems. |
 
 **When a check fails:** fix the relevant build issue and rerun affected verification and review on the changed candidate. If the problem is the requirement itself, return to Specify. Use operations and improvement findings as input to the next intent.
+
+## Evaluate each step and improve the pack
+
+After any step, score its output against the input it came from:
+
+```text
+/ai-sdlc:ai-sdlc-evaluate specify docs/intent.md docs/spec.md
+```
+
+In Codex, use `$ai-sdlc:ai-sdlc-evaluate` with the same step and paths. The [evaluate skill](skills/ai-sdlc-evaluate/SKILL.md) does three things:
+
+1. **Checks structure** with a bundled script: decision first, required sections, caps on questions, nits and length, and whether the output references the input's IDs.
+2. **Judges five dimensions**, each pass, fail or unknown with a one-line reason: coverage, faithfulness, decision clarity, actionability and concision. Concision is two-sided, so an output can fail for being too thin.
+3. **Appends a record** to `docs/ai-sdlc/evaluations.jsonl` in your product, including your own verdict: approved, approved with edits or rejected.
+
+The log is the feedback loop. `summarize` counts failures per step and package version, and the [improve skill](skills/ai-sdlc-improve/SKILL.md) turns a repeated failure into one change to a skill or template, with the failing output kept as a regression case.
+
+The judgments are uncalibrated until a reviewer has labelled about 30 outputs and compared. Use them for trends, not as a gate. [ADR 0002](docs/adr/0002-evaluate-skill.md) records the design and its sources.
 
 ## Outputs built for review
 
@@ -205,7 +223,7 @@ claude plugin install ai-sdlc@ai-sdlc-local --scope user
 claude plugin details ai-sdlc@ai-sdlc-local
 ```
 
-The details should list all twenty skills and no agents, hooks or MCP servers. Open a new Claude Code session in your **product folder**, then run `/ai-sdlc:ai-sdlc-discover`. The plugin name before `:` and the skill name after it match Codex; Claude uses `/` for invocation.
+The details should list all twenty-one skills and no agents, hooks or MCP servers. Open a new Claude Code session in your **product folder**, then run `/ai-sdlc:ai-sdlc-discover`. The plugin name before `:` and the skill name after it match Codex; Claude uses `/` for invocation.
 
 Verified with Claude Code 2.1.318. That client reports the local checkout as `readFromFolder` alongside its installed cache, so keep the registered folder available. See the [dual-host validation record](reviews/dual-host-validation.md) for the exact checks and their limits.
 
@@ -222,7 +240,7 @@ Cloning this repo alone does not install its skills. Use the setup for your host
 
 ## Add specialist skills when needed
 
-The nine steps above are the starting path. These eleven additional skills handle specific needs; use them when the task or your policies call for them.
+The nine steps above are the starting path. These twelve additional skills handle specific needs; use them when the task or your policies call for them.
 
 | When you need it | Agent / skill | What it produces |
 | --- | --- | --- |
@@ -233,6 +251,7 @@ The nine steps above are the starting path. These eleven additional skills handl
 | Actual tool restrictions or approval controls | Controls engineer · [guardrails](skills/ai-sdlc-guardrails/SKILL.md) | Configured boundaries and enforcement evidence |
 | Explicit coordination across owners or dependent tasks | Coordinator · [orchestrate](skills/ai-sdlc-orchestrate/SKILL.md) | Ownership, dependencies and handoffs |
 | Changed prompts, skills, models or AI behavior | Evaluation author · [agent-evals](skills/ai-sdlc-agent-evals/SKILL.md) | Baseline comparisons and regression results |
+| A score for one step's output before review | Evaluator · [evaluate](skills/ai-sdlc-evaluate/SKILL.md) | Failed checks, verdicts per dimension and a logged record |
 | A targeted security assessment | Security reviewer · [security-review](skills/ai-sdlc-security-review/SKILL.md) | Reproducible findings and risk decisions needed |
 | An interface, document or workflow usability check | Usability reviewer · [usability-review](skills/ai-sdlc-usability-review/SKILL.md) | Task walkthrough, friction and accessibility gaps |
 | Recurring security scans or incoming scanner findings | Scan analyst · [security-scanning](skills/ai-sdlc-security-scanning/SKILL.md) | Scan plan, triage and follow-up evidence |
@@ -247,13 +266,13 @@ For repeated team use, start with the [task brief](templates/TASK-BRIEF.md) and 
 | Plan | discover |
 | Design | specify, design |
 | Build | plan, build, repository-context, policy-skills, orchestrate |
-| Test | verify, agent-evals |
+| Test | verify, agent-evals, evaluate |
 | Deploy | review, release |
 | Maintain | operate, security-scanning, improve |
 | Cross-cutting | govern, guardrails, security-review, usability-review |
 | Supplemental | retire |
 
-Each skill has a specific trigger, substantive procedure, output/evidence contract, failure handling and local adaptation fields. The [19-item source inventory](research/playbook-inventory.json) covers source practices, sidebars and cross-cutting concepts. These are different units from the 20 skills and the 12 navigation modules. Retirement is additional lifecycle coverage, not an Anthropic stage.
+Each skill has a specific trigger, substantive procedure, output/evidence contract, failure handling and local adaptation fields. The [19-item source inventory](research/playbook-inventory.json) covers source practices, sidebars and cross-cutting concepts. These are different units from the 21 skills and the 12 navigation modules. Retirement is additional lifecycle coverage, not an Anthropic stage.
 
 ## Research and customization
 
@@ -282,6 +301,7 @@ python3 scripts/check_skills.py
 python3 scripts/check_site.py
 python3 scripts/validate_profiles.py --org config/org.example.json --project config/project.example.json
 python3 -m unittest discover -s tests -v
+uv run --no-project --with coverage==7.6.10 sh -c 'coverage run --branch --include="skills/*/scripts/*" -m unittest discover -s tests && coverage report --fail-under=80'
 node --check assets/app.js
 node tests/test_controls.cjs
 ```
