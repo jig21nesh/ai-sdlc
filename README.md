@@ -87,10 +87,10 @@ This is our practical usage sequence, mapped to the playbook's six lifecycle pha
 After any step, score its output against the input it came from:
 
 ```text
-/ai-sdlc:ai-sdlc-evaluate specify docs/intent.md docs/spec.md
+Use $ai-sdlc:ai-sdlc-evaluate to evaluate the specify step: input docs/intent.md, output docs/spec.md.
 ```
 
-In Codex, use `$ai-sdlc:ai-sdlc-evaluate` with the same step and paths. The [evaluate skill](skills/ai-sdlc-evaluate/SKILL.md) does three things:
+In Claude Code, the same request is `/ai-sdlc:ai-sdlc-evaluate specify docs/intent.md docs/spec.md`. The [evaluate skill](skills/ai-sdlc-evaluate/SKILL.md) does three things:
 
 1. **Checks structure** with a bundled script: decision first, required sections, caps on questions, nits and length, and whether the output references the input's IDs.
 2. **Judges five dimensions**, each pass, fail or unknown with a one-line reason: coverage, faithfulness, decision clarity, actionability and concision. Concision is two-sided, so an output can fail for being too thin.
@@ -187,7 +187,7 @@ Use the skills interactively for the steps that need your judgment, and automate
 | Security scanning, improvement reports | Scheduled | The resulting issue or report |
 | Release | You, with the release skill preparing the record | Environment required reviewers |
 
-For the review step, start from the [example GitHub workflow](templates/github/ai-sdlc-pr-review.example.yml). It loads this plugin in `anthropics/claude-code-action`, runs on `pull_request` only, skips forks and drafts, and cannot push. Pin both actions to a commit and try it in a test repository first. [ADR 0003](docs/adr/0003-interactive-first-ci-for-review.md) gives the reasoning and sources.
+For the review step, start from the example GitHub workflow for your host: [Claude Code](templates/github/ai-sdlc-pr-review.claude-code.example.yml) or [Codex](templates/github/ai-sdlc-pr-review.codex.example.yml). Both run on `pull_request` only, skip forks and drafts, and cannot push. The Claude Code example installs this plugin in the runner; the Codex example checks the pack out beside the code and points the prompt at the skill file. Pin every action to a commit and try the workflow in a test repository first. [ADR 0003](docs/adr/0003-interactive-first-ci-for-review.md) gives the reasoning and sources.
 
 ## Install once for your host
 

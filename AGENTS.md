@@ -35,6 +35,7 @@ claude plugin validate .claude-plugin/marketplace.json --strict
 - Keep `name`, `version`, `description`, `author`, `repository` and `license` identical in `plugin.json` and `.claude-plugin/plugin.json`. Increment both versions for any change users will install.
 - Do not put Markdown under `agents/`; Claude Code would load it as an agent.
 - Do not add `CLAUDE.md` at the repository root; strict plugin validation rejects it. Claude Code reads `.claude/CLAUDE.md`, which imports this file.
+- Skills, their templates and the shared contract name no host and use no host-specific invocation syntax; write "the host" and "sub-agent". Host-specific material belongs in the README install sections and in example files named for the host, and each such example needs a counterpart for the other host.
 - A skill states a claim only with a source in `research/` or a link. Mark toolkit additions as additions.
 - Skills write product artifacts to the user's project, never to this repository or a plugin cache.
 - Skill outputs follow the output rules in `skills/shared-contract.md`. A change that makes outputs longer needs evidence that reviewers benefit.
