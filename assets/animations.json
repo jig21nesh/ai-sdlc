@@ -75,5 +75,24 @@
     "frame_duration_ms": 2400,
     "loop": true,
     "semantic_content_identical_in_static": true
+  },
+  "evaluate-loop": {
+    "title": "Evaluate each step, then improve the pack",
+    "alt": "A step's output and its input pass through structural checks and five judgments, the reviewer's verdict is logged, and repeated failures lead the improve skill to change one skill or template.",
+    "caption": "An original toolkit loop. A score is evidence for the reviewer, not approval; use the log for trends until the judgments are compared with a reviewer's verdicts.",
+    "frames": [
+      "Step output and input",
+      "Structural checks",
+      "Five judgments",
+      "Reviewer verdict logged",
+      "Improve changes one skill"
+    ],
+    "gif": "assets/evaluate-loop.gif",
+    "static": "assets/evaluate-loop.png",
+    "width": 1080,
+    "height": 420,
+    "frame_duration_ms": 2400,
+    "loop": true,
+    "semantic_content_identical_in_static": true
   }
 }

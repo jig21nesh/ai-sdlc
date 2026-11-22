@@ -96,6 +96,15 @@ In Claude Code, the same request is `/ai-sdlc:ai-sdlc-evaluate specify docs/inte
 2. **Judges five dimensions**, each pass, fail or unknown with a one-line reason: coverage, faithfulness, decision clarity, actionability and concision. Concision is two-sided, so an output can fail for being too thin.
 3. **Appends a record** to `docs/ai-sdlc/evaluations.jsonl` in your product, including your own verdict: approved, approved with edits or rejected.
 
+![Evaluate loop: a step's output and input go through structural checks and five judgments, the reviewer's verdict is logged, and repeated failures lead to one change to a skill or template.](assets/evaluate-loop.png)
+
+<details>
+<summary>Play the animated evaluate loop (GIF)</summary>
+
+![A step's output and its input pass through structural checks and five judgments, the reviewer's verdict is logged, and repeated failures lead the improve skill to change one skill or template.](assets/evaluate-loop.gif)
+
+</details>
+
 The log is the feedback loop. `summarize` counts failures per step and package version, and the [improve skill](skills/ai-sdlc-improve/SKILL.md) turns a repeated failure into one change to a skill or template, with the failing output kept as a regression case.
 
 The judgments are uncalibrated until a reviewer has labelled about 30 outputs and compared. Use them for trends, not as a gate. [ADR 0002](docs/adr/0002-evaluate-skill.md) records the design and its sources.
