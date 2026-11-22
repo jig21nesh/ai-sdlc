@@ -4,9 +4,9 @@ Status: accepted (22 November 2026)
 
 ## Context
 
-The pack is used interactively: an engineer invokes one skill at a time in Codex or Claude Code. We considered running the whole framework as GitHub Actions workflows, with an issue label producing a specification pull request, its approval producing a plan, and so on.
+The pack is used interactively: an engineer invokes one skill at a time in Codex or Claude Code. An alternative is to run the whole framework as GitHub Actions workflows, with an issue label producing a specification pull request, its approval producing a plan, and so on.
 
-Research into vendor practice on 22 November 2026 found:
+Vendor documentation reviewed on 22 November 2026 shows:
 
 - No vendor documents an issue-to-specification pipeline. GitHub Spec Kit runs its steps in the agent's chat, one at a time. Google's Jules requires plan approval before code changes.
 - Build is the stage vendors delegate to asynchronous agents (Copilot coding agent, Claude Code via mention, Jules), always ending in a pull request a human reviews.
