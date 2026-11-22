@@ -70,6 +70,7 @@ For a migration, identify state that must survive and backward/forward compatibi
 6. Identify tests and tools that exist, checks to add and checks that need an unavailable environment.
 7. Record stop conditions: unresolved material specification conflict, lost authority, changed candidate, exceeded budget or observed harm.
 
+Each task in the plan is one pull request under [delivery through pull requests](../shared-contract.md#delivery-through-pull-requests): the "Depends on" column is the stack order, and the plan travels in the definition pull request with the intent and specification when those exist as files.
 Use [the implementation-plan template](assets/implementation-plan.md) when a durable plan is useful.
 Put the plan in the designated `project.workflow.task_artifact_dir` or established record system.
 Do not replace an authoritative tracker with a new Markdown source of truth without an agreed mapping.
