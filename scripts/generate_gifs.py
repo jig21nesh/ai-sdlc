@@ -266,6 +266,40 @@ def adaptation(step=None):
     return diagram.finish()
 
 
+def evaluate_loop(step=None):
+    diagram = Diagram(
+        "Evaluate each step, then improve the pack",
+        "One output scored against its input; the log shows which skill to change.",
+    )
+    cards = [
+        ("Step output", "input + artifact"),
+        ("Checks", "structure + caps"),
+        ("Judgments", "five dimensions"),
+        ("Your verdict", "logged as JSONL"),
+        ("Improve", "one skill change"),
+    ]
+    card_width, gap, x0 = 190, 16, 33
+    for i, (title, detail) in enumerate(cards):
+        x = x0 + i * (card_width + gap)
+        diagram.card(x, 135, card_width, 112, [
+            (17, title, 24, True),
+            (62, detail, 22, False),
+        ], active=step is None or step == i, cyan=i == 4)
+        if i < len(cards) - 1:
+            diagram.arrow([(x + card_width + 2, 191), (x + card_width + gap - 2, 191)],
+                          active=step is None or step == i)
+    feedback = step in (None, 4)
+    diagram.arrow([(952, 249), (952, 289), (128, 289), (128, 251)],
+                  color="cyan" if feedback else "line", width=3)
+    diagram.draw.rectangle((250 * SCALE, 270 * SCALE, 830 * SCALE, 307 * SCALE),
+                           fill=COLORS["background"])
+    diagram.text(540, 277, "Repeated failures change the skill or template", 22,
+                 color="cyan" if feedback else "body", anchor="mt")
+    diagram.text(28, 334, "A score is evidence for the reviewer, not approval.", 24, bold=True)
+    diagram.text(28, 377, "Use the log for trends until judgments are compared with a reviewer.", 22, color="body")
+    return diagram.finish()
+
+
 ANIMATIONS = {
     "lifecycle": {
         "title": "Anthropic six-stage reference",
@@ -291,12 +325,19 @@ ANIMATIONS = {
         "caption": "An original toolkit usage sequence, not nine new playbook phases or an automatic agent pipeline. Use the relevant skills and review their outputs in your product repository.",
         "frames": [title for title, _, _ in PRODUCT_STEPS],
     },
+    "evaluate-loop": {
+        "title": "Evaluate each step, then improve the pack",
+        "alt": "A step's output and its input pass through structural checks and five judgments, the reviewer's verdict is logged, and repeated failures lead the improve skill to change one skill or template.",
+        "caption": "An original toolkit loop. A score is evidence for the reviewer, not approval; use the log for trends until the judgments are compared with a reviewer's verdicts.",
+        "frames": ["Step output and input", "Structural checks", "Five judgments", "Reviewer verdict logged", "Improve changes one skill"],
+    },
 }
 
 
 def main():
     renderers = {"lifecycle": lifecycle, "delegation": delegation,
-                 "adaptation": adaptation, "product-flow": product_flow}
+                 "adaptation": adaptation, "product-flow": product_flow,
+                 "evaluate-loop": evaluate_loop}
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--only", choices=renderers, help="Regenerate one diagram and preserve the others.")
     args = parser.parse_args()
