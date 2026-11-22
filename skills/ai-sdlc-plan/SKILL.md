@@ -48,7 +48,7 @@ For a migration, identify state that must survive and backward/forward compatibi
 
 ## Turn the approach into bounded work
 
-1. Choose the smallest coherent change that satisfies the accepted outcome.
+1. Choose the smallest coherent change that satisfies the accepted outcome. Slice work so each reviewable change is about 100 changed lines; split a slice that approaches 1,000.
 2. Compare meaningful alternatives when the tradeoff changes risk, compatibility or maintainability; avoid ceremonial alternatives for trivial edits.
 3. Name affected files/components, ordered steps, dependencies, expected outputs and how each step is verified.
 4. Include negative paths and a recovery/rollback assessment where the change has persistent or external effects.
@@ -94,7 +94,7 @@ If the accepted specification or repository materially changes, compare it with 
 Revise affected tasks and proof; preserve superseded revisions and identify changed acceptance scope.
 Do not restart unrelated completed planning or request an unchanged approval again.
 
-Return: plan location/revision, chosen approach, task graph, ownership, checks, assumptions and blocked dependencies.
+Follow the [output rules](../shared-contract.md#output-rules): reply with the plan location and revision, the approach in one or two sentences, the task count, blocked dependencies and the decision needed. The task table lives in the plan, not the reply.
 State evidence status separately from acceptance and from permission to execute.
 The engineering owner is accountable for the approach; the integration owner is accountable for combining delegated work.
 A planning-only request ends with this handoff, not source edits, published tasks or background agents.

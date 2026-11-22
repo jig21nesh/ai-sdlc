@@ -82,6 +82,18 @@ This is our practical usage sequence, mapped to the playbook's six lifecycle pha
 
 **When a check fails:** fix the relevant build issue and rerun affected verification and review on the changed candidate. If the problem is the requirement itself, return to Specify. Use operations and improvement findings as input to the next intent.
 
+## Outputs built for review
+
+Every skill follows the same [output rules](skills/shared-contract.md#output-rules), so an artifact can be approved or rejected from its first screen:
+
+- **Decision first:** each artifact opens with its status, the decision you need to make and the next owner.
+- **One line per item:** requirements, tasks, checks and findings are single rows; reasoning is collapsed or linked.
+- **Deviations only:** failures and gaps are listed in full; what passed is a count with a link to the evidence.
+- **Capped questions and nits:** at most three open questions, each with a recommended answer; at most five low-severity findings, with the withheld count stated.
+- **Sized to the change:** a routine artifact fits one page, about 400 words, before its record block. Plans aim for slices of about 100 changed lines.
+
+Identity and provenance sit in a `Record` block at the end of each artifact. A failed check, an unresolved decision or a missing authorization is always stated. [ADR 0001](docs/adr/0001-concise-output-contract.md) records the sources behind these rules.
+
 You decide which intent, specification and plan to accept. Existing authorization carries forward within its scope; release actions also need the actual target, artifact and applicable authority. Routine work does not require filling out every organization profile.
 
 ## Continue after discovery
@@ -253,6 +265,7 @@ Each skill has a specific trigger, substantive procedure, output/evidence contra
 - [Consolidated evidence](research/evidence.json): 43 unique source URLs, with access/inspection limits and aliases. Repeated URLs count once.
 - [Configuration guide](config/ADAPTATION.md): exact organization, project and adapter changes.
 - [Agent briefs](references/agent-roles.md): optional delegation contracts, not installed agents.
+- [Decision records](docs/adr/README.md): why the pack works the way it does.
 - [Dual-host validation](reviews/dual-host-validation.md): version 0.2.0 installation and discovery in Codex and Claude Code.
 - [Discovery and plugin validation](reviews/discovery-plugin-validation.md): earlier discovery changes and Codex 0.1.0 installation checks.
 - [Original pack validation](reviews/deep-validation.md): earlier behavioral exercises, findings and their limits.

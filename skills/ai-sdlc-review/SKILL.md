@@ -74,7 +74,12 @@ When relevant changes follow independent acceptance, invalidate affected accepta
 
 ### 7. Prepare disposition and any requested response
 
-Return findings first, or a precise no-findings statement limited to the inspected scope. Include actual checks, missing coverage, residual risks and acceptance status separately.
+Follow the [output rules](../shared-contract.md#output-rules). Return findings first, or a precise no-findings statement limited to the inspected scope. Assess everything, then present one row per finding, sorted by severity:
+
+| Severity | Location | Finding | Disposition |
+| --- | --- | --- | --- |
+
+Use `blocking`, `important` or `nit`. Show at most five nits and state how many were withheld. Do not report what CI already enforces, generated files, or issues that predate the change unless they are blocking; mention pre-existing issues in one line. Put reproduction and reasoning in a collapsed `<details>` block per finding or in the review record. A claim about behavior cites `file:line`. Then state actual checks as a count, missing coverage, residual risks and acceptance status, each only where it exists.
 
 For each incoming comment, draft a concise response connecting the disposition to evidence and revision. Posting replies, resolving remote threads, pushing, merging or deploying requires the task's existing authorization and the actual runtime's authority. Preparing the response is useful work even when external write permission is absent.
 

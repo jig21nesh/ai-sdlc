@@ -87,7 +87,8 @@ Do not merge, publish, or notify people unless that action is already authorized
 6. Stage or commit only when authorized and only the intended task files; never blanket-stage unrelated user work.
 
 Use the existing change record or [change packet](../../templates/CHANGE-PACKET.md) where useful.
-Return the patch location, implementation summary, requirement mapping, observed checks, baseline failures and remaining limits.
+Follow the [output rules](../shared-contract.md#output-rules): reply with the patch location, what changed in one or two sentences, checks as a count with an evidence link, every failed or unrun check, and remaining limits. Map requirements only where the patch deviates from the plan.
+Write a change description whose first line is a standalone imperative summary, followed by what changed and why. If the patch grows well past the planned slice size, say so and propose a split.
 Assign the engineering/implementation owner and the next verification or review action.
 A `pass` means the specified observed checks passed; it does not mean every quality property was verified.
 If no commands ran, state that explicitly. A suggestion, generated test or planned command is not an execution result.

@@ -1,37 +1,37 @@
-# Intent
+# Intent: <short name>
 
-Task / source event ID:
-Author / observation date:
-Canonical record / revision / working copy:
-Acceptance: draft | pending | accepted | rejected (actual decision reference):
+**Status:** draft | pending | accepted | rejected
+**Decision needed:** <what the owner must decide, in one sentence>
+**Next owner:** <role or name>
 
-## Need
-Affected user and situation:
-Observed problem:
-Desired outcome:
-Baseline and target (observed, estimated, proposed or unknown):
-Measurement method and owner:
+## Problem
+<Who experiences what, under which conditions, and why it matters. Two to four sentences.>
+
+## Outcome
+<The observable result and how it will be measured. Mark the baseline and target as observed, estimated, proposed or unknown.>
+
+## Affected users and systems
+<One line each.>
+
+## Scope
+- In: <smallest useful first version>
+- Out: <exclusions>
+- Constraints: <user-selected, policy, data or operational constraints>
 
 ## Evidence
-| ID | Observation | Source and date | Access / confidence limit |
+<Only findings that change the decision. Link the research record for the rest.>
+
+| ID | Finding and its effect on scope | Source and date |
+| --- | --- | --- |
+
+## Open questions
+<At most three. Record anything less consequential under Assumptions.>
+
+| ID | Question | Recommended answer | Blocks |
 | --- | --- | --- | --- |
 
-## Research and proposed first version
-Research performed, or why unnecessary/unavailable:
-Research record (when substantial):
-Existing alternatives / current workaround:
-Key findings and their effect on scope (evidence IDs):
-Proposed differentiation (label unvalidated hypotheses):
-Smallest useful first version:
-Demand / feasibility assumptions and next validation experiment:
+## Assumptions
+<One line each; label unvalidated demand or feasibility hypotheses.>
 
-## Boundaries
-In scope / out of scope:
-User-selected solution constraints:
-Policy / data / operational constraints:
-
-## Decisions to resolve
-| ID | Question or assumption | Impact | Owner | Blocks which decision? |
-| --- | --- | --- | --- | --- |
-
-Next action / owner:
+## Record
+Source event or task ID · author · observation date · canonical record and revision · acceptance decision reference

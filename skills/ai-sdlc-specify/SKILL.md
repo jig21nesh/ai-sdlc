@@ -14,16 +14,16 @@ Intent or equivalent request and its revision/acceptance state, current system b
 ## Procedure
 
 1. Read the request and relevant implementation/interfaces. Identify the source of truth for behavior. Inventory applicable policy clauses: data exposure, authentication, brand, accessibility, reliability or domain rules. Apply policy skills whose source and scope are established.
-2. Assign stable requirement IDs linked to an intent outcome or identified risk. Describe observable behavior, separating mandatory constraints, proposed choices and assumptions. Define units and conditions for quantitative targets.
+2. Assign stable requirement IDs linked to an intent outcome or identified risk. Write each requirement as one line in the form "WHEN <condition> THE SYSTEM SHALL <observable result>". Describe observable behavior, separating mandatory constraints, proposed choices and assumptions. Define units and conditions for quantitative targets.
 3. Design the user/system flow alongside requirements: entry, successful transition, empty/missing state, error, retry/cancel, permission denial and recovery where relevant. Describe API/event/data contracts and existing consumer compatibility. Omit irrelevant UI sections for a non-UI task with a reason.
 4. Choose acceptance examples that distinguish correct from plausible-but-wrong behavior. Include boundary/negative cases and needed integration evidence. Specify which boundaries require real or sandbox integration; do not impose a universal ban on mocks.
-5. Record policy conflicts with competing clauses and revisions, affected requirement, options, decision owner and blocked behavior. Continue unaffected drafting. Never silently weaken a rule or use model confidence as a decision.
-6. Build the [specification matrix](assets/spec.md): requirement → design element → acceptance example → planned evidence. Flag unsupported requirements, missing proof, out-of-scope design, inconsistent terms and vague words such as “fast” without a measure.
+5. Record policy conflicts with competing clauses and revisions, affected requirement, options, decision owner and blocked behavior. Keep at most three open decisions, each with a recommended answer; for a lesser gap choose a reasonable default and record the assumption. Continue unaffected drafting. Never silently weaken a rule or use model confidence as a decision.
+6. Build the [specification table](assets/spec.md): requirement → acceptance example → planned evidence. Reference the intent by ID and revision; do not restate it. Flag unsupported requirements, missing proof, out-of-scope design, inconsistent terms and vague words such as “fast” without a measure.
 7. Record actual acceptance decisions and the canonical revision. When implementation changes behavior, update affected requirements and examples before reusing earlier acceptance.
 
 ## Output and completion
 
-Return the combined spec, requirement/acceptance matrix, material concerns and acceptance state. It is ready for planning when required behavior is sufficiently unambiguous, material conflicts are resolved or explicitly scoped out by an authorized decision, and the canonical revision is identified. An unresolved dependency may still permit useful draft work.
+Follow the [output rules](../shared-contract.md#output-rules): reply with the spec location, its status, the decision needed and the open decisions. The requirement table lives in the spec, not the reply. It is ready for planning when required behavior is sufficiently unambiguous, material conflicts are resolved or explicitly scoped out by an authorized decision, and the canonical revision is identified. An unresolved dependency may still permit useful draft work.
 
 **Failure case:** a mock exposes invoices to any signed-in user while policy restricts them to account owners. Preserve the owner requirement, flag the mismatch and require cross-account denial evidence; the mock does not override authorization.
 
