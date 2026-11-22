@@ -64,7 +64,7 @@ This is our practical usage sequence, mapped to the playbook's six lifecycle pha
 
 ## Step-by-step guide
 
-**Agent** below means the role your coding assistant takes while using that skill. The role labels describe the work; they do not create separate agents. Click a skill to read its instructions. Invoke `discover` with **`$ai-sdlc:ai-sdlc-discover`** in Codex or **`/ai-sdlc:ai-sdlc-discover`** in Claude Code. Use a separate reviewer when independent review is required.
+**Agent** below means the role your coding assistant takes while using that skill. The role labels describe the work. Where your host provides sub-agents, each step hands its research, repository inspection or assessment to one and keeps questions and decisions in your chat; see [sub-agent defaults](skills/shared-contract.md#sub-agent-defaults). No agent definitions are bundled. Click a skill to read its instructions. Invoke `discover` with **`$ai-sdlc:ai-sdlc-discover`** in Codex or **`/ai-sdlc:ai-sdlc-discover`** in Claude Code. Use a separate reviewer when independent review is required.
 
 **Source** identifies the supporting article and its stage/topic. The nine steps and their skill procedures are this toolkit's adaptation; additions are marked below. See the [detailed practice mapping](research/practice-coverage.md) for full traceability.
 

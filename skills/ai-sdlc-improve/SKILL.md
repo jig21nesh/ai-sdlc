@@ -5,7 +5,7 @@ description: "Convert measured delivery outcomes, incidents and repeated agent m
 
 # Improve from observed outcomes
 
-Placement: **Maintain** with feedback across stages. Apply the [shared contract](../shared-contract.md). Improve the specific failure mechanism rather than accumulating permanent instructions for every anecdote.
+Placement: **Maintain** with feedback across stages. Apply the [shared contract](../shared-contract.md). Improve the specific failure mechanism rather than accumulating permanent instructions for every anecdote. Analysis of outcomes and evaluation records runs in a sub-agent where the host provides one; the decision to change a skill stays in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 
 ## Procedure
 

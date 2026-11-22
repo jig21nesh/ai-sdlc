@@ -5,7 +5,7 @@ description: Independently assess a specific software change, skill bundle or ag
 
 # Review the candidate's real security boundaries
 
-Read the [shared contract](../shared-contract.md). Begin with read-only inspection of the exact candidate and authorized scope. Produce supported findings, remediation evidence and explicit limits. This review is neither a compliance certification nor permission to exploit live systems.
+Read the [shared contract](../shared-contract.md). Begin with read-only inspection of the exact candidate and authorized scope. Produce supported findings, remediation evidence and explicit limits. This review is neither a compliance certification nor permission to exploit live systems. The assessment runs in a fresh sub-agent that has the candidate and scope but not the producer's conversation, where the host provides one ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 
 ## Inputs and independence
 
