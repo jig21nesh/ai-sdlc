@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "caps": {
+    "summary_lines": 12,
+    "open_questions": 3,
+    "nits": 5,
+    "table_columns": 5,
+    "paragraph_words": 120,
+    "body_words_routine": 400,
+    "body_words_max": 1200
+  },
+  "judgments": {
+    "coverage": "Does the output address every outcome, requirement or task in the input that it is responsible for? Name each one it misses.",
+    "faithfulness": "Is every fact, path, command, owner and decision in the output supported by the input or by evidence the output links? Name each unsupported claim.",
+    "decision_clarity": "Can a reviewer tell from the first screen what they are being asked to decide and what happens next?",
+    "actionability": "Could the next owner act on this output without the conversation that produced it? Name what they would have to ask.",
+    "concision": "Answer too-thin, right or too-verbose. Too-verbose: restates the input, repeats itself, or includes detail no reviewer decision depends on. Too-thin: omits a failure, risk, decision or evidence a reviewer needs. Quote the worst passage."
+  },
+  "steps": {
+    "discover": {
+      "input": "the idea, ticket or incident",
+      "sections": ["Problem", "Outcome", "Scope", "Record"],
+      "question_sections": ["Open questions"]
+    },
+    "specify": {
+      "input": "the intent",
+      "sections": ["Requirements", "Record"],
+      "question_sections": ["Open decisions"]
+    },
+    "plan": {
+      "input": "the specification",
+      "sections": ["Approach", "Tasks", "Record"],
+      "question_sections": []
+    },
+    "build": {
+      "input": "the plan",
+      "sections": [],
+      "question_sections": []
+    },
+    "verify": {
+      "input": "the specification and candidate",
+      "sections": ["Failures and gaps", "Record"],
+      "question_sections": []
+    },
+    "review": {
+      "input": "the diff and requirements",
+      "sections": [],
+      "question_sections": []
+    },
+    "release": {
+      "input": "the reviewed candidate and target",
+      "sections": ["Binding", "Rollout and recovery", "Authority", "Record"],
+      "question_sections": []
+    },
+    "operate": {
+      "input": "the signals and runbooks",
+      "sections": ["Impact", "Diagnosis", "Follow-up", "Record"],
+      "question_sections": []
+    },
+    "improve": {
+      "input": "the outcomes and evaluation records",
+      "sections": ["Observation", "Cause", "Change", "Result", "Record"],
+      "question_sections": []
+    }
+  }
+}

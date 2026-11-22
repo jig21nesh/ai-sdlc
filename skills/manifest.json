@@ -420,6 +420,35 @@
       ]
     },
     {
+      "id": "ai-sdlc-evaluate",
+      "phase": "Test",
+      "purpose": "Score a step's output against its input",
+      "path": "skills/ai-sdlc-evaluate/SKILL.md",
+      "practice_ids": [
+        "agent-evals"
+      ],
+      "evidence_ids": [
+        "O15",
+        "O06",
+        "DG03",
+        "DG07"
+      ],
+      "output_templates": [
+        "skills/ai-sdlc-evaluate/assets/evaluation-record.json"
+      ],
+      "organization_fields": [
+        "org.ai.evaluation_policy_ref"
+      ],
+      "project_fields": [
+        "project.quality.eval_suite_refs",
+        "project.workflow.task_artifact_dir"
+      ],
+      "success_signals": [
+        "Failed checks and judgments per step and package version",
+        "Agreement between judgments and the reviewer's verdict"
+      ]
+    },
+    {
       "id": "ai-sdlc-review",
       "phase": "Deploy",
       "purpose": "Review changes or resolve review findings",

@@ -1,0 +1,24 @@
+{
+  "step": "specify",
+  "skill_version": "0.4.0",
+  "input_sha256": null,
+  "output_sha256": null,
+  "output_path": "docs/spec.md",
+  "format": "current",
+  "deterministic": true,
+  "independence": "self",
+  "judge": "model and host that produced the judgments",
+  "measures": {},
+  "checks": [
+    {"id": "decision_first", "passed": true, "evidence": ""}
+  ],
+  "judgments": {
+    "coverage": {"verdict": "unknown", "critique": ""},
+    "faithfulness": {"verdict": "unknown", "critique": ""},
+    "decision_clarity": {"verdict": "unknown", "critique": ""},
+    "actionability": {"verdict": "unknown", "critique": ""},
+    "concision": {"verdict": "unknown", "critique": ""}
+  },
+  "human_verdict": "pending",
+  "reviewer_minutes": null
+}

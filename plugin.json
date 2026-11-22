@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-sdlc",
-  "version": "0.3.0",
-  "description": "Research product ideas into intent and apply twenty reusable software delivery skills from any project.",
+  "version": "0.4.0",
+  "description": "Research product ideas into intent and apply twenty-one reusable software delivery skills from any project.",
   "extensions": {
     "com.openai": {
       "interface": {
