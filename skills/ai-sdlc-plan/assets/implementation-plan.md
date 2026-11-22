@@ -3,7 +3,7 @@
 **Status:** draft | ready | accepted
 **Decision needed:** <what the engineering owner must accept, in one sentence>
 **Next owner:** <role or name>
-**Specification:** <ID and revision; do not restate it>
+**Specification:** <ID or ticket link, and revision; do not restate it>
 
 ## Approach
 <The smallest coherent approach in two to four sentences. Name a rejected alternative only where the tradeoff changes risk, compatibility or maintainability.>

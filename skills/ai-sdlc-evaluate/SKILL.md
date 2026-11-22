@@ -11,7 +11,7 @@ Placement: **Test** and **Maintain**. Apply the [shared contract](../shared-cont
 
 - **Step:** `discover`, `specify`, `plan`, `build`, `verify`, `review`, `release`, `operate` or `improve`.
 - **Output:** the path of the artifact to evaluate.
-- **Input:** the path or paths the step worked from, for example the intent for a specification. Without an input, coverage and faithfulness are `unknown`; say so and continue.
+- **Input:** the path or paths the step worked from, for example the intent for a specification. When the input is a ticket, save the text that was planned from to a file and pass that path. Without an input, coverage and faithfulness are `unknown`; say so and continue.
 - **Human verdict**, when the reviewer has already decided: `approved`, `approved-with-edits` or `rejected`. Otherwise record `pending`.
 
 If the step or output is not given and cannot be inferred from the request, ask for it once.
