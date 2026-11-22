@@ -5,7 +5,7 @@ description: "Produce or reconcile a combined requirements and design specificat
 
 # Specify behavior and design together
 
-Placement: **Design**. Apply the [shared contract](../shared-contract.md). Use one coherent specification; specialist architecture work can contribute decisions without a separate phase for every change.
+Placement: **Design**. Apply the [shared contract](../shared-contract.md). Use one coherent specification; specialist architecture work can contribute decisions without a separate phase for every change. Repository inspection runs in a sub-agent where the host provides one; drafting and open decisions stay in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 
 ## Inputs
 

@@ -7,7 +7,7 @@ description: "Plan implementation of an accepted change: inspect the repository,
 
 Produce a plan that another engineer can execute and verify without the conversation.
 This skill belongs to **Build**, not Anthropic's initial Plan stage.
-Use the [shared contract](../shared-contract.md) for authority, evidence states and repair limits.
+Use the [shared contract](../shared-contract.md) for authority, evidence states and repair limits. Read-only repository inspection runs in a sub-agent where the host provides one; the approach and the plan stay in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 Keep a small authorized fix proportionate: a concise task record may contain the whole plan.
 Do not demand a separate document or approval when the accepted request and local policy suffice.
 
@@ -63,7 +63,7 @@ Writing a draft or committing a plan does not itself accept the plan or launch i
 
 ## Decide whether and how to delegate
 
-Delegate only when authorized and the work benefits from separate attention or independent execution.
+Mark each task that can run independently so that build can give it to a sub-agent under the [sub-agent defaults](../shared-contract.md#sub-agent-defaults). Wider delegation, such as concurrent sessions or other owners, needs authorization and must benefit from separate attention or independent execution.
 Use the [task brief](../../references/task-brief.example.json) for scope and output details.
 
 | Work relationship | Coordination choice |

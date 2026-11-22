@@ -1,6 +1,6 @@
 # Project rules: AI-SDLC skill pack
 
-This repository is a skill bundle packaged for Codex (`plugin.json`) and Claude Code (`.claude-plugin/plugin.json`). It ships Markdown procedures, templates and research. It ships no runtime service, hook, agent or MCP server.
+This repository is a skill bundle packaged for Codex (`plugin.json`) and Claude Code (`.claude-plugin/plugin.json`). It ships Markdown procedures, templates and research. It ships no runtime service, hook, agent definition or MCP server; skills instruct the host to use its own sub-agents.
 
 ## Layout
 
