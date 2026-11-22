@@ -94,7 +94,7 @@ For substantial evaluation work, use the agent-evaluation procedure available in
 
 ## Return an honest verdict
 
-List each check as `pass`, `fail`, `partial`, `blocked`, `not-run` or `not-applicable` with a reason and evidence link.
+Follow the [output rules](../shared-contract.md#output-rules): open with the verdict and check counts, then list every check that is `fail`, `partial`, `blocked` or `not-run` with a reason and evidence link. Record `pass` and `not-applicable` checks in the collapsed table of the [report](assets/verification-report.md).
 Separate requirement coverage, software defects, agent behavior findings and product-AI results.
 Name untested critical behavior and the impact of environment/independence limits.
 Route residual-risk acceptance to the actual quality/domain owner under the review policy; the verifier does not self-authorize a release.

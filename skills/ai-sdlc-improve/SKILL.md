@@ -25,7 +25,7 @@ Placement: **Maintain** with feedback across stages. Apply the [shared contract]
 
 ## Output and completion
 
-Use [improvement-record.md](assets/improvement-record.md). Return observation, diagnosis confidence, intervention location, baseline/candidate comparison, residual gaps and actual adoption decision. Completion requires evidence supporting the claimed improvement or an honest inconclusive/rejected result, not merely a new rule.
+Use [improvement-record.md](assets/improvement-record.md). Follow the [output rules](../shared-contract.md#output-rules): reply with the decision, the one change made, the baseline and result in one line, and residual gaps. Completion requires evidence supporting the claimed improvement or an honest inconclusive/rejected result, not merely a new rule.
 
 **Failure case:** a single missed instruction leads to a blanket “always run every test” rule. First determine whether discovery, stale context, an unavailable tool or insufficient verification caused the miss; test the smallest correction against ordinary tasks.
 

@@ -99,7 +99,7 @@ Send summaries or notifications only through authorized destinations with permit
 
 ## Return the operational handoff
 
-Report service/environment, mode, current observed state, evidence status and last observation time.
+Follow the [output rules](../shared-contract.md#output-rules): open with a one-sentence summary of what happened and the current state, then service/environment, evidence status and last observation time. Keep the timeline in the collapsed section of the [incident record](assets/incident-record.md).
 Distinguish diagnosis confidence from action authority and from verified recovery.
 List pending owner decisions, telemetry blind spots, unexecuted steps and follow-up artifacts.
 For a monitoring-design request, return the design and validation needs with ongoing execution marked not-run.

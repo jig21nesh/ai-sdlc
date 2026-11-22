@@ -1,28 +1,27 @@
-# Implementation plan
+# Plan: <short name>
 
-Record change ID, owner, plan revision and timestamp. Identify the authoritative intent/specification record, accepted revision, acceptance evidence and working-copy linkage. This file is a template, not an approval.
+**Status:** draft | ready | accepted
+**Decision needed:** <what the engineering owner must accept, in one sentence>
+**Next owner:** <role or name>
+**Specification:** <ID and revision; do not restate it>
 
-## Outcome and baseline
+## Approach
+<The smallest coherent approach in two to four sentences. Name a rejected alternative only where the tradeoff changes risk, compatibility or maintainability.>
 
-State the requested behavior, exclusions, candidate/base revision, working-tree changes to preserve, relevant architecture, constraints and observed baseline. Distinguish facts, assumptions and unresolved decisions.
+## Tasks
+<One line each, in execution order; cells are phrases. Aim for slices of about 100 changed lines; split a slice that approaches 1,000.>
 
-## Chosen approach
+| ID | Task and files | Requirement | Depends on | Check and expected result |
+| --- | --- | --- | --- | --- |
 
-Explain the smallest coherent approach, meaningful alternatives, consequences, migration/compatibility concerns and recovery implications.
+## Risks and recovery
+<Delete if the change has no persistent or external effect. Migration, compatibility, rollback.>
 
-## Task and proof map
+## Blocked or unavailable
+<Delete if none. Pending artifacts, unavailable environments, unresolved decisions and the tasks each one blocks.>
 
-| Task ID | Requirement/risk | Input revision/dependency | Files/components and owner | Expected output | Check and expected result | State |
-| --- | --- | --- | --- | --- | --- | --- |
+## Delegation
+<Delete unless work is delegated. Owner per task, writable scope, integration owner, ordering for shared interfaces.>
 
-## Execution boundaries
-
-Record writable scopes, tools/commands, side effects, time/cost limits, stopping conditions and isolation actually available. For delegated work, link each task brief and identify the integration owner. Explain ordering for shared interfaces or overlapping edits.
-
-## Integration and acceptance
-
-Name combined-candidate checks and evidence destinations. Record required acceptance separately from structural completeness. Include accepted revision, actual owner/authority and conditions, or describe the outstanding decision without inventing a signature.
-
-## Handoff
-
-State plan evidence status, unresolved dependencies, unavailable checks, next owner and next action. If the specification or baseline changes, identify the affected tasks and preserve the superseded plan.
+## Record
+Plan revision · base revision and working-tree changes to preserve · execution boundaries (tools, limits, stop conditions) · acceptance decision reference

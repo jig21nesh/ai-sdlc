@@ -1,32 +1,44 @@
-# Operational investigation
+# Incident: <service> <short description>
 
-Record incident/check ID, service/tenant/environment, mode, owner and observation time. Identify event/ticket/source ID, verified trigger scope, freshness, deduplication outcome and links to existing incidents.
+**Summary:** <what happened and the current state, in one sentence>
+**Status:** investigating | mitigated | recovered | monitoring
+**Decision needed:** <the owner decision or authorization required, or "none">
+**Next owner:** <role or name>
+**Last observed:** <time and signal>
 
-## Impact and observations
+## Impact
+<Confirmed user or system impact. Keep reports and hypotheses separate from confirmed impact.>
 
-| Time/window | Signal/source | Observation | Coverage/freshness | Sensitive-data handling |
-| --- | --- | --- | --- | --- |
+## Diagnosis
+<The leading hypothesis and its confidence. List only hypotheses still open or just ruled out.>
 
-Separate confirmed user/system impact from reports and hypotheses. Identify current version/configuration, recent changes, telemetry gaps and investigation budget.
-
-## Hypotheses and checks
-
-| Hypothesis | Supporting evidence | Disconfirming check | Risk/cost and authority | Observed outcome | Updated conclusion |
-| --- | --- | --- | --- | --- | --- |
+| Hypothesis | Evidence for | Disconfirming check | Outcome |
+| --- | --- | --- | --- |
 
 ## Proposed response
+<Delete if none. Runbook revision, exact action and parameters, prerequisites, stop and fallback conditions, verification criteria, existing authority.>
 
-Record runbook revision, target/current state, exact action and parameters, rationale, prerequisites, actor, existing authority, timeout/retry rules, stop/fallback conditions and verification criteria. Record required unresolved decisions; do not invent approval.
+## Actions taken
+<Delete if none. A successful exit does not prove recovery; record the fresh verification. For an uncertain outcome, record state inspection before retry.>
 
-## Action and recovery journal
+| Time | Action and run ID | Result | Fresh verification |
+| --- | --- | --- | --- |
 
-| Time | Action/run ID | Actual actor/target | Result or uncertain completion | Fresh verification | Remaining risk |
-| --- | --- | --- | --- | --- | --- |
+## Follow-up
 
-An action's successful exit does not prove service recovery. For an uncertain outcome, record state inspection before retry.
+| Action | Type | Owner | Reference |
+| --- | --- | --- | --- |
 
-## Follow-up and handoff
+## Gaps
+<Delete if none. Telemetry blind spots, stale signals, unexecuted steps.>
 
-Link evidence-backed intent/change drafts, preventive tests and proposed runbook/skill updates with owners. Record publishing/notification only if authorized and performed. Keep learned-policy proposals separate from their adoption.
+<details>
+<summary>Timeline and observations</summary>
 
-State final observed service state, last observation time, evidence status, unanswered questions, unexecuted steps and next owner/action. Use not-run for monitoring or schedules that were only designed.
+| Time or window | Signal and source | Observation | Freshness |
+| --- | --- | --- | --- |
+
+</details>
+
+## Record
+Incident or check ID · environment and tenant · trigger source and deduplication outcome · version and configuration · linked incidents
