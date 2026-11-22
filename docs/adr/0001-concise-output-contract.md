@@ -1,18 +1,16 @@
 # 0001: Concise output contract
 
-Status: accepted (22 November 2026)
+Status: accepted
 
 ## Context
 
-An artifact that a person must approve should show its decision on the first screen. The pack's outputs did not, for three reasons:
+An artifact that a person must approve should show its decision on the first screen. Three things in the pack worked against that:
 
 - The shared contract required about nine identity and provenance fields on every material output and seven items in every handoff.
-- Templates used six- and seven-column tables and prose instructions that agents answered at length.
+- Templates used six- and seven-column tables and prose instructions that invite long answers.
 - No rule put the reviewer's decision first, and nothing capped questions or low-severity findings.
 
-The recorded S01 exercise produced an 897-word specification and a 625-word plan for a small CSV export.
-
-Published practice at Anthropic, Google and GitHub does not use word budgets for these documents. It uses fixed section lists, caps on questions and findings, severity ranking, collapsed reasoning and small changes. Anthropic's prompting guidance warns that hard per-sentence limits make prose choppy, and that telling a reviewer to report only severe issues reduces what it finds.
+Published practice at Anthropic, Google and GitHub keeps such documents short through fixed section lists, caps on questions and findings, severity ranking, collapsed reasoning and small changes. Anthropic's prompting guidance warns that hard per-sentence limits make prose choppy, and that telling a reviewer to report only severe issues reduces what it finds.
 
 ## Decision
 
@@ -32,16 +30,16 @@ Add one "Output rules" section to `skills/shared-contract.md` that every skill i
 
 Rewrite the intent, specification, plan, verification, release, incident and improvement templates to these rules, and point the nine core skills' return instructions at them. Plan and build aim for slices of about 100 changed lines and split near 1,000.
 
-Do not set per-sentence or per-section word limits. Rule 10 gives a target for the whole artifact because structure rules alone do not shorten output: in the [S01 rerun](../../reviews/behavioral/S01-output-rules/REPORT.md), rules 1 to 9 without a size target produced longer artifacts than the earlier templates.
+Do not set per-sentence or per-section word limits. Rule 10 is a target for the whole artifact.
 
 ## Consequences
 
 - A reviewer can decide from the first screen of an artifact; detail remains available below it.
 - The evidence the contract requires is unchanged. It moves to the `Record` block, a collapsed section or a linked file.
 - Artifacts written from the earlier templates remain valid; nothing reads them by section name.
-- The eleven specialist skills inherit the rules through the shared contract but keep their existing templates. They can be slimmed in the same way.
-- In the S01 rerun the rules changed where a reviewer looks first more than how much there is to read: with the page target, the specification and plan were about as long as before and roughly twice the routine target. Enforcing the target through the evaluate skill is the next lever.
-- Caps can hide detail a reviewer wanted. The withheld count and the collapsed sections are the mitigation; the evaluate skill (ADR 0002) measures whether outputs become too thin.
+- The eleven specialist skills inherit the rules through the shared contract but keep their existing templates.
+- Structure rules change where a reviewer looks first more reliably than they reduce total length. The page target is a guide that an agent can exceed.
+- Caps can hide detail a reviewer wanted. The withheld count and the collapsed sections are the mitigation.
 
 ## Sources
 
