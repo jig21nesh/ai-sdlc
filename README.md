@@ -175,6 +175,20 @@ problems. Propose one evidence-backed improvement and how to measure it.
 
 If you start a new chat, include the relevant artifact paths, candidate revision and previously accepted decisions so the next skill can resume accurately.
 
+## Where to run each step
+
+Use the skills interactively for the steps that need your judgment, and automate only review and verification. Running the whole sequence as GitHub workflows is not recommended: no major vendor documents that pattern, and agents triggered by issue or comment text are a known prompt-injection route.
+
+| Step | Where it runs | What you approve |
+| --- | --- | --- |
+| Discover, specify, design, plan | Interactive chat | Review and merge of the committed Markdown |
+| Build | Interactive, or an asynchronous agent started by someone with write access | Pull request review by someone other than the requester |
+| Verify, review, security review | CI on pull requests, read-only | Nothing; findings are advisory |
+| Security scanning, improvement reports | Scheduled | The resulting issue or report |
+| Release | You, with the release skill preparing the record | Environment required reviewers |
+
+For the review step, start from the [example GitHub workflow](templates/github/ai-sdlc-pr-review.example.yml). It loads this plugin in `anthropics/claude-code-action`, runs on `pull_request` only, skips forks and drafts, and cannot push. Pin both actions to a commit and try it in a test repository first. [ADR 0003](docs/adr/0003-interactive-first-ci-for-review.md) gives the reasoning and sources.
+
 ## Install once for your host
 
 Get the package from the personal repository:
