@@ -118,6 +118,8 @@ Every skill follows the same [output rules](skills/shared-contract.md#output-rul
 - **Deviations only:** failures and gaps are listed in full; what passed is a count with a link to the evidence.
 - **Capped questions and nits:** at most three open questions, each with a recommended answer; at most five low-severity findings, with the withheld count stated.
 - **Next step suggested:** when a step is complete and nothing waits on you, the reply ends with a `Next:` line giving the request to send for the following step. If something is waiting on you, it names that instead. Nothing runs until you send it.
+- **Continues under the right skill:** a decision says what "yes" will start. If you tell the host to carry on, it loads the next step's skill instead of improvising, and accepting a plan never authorizes a push, merge, release or deployment.
+- **Handoff record for automation:** each step writes `handoff.json` beside its artifacts: status, what is awaited and from whom, and the next skill with its inputs. A pipeline reads it to decide what to run next; in a run with no user, a step records what needs a person and stops instead of asking.
 - **Sized to the change:** a routine artifact fits one page, about 400 words, before its record block. Plans aim for slices of about 100 changed lines.
 
 Identity and provenance sit in a `Record` block at the end of each artifact. A failed check, an unresolved decision or a missing authorization is always stated. [ADR 0001](docs/adr/0001-concise-output-contract.md) records the sources behind these rules.
