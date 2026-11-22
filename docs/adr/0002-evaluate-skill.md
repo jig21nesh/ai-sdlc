@@ -1,6 +1,6 @@
 # 0002: Evaluate skill and feedback loop
 
-Status: accepted (22 November 2026)
+Status: accepted
 
 ## Context
 
@@ -19,8 +19,6 @@ Add a 21st skill, `ai-sdlc-evaluate`, that scores one step's output against its 
 - Caps and judgment questions live in one file, `references/rubrics.json`.
 
 The script ships inside the skill so that it travels with the plugin on both hosts. Its tests live in `tests/` and run under `coverage` through `uv run`; nothing is added to the package's dependencies.
-
-Not done now: a `claude plugin eval` regression suite. It costs API usage per run and is more useful once real evaluation records exist to draw cases from.
 
 ## Consequences
 
