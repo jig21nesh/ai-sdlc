@@ -28,7 +28,7 @@
       "question_sections": ["Open decisions"]
     },
     "plan": {
-      "input": "the specification",
+      "input": "the specification, or the ticket that carries it",
       "sections": ["Approach", "Tasks", "Record"],
       "question_sections": []
     },

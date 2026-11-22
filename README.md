@@ -72,7 +72,7 @@ This is our practical usage sequence, mapped to the playbook's six lifecycle pha
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **1. Discover** | Research the idea and decide what problem to solve. | Researcher<br>[discover](skills/ai-sdlc-discover/SKILL.md) | Your idea and constraints | Intent brief; research if useful | Check sources, target users and success measures. | Assumptions presented as facts; scope too broad. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stage 1: intent capture.<br>Competitor research is a [toolkit addition](skills/ai-sdlc-discover/SKILL.md#research-as-part-of-discovery). |
 | **2. Specify** | Define what the product must do and how it should behave. | Specification author<br>[specify](skills/ai-sdlc-specify/SKILL.md) | Intent and existing behavior | Requirements/design spec with acceptance scenarios | Can you test each outcome, including failures? | Vague requirements; missing error paths. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stage 2: combined requirements and design. |
-| **3. Plan** | Turn the accepted specification into bounded implementation tasks. | Planner<br>[plan](skills/ai-sdlc-plan/SKILL.md) | Accepted spec and repository context | Plan with files, dependencies and checks | Every requirement maps to a task and proof. | Invented paths; overlooked dependencies. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stage 3: implementation planning in Build. |
+| **3. Plan** | Turn the accepted specification into bounded implementation tasks. | Planner<br>[plan](skills/ai-sdlc-plan/SKILL.md) | Accepted spec, or a ticket that carries one, and repository context | Plan with files, dependencies and checks | Every requirement maps to a task and proof. | Invented paths; overlooked dependencies. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stage 3: implementation planning in Build. |
 | **4. Build** | Implement the agreed change and check it as you go. | Implementer<br>[build](skills/ai-sdlc-build/SKILL.md) | Accepted plan and current code | Reviewable code, tests and check results | Inspect the diff; run the relevant checks. | Unrelated edits; weakened tests. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stages 3–4: implementation with continuous checks. |
 | **5. Verify** | Check the actual candidate against the acceptance scenarios. | Verifier<br>[verify](skills/ai-sdlc-verify/SKILL.md) | Candidate, spec and test environment | Verification report with evidence and gaps | Reproduce happy paths and important failures. | Stale results; untested integrations. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stage 4: test feedback.<br>Separate candidate verification is our adaptation. |
 | **6. Review** | Assess the change and resolve findings before release. | Reviewer<br>[review](skills/ai-sdlc-review/SKILL.md) | Diff, requirements and verification evidence | Findings, dispositions and recheck evidence | Material findings have a recorded resolution. | Open risks; self-review called independent. | [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook), Stage 5: reviewing PRs and addressing findings. |
@@ -144,6 +144,14 @@ Once the specification matches what you want:
 Use $ai-sdlc:ai-sdlc-plan to plan implementation of the accepted specification.
 Identify the files, dependencies, task order and checks.
 ```
+
+If a ticket in your tracker already holds the specification (requirements, acceptance scenarios and scope), start here and skip the first two steps:
+
+```text
+Use $ai-sdlc:ai-sdlc-plan to plan implementation of <ticket link>.
+```
+
+The plan cites the ticket and its revision as the specification and reuses its requirement IDs. It names any gap that blocks a task, sends a ticket that is too thin to specify, and asks you to accept a draft ticket together with the plan.
 
 Once you accept the plan:
 
