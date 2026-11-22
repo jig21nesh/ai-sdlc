@@ -60,9 +60,32 @@ Every handoff names its outputs, the next owner and the next decision or action.
 
 Separate three verification scopes: software behavior, the delivery agent's behavior, and AI features inside the product. Delivery-agent regression cases remain relevant for conventional software when models, skills, repository instructions, hooks or tools change. Continuous local checks during implementation do not replace a required fresh review of the resulting candidate. Preserve meaningful test intent; correcting a demonstrably wrong test requires evidence and the appropriate review, not an arbitrary ban on all test edits.
 
+## Sub-agent defaults
+
+Where the host provides sub-agents, a step hands its research, exploration or assessment to one and keeps the conversation with the user in the main session. Invoking a skill is enough authority for this; no separate approval is needed. A user instruction, organization policy or `project.workflow.max_parallel_agents` can restrict or forbid it.
+
+| Step | Give to a sub-agent | Keep in the main session |
+| --- | --- | --- |
+| discover | Competitor, alternative and feasibility research | Questions to the user; the intent draft |
+| specify, design, plan | Read-only inspection of the repository and existing behavior | Drafting, open decisions, acceptance |
+| build | Each task slice the plan marks independent, one writer per file | Integration, final checks, the handoff |
+| verify, review, security-review, usability-review, evaluate | The whole assessment, in a fresh context without the producer's conversation | Presenting findings; any requested repair |
+| release, operate | Read-only readiness checks, previews and diagnosis | Every action that changes a system |
+| improve | Analysis of outcomes and evaluation records | The decision to change a skill or template |
+
+Apply these limits:
+
+- **Small work stays in-session.** If the delegated part is a few file reads or a change under about 100 lines, do it directly. A sub-agent costs several times the tokens of the same work in-session.
+- **A sub-agent cannot ask the user.** Resolve the questions that shape its task first, and give it the inputs by path and revision.
+- **Brief it completely.** State the goal, input paths, allowed paths and tools, the expected output and when to stop. Ask for a summary that follows the [output rules](#output-rules), not a transcript.
+- **Give an assessor the candidate, not the verdict.** Supply the requirement and the artifact; withhold the producer's reasoning and preferred conclusion.
+- **Inspect what comes back.** A sub-agent's report is evidence to check, not a result to relay. Record in the output which parts were delegated.
+- **A fresh context is not a sandbox.** A sub-agent shares the filesystem, tools and credentials unless the host restricts them. It cannot expand authority, and it never performs an external write or consequential action.
+- **No sub-agents available.** Do the work in-session and say so in the `Record` block. Independence that a step needed is then a stated limitation.
+
 ## Delegation and repair
 
-Delegate only when authorized and when independent work helps. Use the [role briefs](../references/agent-roles.md) and [task brief example](../references/task-brief.example.json) with explicit paths, capability limits and budgets. Shared permissions are not automatically narrowed by a role description. Preserve one integration owner, avoid simultaneous overlapping edits, and have reviewers assess the actual candidate independently.
+Use sub-agents as the [defaults above](#sub-agent-defaults) describe. Wider delegation, such as concurrent sessions, separate checkouts or work handed to other owners, needs authorization and a plan that names ownership. Use the [role briefs](../references/agent-roles.md) and [task brief example](../references/task-brief.example.json) with explicit paths, capability limits and budgets. Shared permissions are not automatically narrowed by a role description. Preserve one integration owner, avoid simultaneous overlapping edits, and have reviewers assess the actual candidate independently.
 
 For a failed check or disputed review finding, attempt at most two bounded repairs within the existing scope, rerun the affected checks and then report the remaining evidence and blocker. Do not repeatedly mutate external systems to make a metric pass. Pause immediately for unauthorized side effects or observed material harm; a new authorized plan can restart work. A producer cannot accept its own high-risk residual risk.
 

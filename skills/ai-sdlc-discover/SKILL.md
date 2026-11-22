@@ -5,7 +5,7 @@ description: "Turn a rough product idea, user problem, ticket or incident into a
 
 # Capture intent
 
-Produce a brief that preserves the originator's need and gives the next owner enough evidence to decide whether to pursue it. Placement: **Plan**. Apply the [shared contract](../shared-contract.md); a conversation can be enough input for a small change.
+Produce a brief that preserves the originator's need and gives the next owner enough evidence to decide whether to pursue it. Placement: **Plan**. Apply the [shared contract](../shared-contract.md); a conversation can be enough input for a small change. Research runs in a sub-agent where the host provides one; questions and the draft stay in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 
 ## Inputs
 

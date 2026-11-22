@@ -6,7 +6,7 @@ description: "Prepare CI delivery integration, a reviewable release, or an alrea
 # Prepare and execute a release within authority
 
 This **Deploy** procedure separates release preparation, authorization and observed execution.
-Read the [shared contract](../shared-contract.md) for authority, evidence and repair limits.
+Read the [shared contract](../shared-contract.md) for authority, evidence and repair limits. Read-only readiness checks and previews can run in a sub-agent; every action that changes a system stays in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 A release request may authorize deployment; a review or preparation request does not.
 Honor existing authorization within its exact scope instead of asking for the same decision repeatedly.
 

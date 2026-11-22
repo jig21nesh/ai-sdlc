@@ -6,7 +6,7 @@ description: "Verify a specific software candidate against accepted behavior and
 # Verify the candidate, not its claims
 
 This **Test** procedure establishes what was actually checked for a particular candidate.
-Read the [shared contract](../shared-contract.md) for evidence statuses, authority and repair limits.
+Read the [shared contract](../shared-contract.md) for evidence statuses, authority and repair limits. The assessment runs in a fresh sub-agent that has the requirements and the candidate but not the producer's conversation, where the host provides one ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 The verification report can be complete while the candidate still has failed or unavailable required checks.
 Do not label that candidate fully passed or infer risk acceptance from report completion.
 

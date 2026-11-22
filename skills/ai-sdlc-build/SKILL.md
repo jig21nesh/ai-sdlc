@@ -6,7 +6,7 @@ description: "Implement an authorized, bounded software change using its accepte
 # Implement a bounded change
 
 Use this **Build** procedure for feature work, bug fixes and scoped refactoring.
-Read the [shared contract](../shared-contract.md) for evidence, authority and repair limits.
+Read the [shared contract](../shared-contract.md) for evidence, authority and repair limits. Each task slice the plan marks independent runs in its own sub-agent where the host provides them; integration and final checks stay in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 The output is an attributable patch with observed checks and disclosed gaps; it is not automatically a release.
 
 ## Establish the baseline
@@ -69,7 +69,7 @@ A proposed fix to a control is separate work and must have its own scope and acc
 
 ## Integrate delegated changes
 
-Use delegation only when authorized and the approved plan identifies ownership.
+Give independent task slices to sub-agents under the [sub-agent defaults](../shared-contract.md#sub-agent-defaults) when the plan identifies one writer per file. Wider delegation needs authorization.
 Before using a worker's output, compare its input revision, actual changed paths and returned evidence with its brief.
 Resolve overlapping edits and interface drift before accepting a combined candidate.
 A worker's successful unit check does not establish cross-component compatibility.

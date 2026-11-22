@@ -5,7 +5,7 @@ description: Review an actual change or pull request against requirements and po
 
 # Review a candidate and resolve supported findings
 
-Read the [shared contract](../shared-contract.md). This practice supports the Deploy review/acceptance stage and can run earlier during Design, Build or Test. Use specialized security or usability review when requested or required by the affected risk, rather than treating every change as an exhaustive audit.
+Read the [shared contract](../shared-contract.md). This practice supports the Deploy review/acceptance stage and can run earlier during Design, Build or Test. Use specialized security or usability review when requested or required by the affected risk, rather than treating every change as an exhaustive audit. The assessment runs in a fresh sub-agent that has the diff and requirements but not the producer's conversation, where the host provides one; repairs stay in this session ([sub-agent defaults](../shared-contract.md#sub-agent-defaults)).
 
 ## Select the mode and establish identity
 
