@@ -117,6 +117,7 @@ Every skill follows the same [output rules](skills/shared-contract.md#output-rul
 - **One line per item:** requirements, tasks, checks and findings are single rows; reasoning is collapsed or linked.
 - **Deviations only:** failures and gaps are listed in full; what passed is a count with a link to the evidence.
 - **Capped questions and nits:** at most three open questions, each with a recommended answer; at most five low-severity findings, with the withheld count stated.
+- **Next step suggested:** when a step is complete and nothing waits on you, the reply ends with a `Next:` line giving the request to send for the following step. If something is waiting on you, it names that instead. Nothing runs until you send it.
 - **Sized to the change:** a routine artifact fits one page, about 400 words, before its record block. Plans aim for slices of about 100 changed lines.
 
 Identity and provenance sit in a `Record` block at the end of each artifact. A failed check, an unresolved decision or a missing authorization is always stated. [ADR 0001](docs/adr/0001-concise-output-contract.md) records the sources behind these rules.

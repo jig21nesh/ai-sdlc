@@ -32,6 +32,8 @@ Rewrite the intent, specification, plan, verification, release, incident and imp
 
 Do not set per-sentence or per-section word limits. Rule 10 is a target for the whole artifact.
 
+A later addition, rule 12, ends each reply with one suggested next step when the step is complete and nothing waits on the user. It keeps the user from having to recall the sequence; it is a suggestion only, so every step is still started by the user.
+
 ## Consequences
 
 - A reviewer can decide from the first screen of an artifact; detail remains available below it.
