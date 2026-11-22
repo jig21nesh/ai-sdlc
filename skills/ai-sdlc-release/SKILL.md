@@ -118,7 +118,7 @@ Preserve partial rollout state, failures and any containment already performed.
 ## Deliver the release record
 
 Use [the release-record template](assets/release-record.md) in `project.release.artifact_dir` or the authoritative release system.
-Return the applicable CI capability plan/draft, candidate identity, readiness evidence, preview effects/limits, authority source, execution status and observed service state.
+Follow the [output rules](../shared-contract.md#output-rules): reply with the status, what actually executed, the candidate and target, readiness gaps, the authorization still required and the observed service state. Passing readiness evidence is one line with a link.
 Separate preparation `pass/partial` from deployment `not-run/pass/fail/blocked` and recovery evidence.
 Name the release owner, service handoff and unresolved follow-up.
 Never describe an unrun deployment, recovery rehearsal or notification as complete.

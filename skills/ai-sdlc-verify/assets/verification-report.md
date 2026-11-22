@@ -1,32 +1,38 @@
-# Verification report
+# Verification: <candidate>
 
-Record report ID/time, verifier, candidate revision or artifact digest, authoritative requirements/acceptance references, relevant profile versions and environment. State whether this is producer self-checking or independent verification.
+**Verdict:** pass | fail | partial | blocked
+**Decision needed:** <what the quality owner must decide, in one sentence>
+**Next owner:** <role or name>
+**Checks:** <n> passed, <n> failed, <n> not run. Evidence: <path or URL>
+**Independence:** producer self-check | independent verification
 
-## Scope
+## Failures and gaps
+<Every check that did not pass, and every required behavior left untested. One line each; quote only the output lines that prove a failure.>
 
-Separate software behavior, delivery-agent behavior and product-AI behavior. State why any scope is not applicable. Identify changed risks, baseline failures and unavailable environments.
-
-## Behavior and proof matrix
-
-| Requirement/risk ID | Expected observable behavior | Check and test data | Dependency realism and reason | Evidence/result | Gap or limitation |
-| --- | --- | --- | --- | --- | --- |
-
-## Execution records
-
-| Check ID | Candidate/configuration identity | Tool/version and literal argv | Working directory/environment | Start/end | Exit/result | Redacted evidence |
-| --- | --- | --- | --- | --- | --- | --- |
-
-Use pass, fail, partial, blocked, not-run or not-applicable with reasons. Record skipped/zero-test outcomes explicitly. For a sensitivity experiment, identify the temporary defect/mutation, expected failing check, result and restoration verification.
+| Requirement or risk | Expected | Observed | Status | Evidence |
+| --- | --- | --- | --- | --- |
 
 ## Findings and repairs
+<Delete if none.>
 
-| Finding | Affected behavior and severity | Supporting evidence | Owner | Repair/candidate | Recheck result |
-| --- | --- | --- | --- | --- | --- |
+| Finding | Severity | Repair or candidate | Recheck result |
+| --- | --- | --- | --- |
 
-## Agent evaluation when applicable
+## Limits
+<Delete if none. Unavailable environments, mocked dependencies that the requirement needed real, skipped or zero-test outcomes, stale evidence.>
 
-Record suite revision, held-out-data handling, task/model/skill/tool versions, repeated-trial count where relevant, grader/calibration, observed outcomes, authority violations, costs and comparison baseline. Keep product-AI evaluation separate.
+## Agent evaluation
+<Delete unless in scope. Suite revision, baseline, outcomes, authority violations. Keep product-AI evaluation separate.>
 
-## Verdict and acceptance
+<details>
+<summary>Passed checks</summary>
 
-State the extent of demonstrated behavior and outstanding required evidence. Record residual-risk decisions separately, with actual source and scope. A passing check is not authorization to release. Name the next owner and decision.
+| Check | Requirement | Command or tool | Result |
+| --- | --- | --- | --- |
+
+</details>
+
+## Record
+Report ID and time · verifier · candidate revision or digest · requirements reference · environment · tool versions
+
+A passing check is not authorization to release.

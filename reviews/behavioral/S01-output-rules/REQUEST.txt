@@ -1,0 +1,1 @@
+Turn this accepted intent into a combined specification, any material design decision and an implementation/delegation plan. No code changes or delegation execution requested.

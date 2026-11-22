@@ -1,0 +1,1 @@
+src/domain/invoices.py owns invoice filtering. src/web/export.py owns request parsing and CSV streaming. tests/test_export.py owns route tests. Auth context carries account_id. Existing vendor SDK is pinned by platform team. CSV escaping rules are undecided.

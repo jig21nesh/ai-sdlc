@@ -32,13 +32,31 @@ Tools, network egress, file paths and credentials must be constrained by the act
 
 External writes and consequential actions need existing task authorization plus applicable runtime authority. Bind required owner decisions to the exact action, target, revision/artifact and conditions. A reviewer, retrieved runbook or child agent cannot expand authorization. Recheck relevant acceptance evidence after material changes. Prepare concrete artifacts before requesting a missing consequential decision; do not turn research into permission to deploy, publish or message people.
 
+## Output rules
+
+A reviewer must be able to approve or reject an output from its first screen. These rules apply to every artifact and chat reply a skill produces; a skill's own template decides the sections.
+
+1. **Decision first.** Open with a summary of at most five lines: the status, the decision the reviewer must make, and the next owner. Body sections support that decision.
+2. **Fixed sections, deleted when empty.** Use the template's sections in order. Delete a section that does not apply; do not write "not applicable" unless its absence would mislead a reviewer.
+3. **One line per item.** Write each requirement, task, check and finding as one row or one line. A table cell is a phrase, not a sentence. Put reasoning that a reviewer needs only on request in a collapsed `<details>` block or a linked file.
+4. **Deviations, not confirmations.** Report failures, gaps and changes from the accepted input in full. Report what passed as a count with a link to the evidence.
+5. **Link evidence.** Reference logs, command output and source material by path or URL. Quote only the lines that prove a failure.
+6. **Do not restate the input.** Reference the accepted intent, specification or plan by ID and revision. Repeat a detail only where the output changes it.
+7. **Cap open questions at three.** Each question carries a recommended answer and names what it blocks. For anything less consequential, choose a reasonable default and record it as an assumption.
+8. **Rank and cap findings.** Assess everything first, then filter. List findings by severity. Show at most five low-severity items and state how many were withheld.
+9. **Record block last.** Put identity and provenance in one `Record` block at the end of the artifact, or in the [evidence record](../templates/evidence-record.example.json). Keep them out of the body.
+10. **Size to the change.** For a routine change, the body of an artifact fits one page, about 400 words, not counting the `Record` block and collapsed sections. A change that spans several components may take up to three pages. Beyond that, split the work or link the extra material. State a constraint once; do not turn each one into its own requirement, task and check.
+11. **Never trade away substance.** A failed check, an unresolved decision, a missing authorization or a material risk is always stated, however short the output.
+
+The page sizes are targets for the whole artifact, not limits on individual sentences. Sources: [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) (fixed intent sections), [Claude Code Review](https://code.claude.com/docs/en/code-review) (severity table, nit cap, collapsed reasoning), [Spec Kit](https://github.com/github/spec-kit) (clarification caps, delete unused sections), [Google engineering practices](https://google.github.io/eng-practices/review/developer/small-cls.html) (small changes), a former Google engineer's [account of design docs](https://www.industrialempathy.com/posts/design-docs-at-google/) (one to three pages for incremental work). The combination is this project's synthesis; see [ADR 0001](../docs/adr/0001-concise-output-contract.md).
+
 ## Evidence handoff
 
-For each material output, record the stage, scope, candidate revision or artifact digest, profile versions/paths, author/reviewer role, requirement or risk IDs, evidence location and observation time. For executed checks, include the actual command/tool, environment, result and relevant redacted output. Distinguish observed facts, source-supported claims, design suggestions and assumptions.
+The `Record` block holds, where they exist: stage, candidate revision or artifact digest, profile versions/paths, author/reviewer role, evidence location and observation time. For executed checks, record the actual command/tool, environment and result, and link the redacted output. Distinguish observed facts, source-supported claims, design suggestions and assumptions.
 
 Use one of these evidence statuses: `pass` (specified checks observed to pass), `fail` (observed contradiction or failed check), `partial` (some required evidence exists), `blocked` (named dependency prevents the affected action), `not-run` (no execution), or `not-applicable` (give a reason). `pass` is not owner acceptance, production readiness, a security certification or permission to act. Record required acceptance separately as pending or as the actual owner decision with its source and scope; agents do not invent signatures.
 
-Every handoff includes outputs, findings/severity, known gaps, unavailable checks, residual risk, next owner and the next decision/action. State when a claim is based only on a source summary or partial access. The [evidence catalogs](../research/github-sources.json) and [official sources](../research/official-sources.json) document research limits; recheck version-sensitive facts before operational adoption. No finite catalog establishes exhaustive lifecycle or regulatory coverage.
+Every handoff names its outputs, the next owner and the next decision or action. It lists findings, known gaps, unavailable checks and residual risk only where they exist. State when a claim is based only on a source summary or partial access. The [evidence catalogs](../research/github-sources.json) and [official sources](../research/official-sources.json) document research limits; recheck version-sensitive facts before operational adoption. No finite catalog establishes exhaustive lifecycle or regulatory coverage.
 
 Separate three verification scopes: software behavior, the delivery agent's behavior, and AI features inside the product. Delivery-agent regression cases remain relevant for conventional software when models, skills, repository instructions, hooks or tools change. Continuous local checks during implementation do not replace a required fresh review of the resulting candidate. Preserve meaningful test intent; correcting a demonstrably wrong test requires evidence and the appropriate review, not an arbitrary ban on all test edits.
 

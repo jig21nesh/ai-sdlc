@@ -1,0 +1,1 @@
+[{"id":"T1","owner":"agent-A","writes":["src/domain/invoices.py","tests/test_export.py"],"depends":[]},{"id":"T2","owner":"agent-B","writes":["src/web/export.py","tests/test_export.py"],"depends":["T1"]}]
