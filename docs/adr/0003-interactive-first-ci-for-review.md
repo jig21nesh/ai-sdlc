@@ -1,12 +1,12 @@
 # 0003: Interactive first, CI for review and verification
 
-Status: accepted (22 November 2026)
+Status: accepted
 
 ## Context
 
 The pack is used interactively: an engineer invokes one skill at a time in Codex or Claude Code. An alternative is to run the whole framework as GitHub Actions workflows, with an issue label producing a specification pull request, its approval producing a plan, and so on.
 
-Vendor documentation reviewed on 22 November 2026 shows:
+Vendor documentation shows:
 
 - No vendor documents an issue-to-specification pipeline. GitHub Spec Kit runs its steps in the agent's chat, one at a time. Google's Jules requires plan approval before code changes.
 - Build is the stage vendors delegate to asynchronous agents (Copilot coding agent, Claude Code via mention, Jules), always ending in a pull request a human reviews.
@@ -36,8 +36,8 @@ Do not ship an issue- or comment-triggered workflow.
 - The steps where judgment and clarification matter stay in a conversation, where the engineer can answer questions.
 - State passes between stages as committed files, which is also what a later CI run can read. Workflow runs do not share memory.
 - The example gives teams a starting point for the stage with the most vendor precedent. It needs the action pinned to a commit and a test-repository trial before use.
-- Teams that want an issue-to-pull-request chain must design it themselves and accept the injection exposure. This pack does not help them do that.
-- Not verified: whether the action can load a marketplace from a private repository.
+- Teams that want an issue-to-pull-request chain must design it themselves and accept the injection exposure.
+- Loading a marketplace from a private repository in the action is outside what the example covers.
 
 ## Sources
 

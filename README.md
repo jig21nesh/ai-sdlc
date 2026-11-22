@@ -187,7 +187,7 @@ Use the skills interactively for the steps that need your judgment, and automate
 | Security scanning, improvement reports | Scheduled | The resulting issue or report |
 | Release | You, with the release skill preparing the record | Environment required reviewers |
 
-For the review step, start from the [example GitHub workflow](templates/github/ai-sdlc-pr-review.example.yml). It loads this plugin in `anthropics/claude-code-action`, runs on `pull_request` only, skips forks and drafts, and cannot push. Pin both actions to a commit and try it in a test repository first; it has not been run from this package. [ADR 0003](docs/adr/0003-interactive-first-ci-for-review.md) gives the reasoning and sources.
+For the review step, start from the [example GitHub workflow](templates/github/ai-sdlc-pr-review.example.yml). It loads this plugin in `anthropics/claude-code-action`, runs on `pull_request` only, skips forks and drafts, and cannot push. Pin both actions to a commit and try it in a test repository first. [ADR 0003](docs/adr/0003-interactive-first-ci-for-review.md) gives the reasoning and sources.
 
 ## Install once for your host
 
