@@ -20,6 +20,7 @@ python3 scripts/check_skills.py
 python3 scripts/check_site.py
 python3 scripts/validate_profiles.py --org config/org.example.json --project config/project.example.json
 python3 -m unittest discover -s tests -v
+uv run --no-project --with coverage==7.6.10 sh -c 'coverage run --branch --include="skills/*/scripts/*" -m unittest discover -s tests && coverage report --fail-under=80'
 node --check assets/app.js
 node tests/test_controls.cjs
 claude plugin validate .claude-plugin/plugin.json --strict
@@ -28,7 +29,8 @@ claude plugin validate .claude-plugin/marketplace.json --strict
 
 ## Conventions
 
-- Python uses the standard library only. Propose any dependency before adding it.
+- Python uses the standard library only. Propose any dependency before adding it. `coverage` runs through `uv run` and is not a package dependency.
+- A script shipped inside a skill needs tests in `tests/` with at least 80% line and branch coverage.
 - Adding, renaming or removing a skill means updating `skills/manifest.json`, the README tables and skill counts, and both plugin descriptions in the same change.
 - Keep `name`, `version`, `description`, `author`, `repository` and `license` identical in `plugin.json` and `.claude-plugin/plugin.json`. Increment both versions for any change users will install.
 - Do not put Markdown under `agents/`; Claude Code would load it as an agent.

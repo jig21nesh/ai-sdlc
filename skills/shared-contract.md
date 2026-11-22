@@ -6,7 +6,7 @@ The installed bundle is a procedure/reference source. Resolve product paths, con
 
 ## Reference model and module boundaries
 
-The [skill manifest](manifest.json) maps twenty focused procedures to the [nineteen inventoried source practices](../research/playbook-inventory.json). These are different units: one guardrails skill handles both build and approval controls, while a combined specification can call on a specialist design assessment. Choose by the actual task, not by skill count. Use the [task brief](../templates/TASK-BRIEF.md) for minimal context; load full profiles or supporting templates only when relevant.
+The [skill manifest](manifest.json) maps twenty-one focused procedures to the [nineteen inventoried source practices](../research/playbook-inventory.json). These are different units: one guardrails skill handles both build and approval controls, while a combined specification can call on a specialist design assessment. Choose by the actual task, not by skill count. Use the [task brief](../templates/TASK-BRIEF.md) for minimal context; load full profiles or supporting templates only when relevant.
 
 The [reference mapping](../data/reference-model.json) separates the six source stages from this kit's twelve work modules. Read the [reconciliation](../research/playbook-reconciliation.md) when comparing terminology. `ai-sdlc-plan` is implementation planning; use `ai-sdlc-discover` for initial intent. Governance is continuous and retirement is additional coverage. Module numbering is a stable identifier, not a mandatory sequential gate or the order for adopting practices.
 

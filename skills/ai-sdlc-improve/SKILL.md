@@ -9,7 +9,7 @@ Placement: **Maintain** with feedback across stages. Apply the [shared contract]
 
 ## Procedure
 
-1. Identify the observed failure or opportunity, affected revision/configuration and impact. Read actual artifacts, review findings and traces where authorized. Separate symptoms, hypotheses and verified contributing conditions; avoid blame or unsupported causal claims.
+1. Identify the observed failure or opportunity, affected revision/configuration and impact. Read actual artifacts, review findings and traces where authorized. Where an evaluation log exists, start from its summary ([evaluate](../ai-sdlc-evaluate/SKILL.md)): a check or dimension that fails repeatedly for one step, or a falling approval rate, is an observed failure; a single low score is not. Separate symptoms, hypotheses and verified contributing conditions; avoid blame or unsupported causal claims.
 2. Establish a useful baseline: recurrence, escape/reopen rate, time waiting versus working, cost, reliability or user outcome. Include countermeasures to gaming (for example change failure alongside throughput). Describe sampling limits and confounders; anecdotal before/after changes do not establish causality.
 3. Locate the smallest appropriate intervention:
    - Stale repository fact or command → repository-context.
@@ -20,7 +20,7 @@ Placement: **Maintain** with feedback across stages. Apply the [shared contract]
    - Product/user problem → new intent; do not solve it by adding unrelated agent rules.
 4. Define a hypothesis, expected observable improvement, unchanged behaviors to preserve and a revisit/rollback condition. Select one bounded change or explain coupled changes. Preserve the failing case in sanitized form without copying private logs into prompts.
 5. Implement the authorized intervention. For skill/context/hook/model/tool changes, use agent evaluation with a prior-version or no-skill baseline as appropriate, realistic tasks, near misses and unexposed final cases. Match budgets and environments; retain actual outputs and trace evidence.
-6. Check for displaced costs, over-triggering, newly blocked ordinary work and privacy/permission regressions. Compare evidence to the hypothesis; retain, revise or revert based on results. Treat an inconclusive result as inconclusive.
+6. Check for displaced costs, over-triggering, newly blocked ordinary work and privacy/permission regressions. Compare evidence to the hypothesis, including the evaluation log's failure counts and human verdicts for the versions before and after; retain, revise or revert based on results. Treat an inconclusive result as inconclusive.
 7. Update relevant knowledge, tests and owners with links to evidence. Record follow-up ownership; do not create schedules or contact teams solely because a follow-up would be useful.
 
 ## Output and completion
