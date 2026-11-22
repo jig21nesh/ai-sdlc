@@ -4,7 +4,7 @@ Status: accepted (22 November 2026)
 
 ## Context
 
-Engineers reported that the artifacts the skills produce are too verbose to read and approve. Three causes were visible in the pack:
+An artifact that a person must approve should show its decision on the first screen. The pack's outputs did not, for three reasons:
 
 - The shared contract required about nine identity and provenance fields on every material output and seven items in every handoff.
 - Templates used six- and seven-column tables and prose instructions that agents answered at length.
@@ -32,15 +32,15 @@ Add one "Output rules" section to `skills/shared-contract.md` that every skill i
 
 Rewrite the intent, specification, plan, verification, release, incident and improvement templates to these rules, and point the nine core skills' return instructions at them. Plan and build aim for slices of about 100 changed lines and split near 1,000.
 
-Do not set per-sentence or per-section word limits. The page target in rule 10 was added after the first rerun of S01 under rules 1 to 9: the outputs gained the decision-first summary and capped questions but grew, to 1,247 words for the specification and 1,115 for the plan. Structure alone did not shorten them. With the page target, a second rerun produced 960 and 770 words: about the same as before the change, and roughly twice the routine target. See the [rerun record](../../reviews/behavioral/S01-output-rules/REPORT.md).
+Do not set per-sentence or per-section word limits. Rule 10 gives a target for the whole artifact because structure rules alone do not shorten output: in the [S01 rerun](../../reviews/behavioral/S01-output-rules/REPORT.md), rules 1 to 9 without a size target produced longer artifacts than the earlier templates.
 
 ## Consequences
 
 - A reviewer can decide from the first screen of an artifact; detail remains available below it.
 - The evidence the contract requires is unchanged. It moves to the `Record` block, a collapsed section or a linked file.
 - Artifacts written from the earlier templates remain valid; nothing reads them by section name.
-- The eleven specialist skills inherit the rules through the shared contract but keep their existing templates. They can be slimmed later if reviewers ask.
-- Measured so far, the rules change where a reviewer looks first, not how much there is to read. Whether that answers the complaint is open, and enforcing the page target is the next lever.
+- The eleven specialist skills inherit the rules through the shared contract but keep their existing templates. They can be slimmed in the same way.
+- In the S01 rerun the rules changed where a reviewer looks first more than how much there is to read: with the page target, the specification and plan were about as long as before and roughly twice the routine target. Enforcing the target through the evaluate skill is the next lever.
 - Caps can hide detail a reviewer wanted. The withheld count and the collapsed sections are the mitigation; the evaluate skill (ADR 0002) measures whether outputs become too thin.
 
 ## Sources
