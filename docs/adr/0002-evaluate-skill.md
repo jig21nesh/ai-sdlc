@@ -4,7 +4,7 @@ Status: accepted (22 November 2026)
 
 ## Context
 
-The pack had no way to measure whether a step's output was good, so feedback such as "too verbose" arrived as anecdote. `ai-sdlc-agent-evals` designs controlled experiments on skills and models; it does not score the output of an ordinary run. `ai-sdlc-improve` needs measured failures as input and had no routine source of them.
+The pack had no way to measure whether a step's output was good, so its quality could not be compared between versions. `ai-sdlc-agent-evals` designs controlled experiments on skills and models; it does not score the output of an ordinary run. `ai-sdlc-improve` needs measured failures as input and had no routine source of them.
 
 Published guidance from Anthropic, OpenAI, Google and practitioners agrees on the design: deterministic checks first, one binary judgment per dimension with a written critique, a judge that sees the step's input, and calibration against a human's labels.
 
@@ -24,7 +24,7 @@ Not done now: a `claude plugin eval` regression suite. It costs API usage per ru
 
 ## Consequences
 
-- Verbosity and quality complaints become counts per step and version that can be compared across releases.
+- Output quality and length become counts per step and version that can be compared across releases.
 - The judgments are uncalibrated until a reviewer labels about 30 outputs. Until then they indicate trends and must not gate anything.
 - A judge in the same session as the producer is biased toward its own work. The record states `independence` so that self-judged runs can be discounted.
 - Skills tuned to the rubric can score better without reviewers being happier. The human verdict in each record is the anchor.
