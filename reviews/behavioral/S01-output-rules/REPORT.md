@@ -1,7 +1,7 @@
 # S01 rerun under the output rules (package 0.3.0)
 
 **Result:** partial. The outputs follow the new structure, but they are not shorter than the 0.2.1 outputs.
-**Decision needed:** whether structure-first outputs of this length meet the reviewers' complaint, or the page target needs enforcing.
+**Decision needed:** whether to enforce the page target, since structure rules alone did not reduce length.
 **Next owner:** package maintainer
 
 ## Measurements
@@ -24,6 +24,6 @@ Body words exclude the `Record` block and collapsed sections. The routine target
 ## Limits
 
 - One run per condition, each by a fresh subagent on a different model and host from the 0.2.1 run. Differences in length cannot be attributed to the rules alone.
-- The first rerun's agent also applied the operator's own reply-format rules; the second was told the shared contract takes precedence.
+- The first rerun's host applied additional reply-format instructions of its own; the second was told the shared contract takes precedence.
 - The decision template was not slimmed and has no summary or `Record` block; the agent added both.
 - No no-skill baseline was run.
