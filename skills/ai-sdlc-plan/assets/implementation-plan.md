@@ -9,7 +9,7 @@
 <The smallest coherent approach in two to four sentences. Name a rejected alternative only where the tradeoff changes risk, compatibility or maintainability.>
 
 ## Tasks
-<One line each, in execution order; cells are phrases. Aim for slices of about 100 changed lines; split a slice that approaches 1,000.>
+<One line each, in execution order; cells are phrases. Each task is one pull request, stacked in "Depends on" order. Aim for slices of about 100 changed lines; split a slice that approaches 1,000.>
 
 | ID | Task and files | Requirement | Depends on | Check and expected result |
 | --- | --- | --- | --- | --- |

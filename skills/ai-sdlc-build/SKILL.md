@@ -45,6 +45,7 @@ Use the runtime's argument-array interface and authorized working directory; nev
 5. Inspect the diff for scope, data handling, dependency changes and accidental generated output.
 6. Update related docs, types, configuration, migrations and the implementation record when the behavior requires it.
 7. Continue only when the next slice's prerequisites are established or its independence is explicit.
+8. Put each plan task on its own branch, based on the branch of the task it depends on, and deliver it as one pull request in the stack described under [delivery through pull requests](../shared-contract.md#delivery-through-pull-requests). Push and open it only with that authority; otherwise leave the branches local and list the pull requests to open.
 
 For a bug, preserve a reproducer or regression scenario that distinguishes the broken and intended behavior.
 For a refactor, identify behavior to preserve; passing newly written tests alone does not establish compatibility.

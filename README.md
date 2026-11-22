@@ -199,13 +199,15 @@ If you start a new chat, include the relevant artifact paths, candidate revision
 
 Use the skills interactively for the steps that need your judgment, and automate only review and verification. Running the whole sequence as GitHub workflows is not recommended: no major vendor documents that pattern, and agents triggered by issue or comment text are a known prompt-injection route.
 
-| Step | Where it runs | What you approve |
-| --- | --- | --- |
-| Discover, specify, design, plan | Interactive chat | Review and merge of the committed Markdown |
-| Build | Interactive, or an asynchronous agent started by someone with write access | Pull request review by someone other than the requester |
-| Verify, review, security review | CI on pull requests, read-only | Nothing; findings are advisory |
-| Security scanning, improvement reports | Scheduled | The resulting issue or report |
-| Release | You, with the release skill preparing the record | Environment required reviewers |
+| Step | Where it runs | Delivered as | What you approve |
+| --- | --- | --- | --- |
+| Discover, specify, design, plan | Interactive chat | One definition pull request; only the plan when a ticket carries the specification | Review and merge of the committed Markdown |
+| Build | Interactive, or an asynchronous agent started by someone with write access | One pull request per plan task, stacked in dependency order | Pull request review by someone other than the requester |
+| Verify, review, security review, evaluate | CI on pull requests, read-only | A comment on the pull request assessed | Nothing; findings are advisory |
+| Security scanning, improvement reports | Scheduled | The resulting issue or report | That issue or report |
+| Release | You, with the release skill preparing the record | Its own record | Environment required reviewers |
+
+A pull request is where a step's output is accepted, but not every step opens one: definition is one decision, build is a stack of small ones, and the assessing steps comment on the pull request they judge. Merging the definition is what lets build start. [ADR 0007](docs/adr/0007-delivery-through-pull-requests.md) gives the reasoning.
 
 For the review step, start from the example GitHub workflow for your host: [Claude Code](templates/github/ai-sdlc-pr-review.claude-code.example.yml) or [Codex](templates/github/ai-sdlc-pr-review.codex.example.yml). Both run on `pull_request` only, skip forks and drafts, and cannot push. The Claude Code example installs this plugin in the runner; the Codex example checks the pack out beside the code and points the prompt at the skill file. Pin every action to a commit and try the workflow in a test repository first. [ADR 0003](docs/adr/0003-interactive-first-ci-for-review.md) gives the reasoning and sources.
 
