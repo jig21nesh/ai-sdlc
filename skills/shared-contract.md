@@ -47,6 +47,21 @@ A reviewer must be able to approve or reject an output from its first screen. Th
 9. **Record block last.** Put identity and provenance in one `Record` block at the end of the artifact, or in the [evidence record](../templates/evidence-record.example.json). Keep them out of the body.
 10. **Size to the change.** For a routine change, the body of an artifact fits one page, about 400 words, not counting the `Record` block and collapsed sections. A change that spans several components may take up to three pages. Beyond that, split the work or link the extra material. State a constraint once; do not turn each one into its own requirement, task and check.
 11. **Never trade away substance.** A failed check, an unresolved decision, a missing authorization or a material risk is always stated, however short the output.
+12. **Suggest the next step.** End the chat reply with one line, `Next:`, that names the skill to run next and the inputs to pass it, worded as a request the user can send as it stands. Give it only when the step is complete, its checks did not fail and nothing waits on the user: no open question, acceptance or authorization. Otherwise the line names what is awaited and from whom, then the step that follows it. Suggest one step, the most useful, and do not start it; a suggestion is not authorization to run it.
+
+    | After | Suggest | Instead, when |
+    | --- | --- | --- |
+    | discover | specify | the problem is unsettled: more discovery |
+    | specify | plan | a consequential architecture choice is open: design |
+    | plan | build, first slice | - |
+    | build | verify | a check failed: build again |
+    | verify | review | a requirement failed: build |
+    | review | release | a blocking finding stands: build, then verify |
+    | release | operate | - |
+    | operate | improve | a new problem surfaced: discover |
+    | improve | evaluate, on the next output of the changed skill | - |
+
+    A specialist skill suggests the step that called for it, or the next unmet item in its own record. Where the output is about to be reviewed by someone else, evaluate may be suggested ahead of the next step.
 
 The page sizes are targets for the whole artifact, not limits on individual sentences. Sources: [Anthropic playbook](https://claude.com/resources/articles/the-ai-native-sdlc-playbook) (fixed intent sections), [Claude Code Review](https://code.claude.com/docs/en/code-review) (severity table, nit cap, collapsed reasoning), [Spec Kit](https://github.com/github/spec-kit) (clarification caps, delete unused sections), [Google engineering practices](https://google.github.io/eng-practices/review/developer/small-cls.html) (small changes), a former Google engineer's [account of design docs](https://www.industrialempathy.com/posts/design-docs-at-google/) (one to three pages for incremental work). The combination is this project's synthesis; see [ADR 0001](../docs/adr/0001-concise-output-contract.md).
 
