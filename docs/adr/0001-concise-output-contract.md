@@ -32,7 +32,7 @@ Rewrite the intent, specification, plan, verification, release, incident and imp
 
 Do not set per-sentence or per-section word limits. Rule 10 is a target for the whole artifact.
 
-A later addition, rule 12, ends each reply with one suggested next step when the step is complete and nothing waits on the user. It keeps the user from having to recall the sequence; it is a suggestion only, so every step is still started by the user.
+A later addition, rule 12, ends each reply with one suggested next step when the step is complete and nothing waits on the user. It keeps the user from having to recall the sequence; it is a suggestion only, so every step is still started by the user. The suggestion always names a step on the main line and the file that step will write, so the user knows what to look for; an optional step such as design is offered on a separate line marked optional, because suggesting it as the next step made an optional step read as required.
 
 ## Consequences
 
