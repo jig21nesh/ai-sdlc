@@ -8,7 +8,7 @@
   "input": {"reference": null, "revision": null},
   "outputs": [{"path": null, "revision": null}],
   "waiting_on": [{"what": null, "who": null, "blocks": null}],
-  "next": {"skill": "build", "inputs": [], "request": null},
+  "next": {"skill": "build", "inputs": [], "request": null, "expected_output": null, "optional_first": {"skill": null, "reason": null, "expected_output": null}},
   "authorized_through": null,
   "run": {"attended": true, "assumptions": []},
   "updated_at": null,
